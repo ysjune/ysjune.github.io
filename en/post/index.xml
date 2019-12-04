@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Lazy Snack</title>
+    <link>http://ysjune.github.io/en/post/</link>
+    <description>Recent content in Posts on Lazy Snack</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>windsyou@gmail.com (snack)</managingEditor>
+    <webMaster>windsyou@gmail.com (snack)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Wed, 04 Dec 2019 17:12:08 +0900</lastBuildDate>
+    
+        <atom:link href="http://ysjune.github.io/en/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>Test</title>
+        <link>http://ysjune.github.io/en/post/test/</link>
+        <pubDate>Wed, 04 Dec 2019 17:12:08 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>http://ysjune.github.io/en/post/test/</guid>
+        <description>test</description>
+      </item>
+      
+    
+  </channel>
+</rss>
