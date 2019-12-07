@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>기능, 역할, 책임 – Lazy Snack</title>
+    <title>2. HTML 속의 자바스크립트 – Lazy Snack</title>
     
 
 <script>
@@ -196,13 +196,13 @@
 
     <meta name="description" content="" />
 <meta name="keywords" content="">
-<meta name="created" content="2019-12-08T01:45:37&#43;0900">
-<meta name="modified" content="2019-12-08T01:45:37&#43;0900">
+<meta name="created" content="2019-12-08T01:52:37&#43;0900">
+<meta name="modified" content="2019-12-08T01:52:37&#43;0900">
 
 
 <meta property="og:site_name" content="Lazy Snack">
-<meta property="og:title" content="기능, 역할, 책임">
-<meta property="og:url" content="http://ysjune.github.io/posts/model-%EC%84%B8%EB%AF%B8%EB%82%98/5%EC%9B%9424%EC%9D%BC/">
+<meta property="og:title" content="2. HTML 속의 자바스크립트">
+<meta property="og:url" content="http://ysjune.github.io/posts/javascript/chapter2/chapter2/">
 <meta property="og:type" content="article">
 
 <meta name="generator" content="Hugo 0.60.1" />
@@ -210,18 +210,18 @@
 <meta name="theme-color" content="#ffffff">
 
 
-<link rel="canonical" href="http://ysjune.github.io/posts/model-%EC%84%B8%EB%AF%B8%EB%82%98/5%EC%9B%9424%EC%9D%BC/">
+<link rel="canonical" href="http://ysjune.github.io/posts/javascript/chapter2/chapter2/">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "기능, 역할, 책임",
-    "datePublished": "2019-12-08T01:45:37+09:00",
-    "dateModified": "2019-12-08T01:45:37+09:00",
-    "url" : "http://ysjune.github.io/posts/model-%EC%84%B8%EB%AF%B8%EB%82%98/5%EC%9B%9424%EC%9D%BC/",
-    "description": "회사에서 진행하는 모델에 관한 세미나를 듣고 내용을 정리하고자 함. (1시간 가량 진행) 중간중간 개인 의견 들어갈 수 있음. 1. 기능 기능이란 사용자 \u0026lt;-\u0026gt; 시스템 간의 상",
+    "headline": "2. HTML 속의 자바스크립트",
+    "datePublished": "2019-12-08T01:52:37+09:00",
+    "dateModified": "2019-12-08T01:52:37+09:00",
+    "url" : "http://ysjune.github.io/posts/javascript/chapter2/chapter2/",
+    "description": "다루는 내용 \u0026lt;script\u0026gt; 요소 사용 인라인 스크립트와 외부 스크립트의 비교 문서 모드가 자바스크립트에 미치는 영향 자바스크립트가 비활성화된 상황에 대한 대비 1. \u0026lt;Script\u0026gt; 요소 여섯가",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "http://ysjune.github.io/"
@@ -389,7 +389,7 @@
   
   <li  class="is-active" >    
     
-      <a href="http://ysjune.github.io/posts/model-%EC%84%B8%EB%AF%B8%EB%82%98/5%EC%9B%9424%EC%9D%BC/">기능, 역할, 책임</a>
+      <a href="http://ysjune.github.io/posts/javascript/chapter2/chapter2/">2. HTML 속의 자바스크립트</a>
         
   </li>
   
@@ -398,46 +398,189 @@
 </nav>
   
   <div class="single">
-    <h2 class="single__title">기능, 역할, 책임</h2>
+    <h2 class="single__title">2. HTML 속의 자바스크립트</h2>
     <div class="single__meta">
-      🕓 Dec 8, 2019 · ☕2 min read
+      🕓 Dec 8, 2019 · ☕3 min read
       <div class="single__tags caption">
 
 </div>
     </div>    
     <article class="single__contents">
-      <p>회사에서 진행하는 모델에 관한 세미나를 듣고 내용을 정리하고자 함. (1시간 가량 진행)<br>
-중간중간 개인 의견 들어갈 수 있음.</p>
-<h2 id="1-">1. 기능</h2>
-<p>기능이란 사용자 &lt;-&gt; 시스템 간의 상호작용</p>
-<p>Input -&gt; 기능 -&gt; Output 으로 간단하게 말하면 Input 과 Output 이 키포인트라고 할 수 있음.<br>
-Input과 Output 는 각각 2가지가 있을 수 있음.</p>
-<ul>
-<li>Input</li>
-</ul>
+      <h2 id="-">다루는 내용</h2>
 <ol>
-<li>파라미터</li>
-<li>DB 같은 곳에서 들어오는 정보 (이 부분은 이해가 갈 듯하면서 뭔가 파라미터 보다는 개념적인 느낌이 들었기에 확실하게 이해가 되진 않았던 부분)</li>
+<li><code>&lt;script&gt;</code> 요소 사용</li>
+<li>인라인 스크립트와 외부 스크립트의 비교</li>
+<li>문서 모드가 자바스크립트에 미치는 영향</li>
+<li>자바스크립트가 비활성화된 상황에 대한 대비</li>
+</ol>
+<h3 id="1-script-">1. <code>&lt;Script&gt;</code> 요소</h3>
+<p>여섯가지의 속성이 있다.</p>
+<ol>
+<li>async
+<ul>
+<li>비동기 옵션으로 스크립트를 받지만, 페이지 로딩은 방해하지 않음. <code>외부 스크립트를 불러올 때만 유효</code></li>
+</ul>
+</li>
+<li>charset
+<ul>
+<li>코드의 문자셋 지정 (자주 사용X)</li>
+</ul>
+</li>
+<li>defer
+<ul>
+<li>문서의 콘텐츠를 완전히 표시할 때까지 스크립트 실행을 지연해도 OK, <code>외부 스크립트를 불러올 때만 유효</code></li>
+</ul>
+</li>
+<li>language
+<ul>
+<li>Deprecated</li>
+</ul>
+</li>
+<li>src
+<ul>
+<li>외부 파일 위치 지정</li>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&#34;example.js&#34;</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="err">/</span><span class="err">s</span><span class="err">c</span><span class="err">r</span><span class="err">i</span><span class="err">p</span><span class="err">t</span><span class="err">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>type
+<ul>
+<li>language 대체, 콘텐츠 타입(<a href="https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types">마임 타입</a>) 지정</li>
+<li>application/javascript, text/javascript(생략가능, default값)</li>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;text/javascript&#34;</span><span class="o">&gt;</span>
+  <span class="kd">function</span> <span class="nx">blah</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
 </ol>
 <ul>
-<li>Output</li>
+<li>
+<p>코드를 가져온 방법과 관계 없이 코드는 위에서 아래로 순차적으로 해석되며, 예외는 defer 과 async 속성이 있을 때 뿐이다.</p>
+<blockquote>
+<p>자바스크립트 파일은 보통 *.js 라는 확장자를 붙이지만, 브라우저는 js 파일을 불러올 때 확장자를 확인하지 않기 때문에 필수는 아니다.<br>
+하지만 서버에서 종종 파일 확장자를 기준으로 응답에 쓸 마임 타입을 결정하는 경우도 있으므로 염두해 둬야 함</p>
+</blockquote>
+</li>
+<li>
+<p><strong><code>&lt;script&gt; 와 &lt;/script&gt; 사이에 스크립트 코드가 있고 src 속성을 사용하고 있다면 인라인 코드는 무시됨</code></strong></p>
+</li>
+<li>
+<p>일반적으로 자바스크립트 코드를 모두 <body> 요소 안에 페이지 콘텐츠 마지막에 쓰는데, 자바스크립트 파일을 전부 <head> 요소에서 불러온다면<br>
+전부 받고, 파싱하고, 해석이 끝날 때까지 페이지 랜더링이 멈추기 때문임 (페이지 렌더링이 지연되면 흰 화면만 보임)</p>
+</li>
 </ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">    <span class="p">&lt;</span><span class="nt">html</span><span class="p"></span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">head</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">title</span><span class="p"></span><span class="p">&gt;</span> title <span class="p">&lt;</span><span class="nt">title</span><span class="p"></span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="p">/</span><span class="nt">head</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">body</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="c">&lt;!--</span><span class="c"> contents </span><span class="c">--&gt;</span>
+        <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;example1.js&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="p">/</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>defer 속성을 설정하면 해당 요소를 만나는 즉시 코드를 내려받지만 실행은 지연한다.<br>
+외부 스크립트를 불러올 때만 유효하며, 인라인 스크립트의 defer 속성은 무시한다.</p>
+</li>
+<li>
+<p>async 속성은 defer 와 같이 외부스크립트에만 적용된다는 점은 비슷하나, 스크립트가 순차적으로 실행된다는 보장이 없다.<br>
+비동기는 페이지의 load 이벤트 전에는 실행되지만, DOM ContentLoaded 이벤트보다 반드시 앞선다는 보장이 없으므로 (비동기니까) DOM 을 조작하는 스크립트는 async 으로 불러오지 않는 편이 좋음</p>
+</li>
+</ul>
+<hr>
+<h3 id="2---">2.인라인 코드와 외부 파일</h3>
+<ul>
+<li>가능한 자바스크립트는 외부 파일로 분리하는게 좋음
 <ol>
-<li>return</li>
-<li>직접적인 return 보다는 한 행위로 인해 실행되는 결과? (예를 들면, 1.의 return 은 성공,실패 등의 상태값이 될 수 있고, 2.는 행위라고 생각됨)</li>
+<li>괸리 용이</li>
+<li>캐싱되어 빠른 로딩속도</li>
 </ol>
-<p>기능은 상황에 따라 다르게 존재 혹은 동작할 수 있음.</p>
-<h2 id="2--">2. 역할, 책임</h2>
-<p>High Cohesion<br>
-Low Coupling<br>
-(정처기 한창 공부할 때 기억나는 High Chesion, Loose Coupling 의 개념)</p>
-<p>저 두 단어면 다 설명이 됨. -&gt; 결과적으로 기능 수정이나, 유지보수가 용이해짐.</p>
-<p>기능에는 여러 하위 기능이 있을 수 있으며, 기능에 하위 기능을 도출하는 연습을 많이 해야 함.<br>
-물론 처음에는 잘 보이지 않고, 크기가 큰 클래스 혹은 메소드 일 수록 쪼개기가 어렵다. (메소드 추출 방식 등..)<br>
-메소드 추출을 하다보면 크기가 오히려 커지고, 구조가 복잡해질 수 있다. (이 부분은 공감하는 부분이고 실제로 경험.. 하면서도 이게 맞는건가 의구심이 든 적도 있음)</p>
-<p>역할, 책임에 대해서는 객체지향 원리랄까 그 부분이 생각나는 부분이었음. (단일책임원칙, 캡슐링 - 캡슐링이 맞던가..)<br>
-이런 자리를 회사 내부에서 업무 시간에 갖는다는 것은 좋은 것 같다.<br>
-잘 응용해서 반푼이가 아닌 <code>멀쩡한 개발자</code>가 되도록&hellip;</p>
+</li>
+</ul>
+<hr>
+<h3 id="3-">3.문서 모드</h3>
+<ul>
+<li>퀵스모드</li>
+<li>표준모드</li>
+</ul>
+<hr>
+<h3 id="4nonscript-">4.<nonscript> 요소</h3>
+<ul>
+<li>브라우저가 스크립트 미지원</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">  <span class="p">&lt;</span><span class="nt">html</span><span class="p"></span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">head</span><span class="p"></span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">title</span><span class="p"></span><span class="p">&gt;</span> title <span class="p">&lt;</span><span class="p">/</span><span class="nt">title</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;example.js&#34;</span><span class="p"></span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">body</span><span class="p"></span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">noscript</span><span class="p"></span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">a</span><span class="p"></span><span class="p">&gt;</span>not support<span class="p">&lt;</span><span class="p">/</span><span class="nt">a</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="p">/</span><span class="nt">noscript</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="p">/</span><span class="nt">body</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="p">/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h5 id="-1">생각해볼 점</h5>
+<ul>
+<li>script 옵션에 대해서 알게되었다. 이전에는 src와 type 밖에 몰랐는데, async 와 defer 에 대해서 알게되었다.<br>
+async 는 자바에서도 익숙하므로 비동기라 생각하면 되겠고, defer 는 promise 에 나오는 deferred 와 관련이 있으려나? (추후 공부하면서 알아보는 걸로)<br>
+또한 type 의 text/javscript는 기본값이라 적지 않아도 된다는 사실은 깨알팁</li>
+<li>~async 와 defer 는 상당히 헷갈리는 개념(?) 인 것 같다. 둘 다 외부스크립트를 불러올 때만 유효하며, 당장 실행하지 않는다.<br>
+실제로 책의 내용을 보면 async 와 defer 는 async 가 <code>실행순서를 보장하지 않는다</code> 라는 차이점을 들어 설명하는데<br>
+defer 쪽의 설명을 보면 <code>하지만 현실에서는 defer 속성으로 지연시킨 스크립트가 항상 순서대로 실행되지는 않으며...</code> 라고 하는데&hellip;?~<br>
+구글링을 통해 알게되었다! <a href="https://appletree.or.kr/blog/web-development/javascript/script-%ED%83%9C%EA%B7%B8%EC%9D%98-async%EC%99%80-defer-%EC%86%8D%EC%84%B1/">실행시점에 차이가 있다</a></li>
+<li>xhtml 에 대한 내용은 그냥 읽어보고 지나갔는데, 많은 브라우저가 아직은 비호환이라는 말과 실제로도 많이 본 적이 없기에&hellip;?</li>
+</ul>
 
     </article>
     
@@ -515,21 +658,14 @@ Low Coupling<br>
     <div class="grow"></div>
 <nav class="pagination-single">
   
-    <a href="http://ysjune.github.io/posts/model-%EC%84%B8%EB%AF%B8%EB%82%98/5%EC%9B%9429%EC%9D%BC/" class="pagination-single__left">
+    <a href="http://ysjune.github.io/posts/javascript/chapter3/%EC%96%B8%EC%96%B4%EC%9D%98-%EA%B8%B0%EC%B4%88/" class="pagination-single__left">
       <div class="pagination-single__icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
       </div>
-      <div class="pagination-single__left-title">모델</div>      
+      <div class="pagination-single__left-title">3. 언어의 기초</div>      
     </a>
   
   <div class="grow"></div>
-  
-    <a href="http://ysjune.github.io/posts/model-%EC%84%B8%EB%AF%B8%EB%82%98/6%EC%9B%94-12%EC%9D%BC/" class="pagination-single__right">      
-      <div class="pagination-single__right-title">What-How 에 대해 (2)</div>
-      <div class="pagination-single__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
-      </div>
-    </a>
   
 </nav>
     
@@ -1179,7 +1315,7 @@ Low Coupling<br>
         
           
             
-              <a href="http://ysjune.github.io/posts/model-%EC%84%B8%EB%AF%B8%EB%82%98/5%EC%9B%9424%EC%9D%BC/" data-lang="en" class="dropdown-item is-active">English</a>
+              <a href="http://ysjune.github.io/posts/javascript/chapter2/chapter2/" data-lang="en" class="dropdown-item is-active">English</a>
             
           
         
@@ -1232,7 +1368,7 @@ Low Coupling<br>
             
     
     
-  <a href="http://ysjune.github.io/posts/model-%EC%84%B8%EB%AF%B8%EB%82%98/5%EC%9B%9424%EC%9D%BC//index.xml" type="application/rss+xml" title="rss" aria-label="RSS Feed Link">
+  <a href="http://ysjune.github.io/posts/javascript/chapter2/chapter2//index.xml" type="application/rss+xml" title="rss" aria-label="RSS Feed Link">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><circle fill="currentColor" cx="6.18" cy="17.82" r="2.18"/><path fill="currentColor" d="M5.59 10.23c-.84-.14-1.59.55-1.59 1.4 0 .71.53 1.28 1.23 1.4 2.92.51 5.22 2.82 5.74 5.74.12.7.69 1.23 1.4 1.23.85 0 1.54-.75 1.41-1.59-.68-4.2-3.99-7.51-8.19-8.18zm-.03-5.71C4.73 4.43 4 5.1 4 5.93c0 .73.55 1.33 1.27 1.4 6.01.6 10.79 5.38 11.39 11.39.07.73.67 1.28 1.4 1.28.84 0 1.5-.73 1.42-1.56-.73-7.34-6.57-13.19-13.92-13.92z"/></svg>
   </a>
 
