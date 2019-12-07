@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Lazy Snack</title>
-    <link>http://ysjune.github.io/categories/</link>
+    <link>https://ysjune.github.io/categories/</link>
     <description>Recent content in Categories on Lazy Snack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
@@ -11,71 +11,71 @@
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
     <lastBuildDate>Sun, 08 Dec 2019 01:52:37 +0900</lastBuildDate>
     
-        <atom:link href="http://ysjune.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://ysjune.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     
       
       <item>
         <title>javascript</title>
-        <link>http://ysjune.github.io/categories/javascript/</link>
+        <link>https://ysjune.github.io/categories/javascript/</link>
         <pubDate>Sun, 08 Dec 2019 01:52:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
-        <guid>http://ysjune.github.io/categories/javascript/</guid>
+        <guid>https://ysjune.github.io/categories/javascript/</guid>
         <description></description>
       </item>
       
       <item>
         <title>모델 세미나</title>
-        <link>http://ysjune.github.io/categories/%EB%AA%A8%EB%8D%B8-%EC%84%B8%EB%AF%B8%EB%82%98/</link>
+        <link>https://ysjune.github.io/categories/%EB%AA%A8%EB%8D%B8-%EC%84%B8%EB%AF%B8%EB%82%98/</link>
         <pubDate>Sun, 08 Dec 2019 01:45:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
-        <guid>http://ysjune.github.io/categories/%EB%AA%A8%EB%8D%B8-%EC%84%B8%EB%AF%B8%EB%82%98/</guid>
+        <guid>https://ysjune.github.io/categories/%EB%AA%A8%EB%8D%B8-%EC%84%B8%EB%AF%B8%EB%82%98/</guid>
         <description></description>
       </item>
       
       <item>
         <title>linux</title>
-        <link>http://ysjune.github.io/categories/linux/</link>
+        <link>https://ysjune.github.io/categories/linux/</link>
         <pubDate>Sun, 08 Dec 2019 01:35:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
-        <guid>http://ysjune.github.io/categories/linux/</guid>
+        <guid>https://ysjune.github.io/categories/linux/</guid>
         <description></description>
       </item>
       
       <item>
         <title>java</title>
-        <link>http://ysjune.github.io/categories/java/</link>
+        <link>https://ysjune.github.io/categories/java/</link>
         <pubDate>Sun, 08 Dec 2019 01:30:33 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
-        <guid>http://ysjune.github.io/categories/java/</guid>
+        <guid>https://ysjune.github.io/categories/java/</guid>
         <description></description>
       </item>
       
       <item>
         <title>환경 설정</title>
-        <link>http://ysjune.github.io/categories/%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/</link>
+        <link>https://ysjune.github.io/categories/%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/</link>
         <pubDate>Sun, 08 Dec 2019 01:16:31 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
-        <guid>http://ysjune.github.io/categories/%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/</guid>
+        <guid>https://ysjune.github.io/categories/%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/</guid>
         <description></description>
       </item>
       
       <item>
         <title>면접준비</title>
-        <link>http://ysjune.github.io/categories/%EB%A9%B4%EC%A0%91%EC%A4%80%EB%B9%84/</link>
+        <link>https://ysjune.github.io/categories/%EB%A9%B4%EC%A0%91%EC%A4%80%EB%B9%84/</link>
         <pubDate>Sun, 08 Dec 2019 01:11:52 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
-        <guid>http://ysjune.github.io/categories/%EB%A9%B4%EC%A0%91%EC%A4%80%EB%B9%84/</guid>
+        <guid>https://ysjune.github.io/categories/%EB%A9%B4%EC%A0%91%EC%A4%80%EB%B9%84/</guid>
         <description></description>
       </item>
       
       <item>
         <title>clean code</title>
-        <link>http://ysjune.github.io/categories/clean-code/</link>
+        <link>https://ysjune.github.io/categories/clean-code/</link>
         <pubDate>Sat, 07 Dec 2019 13:49:32 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
-        <guid>http://ysjune.github.io/categories/clean-code/</guid>
+        <guid>https://ysjune.github.io/categories/clean-code/</guid>
         <description></description>
       </item>
       
