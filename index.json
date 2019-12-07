@@ -1,5 +1,14 @@
 [
 {
+	"uri": "http://ysjune.github.io/",
+	"title": "",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
 	"uri": "http://ysjune.github.io/posts/javascript/chapter2/chapter2/",
 	"title": "2. HTML 속의 자바스크립트",
 	"tags": [],
@@ -65,15 +74,6 @@
 {
 	"uri": "http://ysjune.github.io/categories/javascript/",
 	"title": "javascript",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://ysjune.github.io/",
-	"title": "Lazy Snack",
 	"tags": [],
 	"categories": [],
 	"series": [],
@@ -510,5 +510,14 @@
 	"categories": [],
 	"series": [],
 	"description": "",
+	"content": ""
+},
+{
+	"uri": "http://ysjune.github.io/archive/",
+	"title": "Archive",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "Archive Page",
 	"content": ""
 }]
