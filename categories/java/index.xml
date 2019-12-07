@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>java on Lazy Snack</title>
+    <link>http://ysjune.github.io/categories/java/</link>
+    <description>Recent content in java on Lazy Snack</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>windsyou@gmail.com (snack)</managingEditor>
+    <webMaster>windsyou@gmail.com (snack)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 08 Dec 2019 01:30:33 +0900</lastBuildDate>
+    
+        <atom:link href="http://ysjune.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>DB Insert 시 자동생성된 id 를 알아내기</title>
+        <link>http://ysjune.github.io/posts/java/db-insert-%EC%8B%9C-id-%EB%B0%98%ED%99%98feat.mybatis-jdbctemplate/</link>
+        <pubDate>Sun, 08 Dec 2019 01:30:33 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>http://ysjune.github.io/posts/java/db-insert-%EC%8B%9C-id-%EB%B0%98%ED%99%98feat.mybatis-jdbctemplate/</guid>
+        <description>DB Insert 시 자동생성된 id 를 알아내기 1.Mybatis 1 2 3 4 5 6 7 8 9 10 11 &amp;lt;insert id=&amp;#34;insertStudent&amp;#34; parameterType=&amp;#34;studentDto&amp;#34; useGeneratedKeys=&amp;#34;true&amp;#34; keyProperty=&amp;#34;id&amp;#34;&amp;gt; INSERT INTO student ( name, grade, phone ) VALUES ( #{name}, #{grade}, #{phone} ) 사용하는 데이터베이스가 Auto Increment 가 된다면 (e.g. MySQL, Maria) 다음을 통해</description>
+      </item>
+      
+      <item>
+        <title>Feign 사용 (1)</title>
+        <link>http://ysjune.github.io/posts/java/feign-%EC%82%AC%EC%9A%A91/</link>
+        <pubDate>Sun, 08 Dec 2019 01:30:33 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>http://ysjune.github.io/posts/java/feign-%EC%82%AC%EC%9A%A91/</guid>
+        <description>이번 API 통신을 하면서 Feign 을 사용해봤는데, 어떻게 사용했는지 적어보고자 함. Feign 이란? Java to HTTP client binder Netflix 에서 개발함 https://github.com/OpenFeign/feign 이라고 간단하게만, API 통신을 이용해서 개발할 필</description>
+      </item>
+      
+      <item>
+        <title>Feign 사용 (2)</title>
+        <link>http://ysjune.github.io/posts/java/feign-%EC%82%AC%EC%9A%A92/</link>
+        <pubDate>Sun, 08 Dec 2019 01:30:33 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>http://ysjune.github.io/posts/java/feign-%EC%82%AC%EC%9A%A92/</guid>
+        <description>Circuit Breaker 적용 API 통신에서 서킷 브레이커를 적용해야 한다는 얘기를 들었고, 이 역시 처음 듣는 용어라 일단 이해를 위해.. Circuit Breaker 란? 회로차단기로 불리며, 전기적 회로를 과</description>
+      </item>
+      
+      <item>
+        <title>HandlerMethodArgumentResolver 사용</title>
+        <link>http://ysjune.github.io/posts/java/handlermethodargumentresolver-%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC/</link>
+        <pubDate>Sun, 08 Dec 2019 01:30:33 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>http://ysjune.github.io/posts/java/handlermethodargumentresolver-%E1%84%89%E1%85%A1%E1%84%8B%E1%85%AD%E1%86%BC/</guid>
+        <description>이전에 회사에서 다른 프로젝트 소스를 보다가 http 헤더에서 보낸 정보를 controller 단에서 바로 vo 로 매핑해주는 코드를 발견했다. 당시에 이거 꽤 유용하게 쓸 수 있겠네. 하고 지나</description>
+      </item>
+      
+      <item>
+        <title>WireMock 사용</title>
+        <link>http://ysjune.github.io/posts/java/wiremock-%EC%82%AC%EC%9A%A9/</link>
+        <pubDate>Sun, 08 Dec 2019 01:30:33 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>http://ysjune.github.io/posts/java/wiremock-%EC%82%AC%EC%9A%A9/</guid>
+        <description>순서가 어긋난 감이 있긴 하지만, 지난 번 API 통신을 위해 Feign 을 사용했었는데, 테스트를 진행할 때 실제로 API 접속을 할 수는 없으니 Mock Web 서버를 만드는 기술인 WireMock 를 사용한 내</description>
+      </item>
+      
+    
+  </channel>
+</rss>

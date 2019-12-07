@@ -9,12 +9,21 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Fri, 06 Dec 2019 16:14:03 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Dec 2019 13:49:32 +0900</lastBuildDate>
     
         <atom:link href="http://ysjune.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>clean code</title>
+        <link>http://ysjune.github.io/en/categories/clean-code/</link>
+        <pubDate>Sat, 07 Dec 2019 13:49:32 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>http://ysjune.github.io/en/categories/clean-code/</guid>
+        <description></description>
+      </item>
       
     
   </channel>
