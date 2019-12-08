@@ -9,12 +9,21 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 08 Dec 2019 01:52:37 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2019 13:24:59 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>7. 함수 표현식</title>
+        <link>https://ysjune.github.io/posts/javascript/chapter7/function/</link>
+        <pubDate>Sun, 08 Dec 2019 13:24:59 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/javascript/chapter7/function/</guid>
+        <description>다루는 내용 함수 표현식의 특징 함수와 재귀 클로저를 이용한 고유(프라이빗) 변수 1. 함수 표현식의 특징 함수를 정의하는 방법은 함수 선언과 함수 표현식 2가지가 있음</description>
+      </item>
       
       <item>
         <title>2. HTML 속의 자바스크립트</title>
