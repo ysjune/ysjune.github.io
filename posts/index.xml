@@ -9,12 +9,21 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 09 Dec 2019 17:39:01 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Dec 2019 18:36:11 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>Caffeine(캐시 라이브러리) 사용</title>
+        <link>https://ysjune.github.io/posts/java/caffeine/</link>
+        <pubDate>Mon, 09 Dec 2019 18:36:11 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/java/caffeine/</guid>
+        <description>이번에 회사에서 학습기에 들어가는 화면에 대한 관리를 하는데, 자주 바뀌는 사항이 아니다보니, 캐쉬를 적용하자는 말이 나왔다. 캐시라고 하면 레디스(redis</description>
+      </item>
       
       <item>
         <title>SimpleJdbcInsert 문제</title>

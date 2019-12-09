@@ -9,6 +9,15 @@
 	"content": ""
 },
 {
+	"uri": "https://ysjune.github.io/posts/java/caffeine/",
+	"title": "Caffeine(캐시 라이브러리) 사용",
+	"tags": [],
+	"categories": [],
+	"series": [""],
+	"description": "",
+	"content": "이번에 회사에서 학습기에 들어가는 화면에 대한 관리를 하는데,\n자주 바뀌는 사항이 아니다보니, 캐쉬를 적용하자는 말이 나왔다.\n캐시라고 하면 레디스(redis) 를 생각했었는데, caffeine 이라는 것이 나와서, 적용해볼겸 정리해보려고 한다 .\n1. Caffeine  Java 8을 기반으로 하는 High Performance 캐싱 라이브러리 빈도 및 최근 데이터에 따라 사이즈가 넘어갈 경우 eviction(방출?) 최근 접근 or 쓰기 에 따라 만료 시간 설정 비동기적으로 refresh 가능 key, values 가 자동적으로 weak reference 로 wrap cache access 에 대한 statistics 제공  등등.. 이 있다.\n2. 사용   우선, maven 을 사용하므로 pom.xml 에 추가\n1 2 3 4 5  \u0026lt;dependency\u0026gt;\r\u0026lt;groupId\u0026gt;com.github.ben-manes.caffeine\u0026lt;/groupId\u0026gt;\r\u0026lt;artifactId\u0026gt;caffeine\u0026lt;/artifactId\u0026gt;\r\u0026lt;version\u0026gt;2.8.0\u0026lt;/version\u0026gt;\r\u0026lt;/dependency\u0026gt;\r    서비스 로직 수정\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28  @Service\rpublic class DataProvider {\rprivate final DataRepository dataRepository;\rprivate LoadingCache\u0026lt;String, DataVO\u0026gt; cache;\rprivate final String CACHE_KEY = \u0026#34;data\u0026#34;;\r@Autowired\rpublic DataProvider(DataRepository dataRepository) {\rthis.dataRepository = dataRepository;\rcache = createCache();\r}\r@NonNull\rprivate LoadingCache\u0026lt;String, DataVO\u0026gt; createCache() {\rreturn Caffeine.newBuilder()\r.maximumSize(10) // max size\r .expireAfterWrite(30, TimeUnit.MINUTES) // 쓴 이후로 30분 후 expired\r .build(key -\u0026gt; getData(key)); // 지정한 key 값으로 cache 저장\r }\rprivate LoginUIData getData(final String key) {\rreturn dataRepository.findData();\r}\rpublic LoginUIData getData() {\rreturn cache.get(CACHE_KEY);\r}\r}     이전에는 getData() 만 단순히 호출 하는 구조였는데 (서비스 레이어라는 이름이 무색할 정도로..), 생성자에 cache 를 추가해 줬다.\n  이전과 같이 컨트롤러에서 getData() 를 호출하면 cache.get 를 통해 캐시가 있으면 캐시에 있는 값을 가져오고, 없으면 DB 에서 불러와서 캐시에 저장 후, 캐시 값을 읽어온다.\n     간단한 용도로 사용할 예정이었기에 간단하게만 사용했지만, 이 밖에 여러 가지 옵션 들이 있으니, wiki 를 보면서 확인해보자  "
+},
+{
 	"uri": "https://ysjune.github.io/categories/",
 	"title": "Categories",
 	"tags": [],

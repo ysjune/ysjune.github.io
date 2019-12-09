@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://ysjune.github.io/</loc>
-    <lastmod>2019-12-09T17:39:01+09:00</lastmod>
+    <lastmod>2019-12-09T18:36:11+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -18,8 +18,13 @@
   </url>
   
   <url>
+    <loc>https://ysjune.github.io/posts/java/caffeine/</loc>
+    <lastmod>2019-12-09T18:36:11+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ysjune.github.io/categories/</loc>
-    <lastmod>2019-12-09T17:39:01+09:00</lastmod>
+    <lastmod>2019-12-09T18:36:11+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -34,17 +39,17 @@
   
   <url>
     <loc>https://ysjune.github.io/categories/java/</loc>
-    <lastmod>2019-12-09T17:39:01+09:00</lastmod>
+    <lastmod>2019-12-09T18:36:11+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/posts/</loc>
-    <lastmod>2019-12-09T17:39:01+09:00</lastmod>
+    <lastmod>2019-12-09T18:36:11+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/series/</loc>
-    <lastmod>2019-12-09T17:39:01+09:00</lastmod>
+    <lastmod>2019-12-09T18:36:11+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
