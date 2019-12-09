@@ -3,58 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://ysjune.github.io/ko/categories/</loc>
+    <loc>https://ysjune.github.io/ko/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://ysjune.github.io/en/categories/"
+                href="https://ysjune.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://ysjune.github.io/ko/categories/"
+                href="https://ysjune.github.io/ko/categories/"
                 />
   </url>
   
   <url>
-    <loc>http://ysjune.github.io/ko/</loc>
+    <loc>https://ysjune.github.io/ko/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://ysjune.github.io/en/"
+                href="https://ysjune.github.io/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://ysjune.github.io/ko/"
+                href="https://ysjune.github.io/ko/"
                 />
   </url>
   
   <url>
-    <loc>http://ysjune.github.io/ko/series/</loc>
+    <loc>https://ysjune.github.io/ko/series/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://ysjune.github.io/en/series/"
+                href="https://ysjune.github.io/series/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://ysjune.github.io/ko/series/"
+                href="https://ysjune.github.io/ko/series/"
                 />
   </url>
   
   <url>
-    <loc>http://ysjune.github.io/ko/tags/</loc>
+    <loc>https://ysjune.github.io/ko/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://ysjune.github.io/en/tags/"
+                href="https://ysjune.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
-                href="http://ysjune.github.io/ko/tags/"
+                href="https://ysjune.github.io/ko/tags/"
                 />
   </url>
   
