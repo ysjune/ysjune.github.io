@@ -22,7 +22,7 @@
         <pubDate>Sun, 08 Dec 2019 01:35:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
         <guid>https://ysjune.github.io/posts/linux/book/chapter1/</guid>
-        <description>애플리케이션 : 사용자가 직접 사용, 컴퓨터의 오피스 프로그램 또는 스마트폰 앱등 미틀웨어 : 여러 애플리케이션이 공통으로 사용하는 처리를 묶어서 애플리케이션의</description>
+        <description>애플리케이션 : 사용자가 직접 사용, 컴퓨터의 오피스 프로그램 또는 스마트폰 앱등 미틀웨어 : 여러 애플리케이션이 공</description>
       </item>
       
       <item>
@@ -31,7 +31,7 @@
         <pubDate>Sun, 08 Dec 2019 01:35:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
         <guid>https://ysjune.github.io/posts/linux/book/chapter2/</guid>
-        <description>OS는 커널 이외에도 사용자 모드에서 동작하는 다양한 프로그램으로 구성 라이브러리 형태, 단독 프로그램으로 동작 이 부분은 다양.. 시스템 콜, OS가 제공하는 라</description>
+        <description>OS는 커널 이외에도 사용자 모드에서 동작하는 다양한 프로그램으로 구성 라이브러리 형태, 단독 프로그램으로 동작 이</description>
       </item>
       
       <item>
@@ -40,7 +40,7 @@
         <pubDate>Sun, 08 Dec 2019 01:35:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
         <guid>https://ysjune.github.io/posts/linux/book/chapter3/</guid>
-        <description>가상 기억장치가 없는 단순한 경우만 나타낸다. 실제 프로세스의 생성 및 삭제는 5장에서 자세히 다룸 프로세스 생성의 목적 같은 프로그램의 처리를 여러 개의 프로세스가</description>
+        <description>가상 기억장치가 없는 단순한 경우만 나타낸다. 실제 프로세스의 생성 및 삭제는 5장에서 자세히 다룸 프로세스 생성의 목</description>
       </item>
       
       <item>
@@ -49,7 +49,7 @@
         <pubDate>Sun, 08 Dec 2019 01:35:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
         <guid>https://ysjune.github.io/posts/linux/book/chapter4/</guid>
-        <description>프로세스 스케줄러 여러 프로그램을 동시에 동작 시킴 (정확히는 동시에 동작하는 것처럼 보이게 함) 하나의 CPU는 동시에 하나의 프로세스만 처리 가능 하나의 CPU</description>
+        <description>프로세스 스케줄러 여러 프로그램을 동시에 동작 시킴 (정확히는 동시에 동작하는 것처럼 보이게 함) 하나의 CPU는 동</description>
       </item>
       
       <item>
@@ -58,7 +58,7 @@
         <pubDate>Sun, 08 Dec 2019 01:35:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
         <guid>https://ysjune.github.io/posts/linux/book/chapter6/</guid>
-        <description>구체적으로 크기와 성능에 얼마나 차이가 있습니까? 이런 차이를 고려하여 하드웨어나 리눅스는 어떤 구조로 되어 있습니까? 라는 두 질문이 이 장에서 풀어나갈 내용. 캐</description>
+        <description>구체적으로 크기와 성능에 얼마나 차이가 있습니까? 이런 차이를 고려하여 하드웨어나 리눅스는 어떤 구조로 되어 있습니</description>
       </item>
       
     
