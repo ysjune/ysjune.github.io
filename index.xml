@@ -9,12 +9,21 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 09 Dec 2019 18:36:11 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Dec 2019 23:25:39 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>8. 브라우저 객체 모델</title>
+        <link>https://ysjune.github.io/posts/javascript/chapter8/bom/</link>
+        <pubDate>Mon, 16 Dec 2019 23:25:39 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/javascript/chapter8/bom/</guid>
+        <description>다루는 내용 BOM 의 핵심인 window 객체에 대한 이해 창과 프레임, 팝업 컨트롤 location 객체에서 얻는 페이지 정보 navigator 객체를 통한 브라우</description>
+      </item>
       
       <item>
         <title>Caffeine(캐시 라이브러리) 사용</title>
