@@ -9,12 +9,21 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 16 Dec 2019 23:25:39 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2019 13:32:07 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>캡슐화(encapsulation)</title>
+        <link>https://ysjune.github.io/posts/java/encapsulation/</link>
+        <pubDate>Tue, 17 Dec 2019 13:32:07 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/java/encapsulation/</guid>
+        <description>캡슐화(encapsulation) 객체가 내부적으로 기능을 어떻게 구현하는지를 감추는 것 내부의 기능 구현이</description>
+      </item>
       
       <item>
         <title>8. 브라우저 객체 모델</title>
