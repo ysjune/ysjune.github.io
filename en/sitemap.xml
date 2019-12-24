@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://ysjune.github.io/</loc>
-    <lastmod>2019-12-16T23:25:39+09:00</lastmod>
+    <lastmod>2019-12-24T23:24:28+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -18,13 +18,13 @@
   </url>
   
   <url>
-    <loc>https://ysjune.github.io/posts/javascript/chapter8/bom/</loc>
-    <lastmod>2019-12-16T23:25:39+09:00</lastmod>
+    <loc>https://ysjune.github.io/posts/chatter/2019retrospect/</loc>
+    <lastmod>2019-12-24T23:24:28+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/categories/</loc>
-    <lastmod>2019-12-16T23:25:39+09:00</lastmod>
+    <lastmod>2019-12-24T23:24:28+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -38,18 +38,13 @@
   </url>
   
   <url>
-    <loc>https://ysjune.github.io/categories/javascript/</loc>
-    <lastmod>2019-12-16T23:25:39+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ysjune.github.io/posts/</loc>
-    <lastmod>2019-12-16T23:25:39+09:00</lastmod>
+    <lastmod>2019-12-24T23:24:28+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/series/</loc>
-    <lastmod>2019-12-16T23:25:39+09:00</lastmod>
+    <lastmod>2019-12-24T23:24:28+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -60,6 +55,21 @@
                 hreflang="en"
                 href="https://ysjune.github.io/series/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/categories/%EC%83%9D%EA%B0%81%EA%B1%B0%EB%A6%AC/</loc>
+    <lastmod>2019-12-24T23:24:28+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/posts/javascript/chapter8/bom/</loc>
+    <lastmod>2019-12-16T23:25:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/categories/javascript/</loc>
+    <lastmod>2019-12-16T23:25:39+09:00</lastmod>
   </url>
   
   <url>
