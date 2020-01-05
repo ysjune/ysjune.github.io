@@ -9,7 +9,7 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 29 Dec 2019 12:55:43 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jan 2020 22:53:51 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,12 +17,21 @@
     
       
       <item>
+        <title>11. DOM 확장</title>
+        <link>https://ysjune.github.io/posts/javascript/chapter11/dom-extension/</link>
+        <pubDate>Sat, 04 Jan 2020 22:53:51 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/javascript/chapter11/dom-extension/</guid>
+        <description>다루는 내용 선택자 API 에 대한 이해 HTML5 DOM 확장 사용 브라우저 전용 DOM 확장 사용 1. 선택자 API CSS 선택자로 패턴을 만들고 그에 맞</description>
+      </item>
+      
+      <item>
         <title>10. DOM</title>
         <link>https://ysjune.github.io/posts/javascript/chapter10/dom/</link>
         <pubDate>Sun, 29 Dec 2019 12:55:43 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
         <guid>https://ysjune.github.io/posts/javascript/chapter10/dom/</guid>
-        <description>다루는 내용 DOM 을 노드의 계층 구조로 이해 다양한 노드 타입 브라우저들 간의 비호환성을 우회하는 DOM 코딩 1. 노드의 계층 구</description>
+        <description>DOM 을 노드의 계층 구조로 이해 다양한 노드 타입 브라우저들 간의 비호환성을 우회하는 DOM 코딩 1. 노드의 계층 구조 HTML 과 XML 문</description>
       </item>
       
       <item>
