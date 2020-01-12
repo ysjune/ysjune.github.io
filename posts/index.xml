@@ -9,12 +9,30 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 04 Jan 2020 22:53:51 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jan 2020 15:08:17 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>13. 이벤트</title>
+        <link>https://ysjune.github.io/posts/javascript/chapter13/event/</link>
+        <pubDate>Sun, 12 Jan 2020 15:08:17 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/javascript/chapter13/event/</guid>
+        <description>다루는 내용 이벤트 흐름에 대한 이해 이벤트 핸들러 다루기 여러 가지 타입의 이벤트 메모리와 성능 1. 이벤트 흐름에 대한 이</description>
+      </item>
+      
+      <item>
+        <title>JPA 어노테이션</title>
+        <link>https://ysjune.github.io/posts/java/jpa_annotation/</link>
+        <pubDate>Fri, 10 Jan 2020 18:52:51 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/java/jpa_annotation/</guid>
+        <description>1. NotFound org.hibernate.annotations 에 포함되어 있음 @JoinColumn 등으로 조인을 했을 시, 조인한 테이블의 값이 null 일 경우 EntityNotFoundException 이 발생하는데, 이럴 경우 1 2 3 @JoinColumn(&amp;#34;dto_id&amp;#34;)</description>
+      </item>
       
       <item>
         <title>11. DOM 확장</title>

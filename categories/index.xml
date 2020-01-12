@@ -9,7 +9,7 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 04 Jan 2020 22:53:51 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 12 Jan 2020 15:08:17 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,9 +19,18 @@
       <item>
         <title>javascript</title>
         <link>https://ysjune.github.io/categories/javascript/</link>
-        <pubDate>Sat, 04 Jan 2020 22:53:51 +0900</pubDate>
+        <pubDate>Sun, 12 Jan 2020 15:08:17 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
         <guid>https://ysjune.github.io/categories/javascript/</guid>
+        <description></description>
+      </item>
+      
+      <item>
+        <title>java</title>
+        <link>https://ysjune.github.io/categories/java/</link>
+        <pubDate>Fri, 10 Jan 2020 18:52:51 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/categories/java/</guid>
         <description></description>
       </item>
       
@@ -31,15 +40,6 @@
         <pubDate>Tue, 24 Dec 2019 23:24:28 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
         <guid>https://ysjune.github.io/categories/%EC%83%9D%EA%B0%81%EA%B1%B0%EB%A6%AC/</guid>
-        <description></description>
-      </item>
-      
-      <item>
-        <title>java</title>
-        <link>https://ysjune.github.io/categories/java/</link>
-        <pubDate>Tue, 17 Dec 2019 13:32:07 +0900</pubDate>
-        <author>windsyou@gmail.com (snack)</author>
-        <guid>https://ysjune.github.io/categories/java/</guid>
         <description></description>
       </item>
       
