@@ -9,12 +9,21 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 12 Jan 2020 15:08:17 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 19 Jan 2020 15:20:37 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>17. 에러 처리와 디버깅</title>
+        <link>https://ysjune.github.io/posts/javascript/chapter17/error_debug/</link>
+        <pubDate>Sun, 19 Jan 2020 15:20:37 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/javascript/chapter17/error_debug/</guid>
+        <description>다루는 내용 브라우저의 에러 보고에 대한 이해 에러 처리 자바스크립트 코드 디버그 1. 브라우저의 에러 보고에 대한 이해 주</description>
+      </item>
       
       <item>
         <title>13. 이벤트</title>

@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://ysjune.github.io/</loc>
-    <lastmod>2020-01-12T15:08:17+09:00</lastmod>
+    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -18,13 +18,13 @@
   </url>
   
   <url>
-    <loc>https://ysjune.github.io/posts/javascript/chapter13/event/</loc>
-    <lastmod>2020-01-12T15:08:17+09:00</lastmod>
+    <loc>https://ysjune.github.io/posts/javascript/chapter17/error_debug/</loc>
+    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/categories/</loc>
-    <lastmod>2020-01-12T15:08:17+09:00</lastmod>
+    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -39,17 +39,17 @@
   
   <url>
     <loc>https://ysjune.github.io/categories/javascript/</loc>
-    <lastmod>2020-01-12T15:08:17+09:00</lastmod>
+    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/posts/</loc>
-    <lastmod>2020-01-12T15:08:17+09:00</lastmod>
+    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/series/</loc>
-    <lastmod>2020-01-12T15:08:17+09:00</lastmod>
+    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -64,6 +64,11 @@
   
   <url>
     <loc>https://ysjune.github.io/series/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</loc>
+    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/posts/javascript/chapter13/event/</loc>
     <lastmod>2020-01-12T15:08:17+09:00</lastmod>
   </url>
   
