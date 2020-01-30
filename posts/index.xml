@@ -9,12 +9,21 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 19 Jan 2020 15:20:37 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jan 2020 23:59:35 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>테스트 환경에서 JPA update 안됨</title>
+        <link>https://ysjune.github.io/posts/chatter/jpa_update_problem/</link>
+        <pubDate>Thu, 30 Jan 2020 23:59:35 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/chatter/jpa_update_problem/</guid>
+        <description>expect JPA 를 사용하여 entity 를 변경했을 시 update 가 되야하지만, 테스트 코드에서 동작하지 않음. situation Repository 를 상속한 곳에서 flush 메소드를</description>
+      </item>
       
       <item>
         <title>17. 에러 처리와 디버깅</title>

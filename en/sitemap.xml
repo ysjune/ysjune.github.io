@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://ysjune.github.io/</loc>
-    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
+    <lastmod>2020-01-30T23:59:35+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -18,13 +18,8 @@
   </url>
   
   <url>
-    <loc>https://ysjune.github.io/posts/javascript/chapter17/error_debug/</loc>
-    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ysjune.github.io/categories/</loc>
-    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
+    <lastmod>2020-01-30T23:59:35+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -38,18 +33,13 @@
   </url>
   
   <url>
-    <loc>https://ysjune.github.io/categories/javascript/</loc>
-    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ysjune.github.io/posts/</loc>
-    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
+    <lastmod>2020-01-30T23:59:35+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/series/</loc>
-    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
+    <lastmod>2020-01-30T23:59:35+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -60,6 +50,26 @@
                 hreflang="en"
                 href="https://ysjune.github.io/series/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/categories/%EC%82%BD%EC%A7%88-log/</loc>
+    <lastmod>2020-01-30T23:59:35+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/posts/chatter/jpa_update_problem/</loc>
+    <lastmod>2020-01-30T23:59:35+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/posts/javascript/chapter17/error_debug/</loc>
+    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/categories/javascript/</loc>
+    <lastmod>2020-01-19T15:20:37+09:00</lastmod>
   </url>
   
   <url>

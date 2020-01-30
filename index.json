@@ -9,26 +9,8 @@
 	"content": ""
 },
 {
-	"uri": "https://ysjune.github.io/posts/javascript/chapter17/error_debug/",
-	"title": "17. 에러 처리와 디버깅",
-	"tags": [],
-	"categories": [],
-	"series": ["자바스크립트 프로그래밍"],
-	"description": "",
-	"content": "다루는 내용  브라우저의 에러 보고에 대한 이해 에러 처리 자바스크립트 코드 디버그  1. 브라우저의 에러 보고에 대한 이해  주요 웹 브라우저는 자바스크립트 에러를 사용자에게 보고하는 기능을 갖추고 있음 대개 개발자에게만 쓸모있는 정보이므로 개발할 때는 에러 보고 기능을 켜야함  2. 에러 처리  기대할 수 있는 최선의 경우는 사용자가 무슨 일이 일어난 건지 모른 채 다시 시도해보는 것이며, 최악의 경우는 화를 내고 다시 방문하지 않는 것  2-1. try-catch   try 절에서 에러가 생기면 코드 실행을 즉시 멈추고, catch 절을 실행\n  catch 에 담기는 정보는 브라우저에 따라 다르지만, message 프로퍼티는 존재\n  finally 절은 항상 실행됨\n1 2 3 4 5 6 7 8 9 10  function trycatchFunction() { try{ return 2; // 무의미  } catch(error) { console.log(error.message); return 1; // 무의미  } finally { return 0; } }     에러 타입에는 Error, EvalError, RangeError, ReferenceError, SyntaxError, TypeError, URIError 이 있으며 모두 Error 타입을 상속\n  try-catch 문은 에러가 발생할 수도 있지만, 개발자가 컨트롤 할 수 없을 때 이상적\n ex) 라이브러리를 사용하고 에러가 날지 확신이 안 나는 상황에서 라이브러리를 직접 수정할 수 없을 때    2.2 에러 반환   throw 를 통해 언제든 커스텀 에러를 반환할 수 있음\n1 2 3 4 5 6 7 8  function CustomError(message) { this.name = \u0026#34;CustomError\u0026#34;; this.message = \u0026#34;message\u0026#34;; } CustomError.prototype = new Error(); throw new CustomError(\u0026#34;CustomError\u0026#34;);     브라우저는 개발자가 알고 있는 조건을 모르므로 불분명한 메시지 밖에 알릴 수가 없는데, 이럴 때 커스텀 메시지를 사용하면 명확한 단서를 제공할 수 있음\n  코드를 다룰 때 각 함수가 제대로 실행될 수 없는 상황에 대해 특히 주의!\n  커스텀 에러와 try-catch 문을 선택하는 최선의 기준은 해당 에러를 어떻게 처리할지 정확히 알고 있느냐 이다. try-catch 는 브라우저가 에러를 기본 방식대로 처리하지 못하게 막는 것이고, 커스텀 에러의 목적은 에러가 일어난 이유를 제공하는 것\n  2-3. error 이벤트   onerror 이벤트는 DOM 레벨 2 이벤트 표준을 따르지 않으므로 DOM 레벨 0 테크닉을 써서 할당해야 함\n1 2 3  window.onerror = function(message, url, line) { console.log(message); }     try-catch 문을 올바르게 사용사면 에러가 브라우저까지 전달되지 않으며, error 이벤트도 발생하지 않음\n  2-4. 에러 처리 전략  웹 애플리케이션의 자바 스크립트 레벨에서도 에러 처리 전략을 세워야 하며 그 중요성은 서버 레벨과 다르지 않음 미세한 자바스크립트 에러도 웹 페이지의 동작을 멈추게 할 수 있으므로 에러가 왜, 언제 일어나는지 파악해야 함  타입 강제 에러  값의 데이터 타입을 자동으로 바꾸는 연산자나 기타 언어 구조를 사용했을 때 발생 주로 == 와 != 연산자 혹은 if, for 같은 흐름 제어문에서 불리언이 아닌 값을 사용했을 때   데이터 타입 에러  느슨한 타입을 사용하므로 에러가 생기지 않도록 데이터 타입을 체크해줘야 함   통신 에러  URL 이나 데이터 형식이 잘못된 경우 서버의 응답이 예상과 다를 때 발생      2-5. 심각한 에러와 그렇지 않은 에러 구별   심각하지 않은 에러\n 사용자의 주요 작업을 방해하지 않는 에러 페이지의 일부분에만 영향을 끼치는 에러 복구 가능한 에러 다시 시도해보면 일어나지 않을 수 있는 에러    심각한 에러\n 애플리케이션 진행을 완전히 막는 에러 사용자의 주요 목적을 뚜렷이 방해하는 에러 다른 에러를 일으키는 에러    try-catch 를 사용해 에러가 발생해도 독립적으로 처리할 수 있도록 함\n1 2 3 4 5 6 7  for(var i=0, len=mods.length; i\u0026lt;len; i++) { try { modes[i].init(); } catch(ex) { //handle error  } }     3. 자바스크립트 코드 디버그  결국 디버그 정보를 표시할 코드에 삽입하는 식  3-1. 콘솔에 기록   개발자가 직접 콘솔에 기록하는 방식 (책의 예제 코드는 대부분 alert 였는데, 여태 console 로 했던 것)\n  error, info, log, warn 4가지 메소드가 있음\n1 2 3 4 5  var message = \u0026#34;console message\u0026#34; console.error(message); console.info(message); console.log(message); console.warn(message);     디버그가 편해지지만 배포할 때는 반드시 메시지를 모두 제거해야 함\n  alert 보다 더 나은 방법인 이유는 alert 이 프로그램 실행 흐름에 끼어들기 때문에 비동기적 프로세스에서는 결과가 달라질 수 있기 때문\n  3-2 페이지에 메시지 기록  innerHTML 을 통해 기록 콘솔을 지원하지 않는 브라우저에서 디버그 할 때 유용  "
-},
-{
 	"uri": "https://ysjune.github.io/categories/",
 	"title": "Categories",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://ysjune.github.io/categories/javascript/",
-	"title": "javascript",
 	"tags": [],
 	"categories": [],
 	"series": [],
@@ -47,6 +29,42 @@
 {
 	"uri": "https://ysjune.github.io/series/",
 	"title": "Series",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://ysjune.github.io/categories/%EC%82%BD%EC%A7%88-log/",
+	"title": "삽질 Log",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://ysjune.github.io/posts/chatter/jpa_update_problem/",
+	"title": "테스트 환경에서 JPA update 안됨",
+	"tags": [],
+	"categories": [],
+	"series": [""],
+	"description": "",
+	"content": "expect  JPA 를 사용하여 entity 를 변경했을 시 update 가 되야하지만, 테스트 코드에서 동작하지 않음.  situation   Repository 를 상속한 곳에서 flush 메소드를 만든 후 호출\n-\u0026gt; 반응 없음 (sql log 에 update 가 출력 안됨)\n  EntityManager 를 직접 호출하여 flush 수행\n-\u0026gt; No EntityManager with actual transaction available for current thread - cannot reliably process \u0026lsquo;flush\u0026rsquo; call\n  PersistenceContext 어노테이션 추가\n  1 2 3  @PersistenceContext(type = PersistenceContextType.EXTENDED) // type PersistenceContextType.EXTENDED 을 추가 lateinit var entityManager: EntityManager   ​\t-\u0026gt; javax.persistence.TransactionRequiredException: no transaction is in progress\n Test Method 에 @Transactional 을 추가\n-\u0026gt; 정상적으로 업데이트 진행\n  entityManager 의 flush 부분 삭제\n-\u0026gt; 정상적으로 업데이트 진행\n  1에서 진행했던 Repository 의 flush 메소드 호출 부분 삭제\n-\u0026gt; 정상적으로 업데이트 진행\n  @Transactional 은 컨트롤러 상위든 메소드에든 상관 없이 동작\n  Test 메소드가 끝나면 롤백되는 것을 확인\n  삽질을 하면서 AfterEach 사용했었는데.. (junit5 사용)\n-\u0026gt; 어찌보면 당연하겠지만, test 메소드의 라이프 사이클 내에 포함되는 것 같다.\n-\u0026gt; 즉, beforeEach - Test - afterEach 순으로 진행되며, afterEach 가 끝나야 롤백이 됨\n  사용하고자 하는 기능에 @Transactional 이 있기 때문에 Test 메소드에는 필요 없다고 생각했는데, 이게 잘못된 것 같음.\n  flush 를 해주지 않아도 update 가 된다는 것은?? (추측)\n 테스트 코드 부분  1 2 3 4 5 6 7  @Test @DisplayName(\u0026#34;업데이트 성공\u0026#34;) @Transactional internal fun success_update() { val updateReq = UpdateReq() updateService.update(updateReq) }    서비스 코드 부분  1 2 3 4 5 6  @Transactional fun updateBoard(req: UpdateReq) { ..... val board = repository.findById(req.id) board.update(req) }   -\u0026gt; 기존에는 테스트 코드 부분에 Transactional 이 없었기 때문에 서비스 코드 부분의 Transactional 이 계속 진행중? 이었으나, 테스트 코드 부분에 Transactional 을 추가함으로써 서로 격리가 되어, 서비스 부분의 Transactional 이 갖고 있는 context 는 더 진행할 것이 없기 때문에 update 가 되고, 서비스 객체 자체를 Test 의 Transactional 에 넘겨서 Test 에서 처리하게 하는 것이 아닌가 싶다. 아니면 롤백을 할 때는 서비스의 Transactional 을 수행해야 할 것 같으니, 순서? 같은 걸 스냅샷 같은 방법으로 남겨서 넘긴다던가??\n  conclusion  추측은 위험하지만, 당장의 지식으로 현 상황(삽질)을 정리하고 팠기에.. @Transactional 에 대한 정리가 필요하다. (적당히 알았는데, 라이프 사이클이라던가 동작 방식을 확실히 알 필요가 생겼다.) 자세히 모르고 사용하는 JPA 가 문제인가 싶기도 하다. 영속성 컨텍스트 에 대한 이해도 필요하다. (문제해결을 위해 읽어봤으나, 당장 훑어봐서는 이해가 잘 안된다.)  테스트 환경에서 JPA 주의점 을 봤지만 제대로 이해를 못했다. (내가 처한 것과 살짝 다른 것 같은 느낌도 들고 말이지..) JPA 변경 감지 오늘의 글을 쓰게 해준 고마운 아티클 (처음에는 잘 모르는 상태에서 save 를 사용해서 update 를 했음\u0026hellip;)    "
+},
+{
+	"uri": "https://ysjune.github.io/posts/javascript/chapter17/error_debug/",
+	"title": "17. 에러 처리와 디버깅",
+	"tags": [],
+	"categories": [],
+	"series": ["자바스크립트 프로그래밍"],
+	"description": "",
+	"content": "다루는 내용  브라우저의 에러 보고에 대한 이해 에러 처리 자바스크립트 코드 디버그  1. 브라우저의 에러 보고에 대한 이해  주요 웹 브라우저는 자바스크립트 에러를 사용자에게 보고하는 기능을 갖추고 있음 대개 개발자에게만 쓸모있는 정보이므로 개발할 때는 에러 보고 기능을 켜야함  2. 에러 처리  기대할 수 있는 최선의 경우는 사용자가 무슨 일이 일어난 건지 모른 채 다시 시도해보는 것이며, 최악의 경우는 화를 내고 다시 방문하지 않는 것  2-1. try-catch   try 절에서 에러가 생기면 코드 실행을 즉시 멈추고, catch 절을 실행\n  catch 에 담기는 정보는 브라우저에 따라 다르지만, message 프로퍼티는 존재\n  finally 절은 항상 실행됨\n1 2 3 4 5 6 7 8 9 10  function trycatchFunction() { try{ return 2; // 무의미  } catch(error) { console.log(error.message); return 1; // 무의미  } finally { return 0; } }     에러 타입에는 Error, EvalError, RangeError, ReferenceError, SyntaxError, TypeError, URIError 이 있으며 모두 Error 타입을 상속\n  try-catch 문은 에러가 발생할 수도 있지만, 개발자가 컨트롤 할 수 없을 때 이상적\n ex) 라이브러리를 사용하고 에러가 날지 확신이 안 나는 상황에서 라이브러리를 직접 수정할 수 없을 때    2.2 에러 반환   throw 를 통해 언제든 커스텀 에러를 반환할 수 있음\n1 2 3 4 5 6 7 8  function CustomError(message) { this.name = \u0026#34;CustomError\u0026#34;; this.message = \u0026#34;message\u0026#34;; } CustomError.prototype = new Error(); throw new CustomError(\u0026#34;CustomError\u0026#34;);     브라우저는 개발자가 알고 있는 조건을 모르므로 불분명한 메시지 밖에 알릴 수가 없는데, 이럴 때 커스텀 메시지를 사용하면 명확한 단서를 제공할 수 있음\n  코드를 다룰 때 각 함수가 제대로 실행될 수 없는 상황에 대해 특히 주의!\n  커스텀 에러와 try-catch 문을 선택하는 최선의 기준은 해당 에러를 어떻게 처리할지 정확히 알고 있느냐 이다. try-catch 는 브라우저가 에러를 기본 방식대로 처리하지 못하게 막는 것이고, 커스텀 에러의 목적은 에러가 일어난 이유를 제공하는 것\n  2-3. error 이벤트   onerror 이벤트는 DOM 레벨 2 이벤트 표준을 따르지 않으므로 DOM 레벨 0 테크닉을 써서 할당해야 함\n1 2 3  window.onerror = function(message, url, line) { console.log(message); }     try-catch 문을 올바르게 사용사면 에러가 브라우저까지 전달되지 않으며, error 이벤트도 발생하지 않음\n  2-4. 에러 처리 전략  웹 애플리케이션의 자바 스크립트 레벨에서도 에러 처리 전략을 세워야 하며 그 중요성은 서버 레벨과 다르지 않음 미세한 자바스크립트 에러도 웹 페이지의 동작을 멈추게 할 수 있으므로 에러가 왜, 언제 일어나는지 파악해야 함  타입 강제 에러  값의 데이터 타입을 자동으로 바꾸는 연산자나 기타 언어 구조를 사용했을 때 발생 주로 == 와 != 연산자 혹은 if, for 같은 흐름 제어문에서 불리언이 아닌 값을 사용했을 때   데이터 타입 에러  느슨한 타입을 사용하므로 에러가 생기지 않도록 데이터 타입을 체크해줘야 함   통신 에러  URL 이나 데이터 형식이 잘못된 경우 서버의 응답이 예상과 다를 때 발생      2-5. 심각한 에러와 그렇지 않은 에러 구별   심각하지 않은 에러\n 사용자의 주요 작업을 방해하지 않는 에러 페이지의 일부분에만 영향을 끼치는 에러 복구 가능한 에러 다시 시도해보면 일어나지 않을 수 있는 에러    심각한 에러\n 애플리케이션 진행을 완전히 막는 에러 사용자의 주요 목적을 뚜렷이 방해하는 에러 다른 에러를 일으키는 에러    try-catch 를 사용해 에러가 발생해도 독립적으로 처리할 수 있도록 함\n1 2 3 4 5 6 7  for(var i=0, len=mods.length; i\u0026lt;len; i++) { try { modes[i].init(); } catch(ex) { //handle error  } }     3. 자바스크립트 코드 디버그  결국 디버그 정보를 표시할 코드에 삽입하는 식  3-1. 콘솔에 기록   개발자가 직접 콘솔에 기록하는 방식 (책의 예제 코드는 대부분 alert 였는데, 여태 console 로 했던 것)\n  error, info, log, warn 4가지 메소드가 있음\n1 2 3 4 5  var message = \u0026#34;console message\u0026#34; console.error(message); console.info(message); console.log(message); console.warn(message);     디버그가 편해지지만 배포할 때는 반드시 메시지를 모두 제거해야 함\n  alert 보다 더 나은 방법인 이유는 alert 이 프로그램 실행 흐름에 끼어들기 때문에 비동기적 프로세스에서는 결과가 달라질 수 있기 때문\n  3-2 페이지에 메시지 기록  innerHTML 을 통해 기록 콘솔을 지원하지 않는 브라우저에서 디버그 할 때 유용  "
+},
+{
+	"uri": "https://ysjune.github.io/categories/javascript/",
+	"title": "javascript",
 	"tags": [],
 	"categories": [],
 	"series": [],

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>JPA 어노테이션 – Lazy Snack</title>
+    <title>테스트 환경에서 JPA update 안됨 – Lazy Snack</title>
     
 
 <script>
@@ -196,13 +196,13 @@
 
     <meta name="description" content="" />
 <meta name="keywords" content="">
-<meta name="created" content="2020-01-10T18:52:51&#43;0900">
-<meta name="modified" content="2020-01-10T18:52:51&#43;0900">
+<meta name="created" content="2020-01-30T23:59:35&#43;0900">
+<meta name="modified" content="2020-01-30T23:59:35&#43;0900">
 
 
 <meta property="og:site_name" content="Lazy Snack">
-<meta property="og:title" content="JPA 어노테이션">
-<meta property="og:url" content="https://ysjune.github.io/posts/java/jpa_annotation/">
+<meta property="og:title" content="테스트 환경에서 JPA update 안됨">
+<meta property="og:url" content="https://ysjune.github.io/posts/chatter/jpa_update_problem/">
 <meta property="og:type" content="article">
 
 <meta name="generator" content="Hugo 0.60.1" />
@@ -210,18 +210,18 @@
 <meta name="theme-color" content="#ffffff">
 
 
-<link rel="canonical" href="https://ysjune.github.io/posts/java/jpa_annotation/">
+<link rel="canonical" href="https://ysjune.github.io/posts/chatter/jpa_update_problem/">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "JPA 어노테이션",
-    "datePublished": "2020-01-10T18:52:51+09:00",
-    "dateModified": "2020-01-10T18:52:51+09:00",
-    "url" : "https://ysjune.github.io/posts/java/jpa_annotation/",
-    "description": "1. NotFound org.hibernate.annotations 에 포함되어 있음 @JoinColumn 등으로 조인을 했을 시, 조인한 테이블의 값이 null 일 경우 EntityNotFoundException 이 발생하는데, 이럴 경우 1 2 3 @JoinColumn(\u0026#34;dto_id\u0026#34;)",
+    "headline": "테스트 환경에서 JPA update 안됨",
+    "datePublished": "2020-01-30T23:59:35+09:00",
+    "dateModified": "2020-01-30T23:59:35+09:00",
+    "url" : "https://ysjune.github.io/posts/chatter/jpa_update_problem/",
+    "description": "expect JPA 를 사용하여 entity 를 변경했을 시 update 가 되야하지만, 테스트 코드에서 동작하지 않음. situation Repository 를 상속한 곳에서 flush 메소드를",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://ysjune.github.io/"
@@ -392,7 +392,7 @@
   
   <li  class="is-active" >    
     
-      <a href="https://ysjune.github.io/posts/java/jpa_annotation/">JPA 어노테이션</a>
+      <a href="https://ysjune.github.io/posts/chatter/jpa_update_problem/">테스트 환경에서 JPA update 안됨</a>
         
   </li>
   
@@ -401,18 +401,32 @@
 </nav>
   
   <div class="single">
-    <h2 class="single__title">JPA 어노테이션</h2>
+    <h2 class="single__title">테스트 환경에서 JPA update 안됨</h2>
     <div class="single__meta">
-      🕓 Jan 10, 2020 · ☕2 min read
+      🕓 Jan 30, 2020 · ☕2 min read
       <div class="single__tags caption">
 
 </div>
     </div>    
     <article class="single__contents">
-      <h2 id="1-notfound">1. NotFound</h2>
-<p>org.hibernate.annotations 에 포함되어 있음</p>
-<p>@JoinColumn 등으로 조인을 했을 시, 조인한 테이블의 값이 null 일 경우</p>
-<p><code>EntityNotFoundException</code> 이 발생하는데, 이럴 경우</p>
+      <h2 id="expect">expect</h2>
+<ul>
+<li>JPA 를 사용하여 entity 를 변경했을 시 update 가 되야하지만, 테스트 코드에서 동작하지 않음.</li>
+</ul>
+<h2 id="situation">situation</h2>
+<ol>
+<li>
+<p>Repository 를 상속한 곳에서 flush 메소드를 만든 후 호출</p>
+<p>-&gt; 반응 없음 (sql log 에 update 가 출력 안됨)</p>
+</li>
+<li>
+<p>EntityManager 를 직접 호출하여 flush 수행</p>
+<p>-&gt;  No EntityManager with actual transaction available for current thread - cannot reliably process &lsquo;flush&rsquo; call</p>
+</li>
+<li>
+<p>PersistenceContext 어노테이션 추가</p>
+</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -420,69 +434,45 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@JoinColumn</span><span class="o">(</span><span class="s">&#34;dto_id&#34;</span><span class="o">)</span>
-<span class="nd">@NotFound</span><span class="o">(</span><span class="n">action</span> <span class="o">=</span> <span class="n">NotFoundAction</span><span class="o">.</span><span class="na">IGNORE</span><span class="o">)</span>
-<span class="kd">private</span> <span class="n">DTO</span> <span class="n">dto</span><span class="o">;</span>
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">@PersistenceContext</span><span class="p">(</span><span class="n">type</span> <span class="p">=</span> <span class="n">PersistenceContextType</span><span class="p">.</span><span class="n">EXTENDED</span><span class="p">)</span>
+<span class="c1">// type PersistenceContextType.EXTENDED 을 추가
+</span><span class="c1"></span><span class="k">lateinit</span> <span class="k">var</span> <span class="py">entityManager</span><span class="p">:</span> <span class="n">EntityManager</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>을 해주면 Exception 이 발생하지 않음. Ignore, Exception 2개의 값이 있는데 default 는 Exception 인 모양이다.</p>
-<h2 id="2-transient">2. Transient</h2>
-<p>javax.persistence 에 포함되어 있음</p>
-<p>Entity 에 변수는 있으나, 컬럼과의 매핑을 원하지 않는 경우 사용</p>
+</div><p>​	-&gt; javax.persistence.TransactionRequiredException: no transaction is in progress</p>
+<ol start="4">
+<li>
+<p>Test Method 에 @Transactional 을 추가</p>
+<p>-&gt; 정상적으로 업데이트 진행</p>
+</li>
+<li>
+<p>entityManager 의 flush 부분 삭제</p>
+<p>-&gt; 정상적으로 업데이트 진행</p>
+</li>
+<li>
+<p>1에서 진행했던 Repository 의 flush 메소드 호출 부분 삭제</p>
+<p>-&gt; 정상적으로 업데이트 진행</p>
+</li>
+<li>
+<p>@Transactional 은 컨트롤러 상위든 메소드에든 상관 없이 동작</p>
+</li>
+<li>
+<p>Test 메소드가 끝나면 롤백되는 것을 확인</p>
+</li>
+<li>
+<p>삽질을 하면서 AfterEach 사용했었는데.. (junit5 사용)</p>
+<p>-&gt; 어찌보면 당연하겠지만, test 메소드의 라이프 사이클 내에 포함되는 것 같다.</p>
+<p>-&gt; 즉, beforeEach - Test - afterEach 순으로 진행되며, afterEach 가 끝나야 롤백이 됨</p>
+</li>
+<li>
+<p>사용하고자 하는 기능에 @Transactional 이 있기 때문에 Test 메소드에는 필요 없다고 생각했는데, 이게 잘못된 것 같음.</p>
+</li>
+<li>
+<p>flush 를 해주지 않아도 update 가 된다는 것은?? (추측)</p>
+<ul>
+<li>테스트 코드 부분</li>
+</ul>
 <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Transient</span>
-<span class="kd">private</span> <span class="n">String</span> <span class="n">compositeUrl</span><span class="o">;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>주로 결과를 바로 넘기지 않고, 결과값을 조작해서 (filePath 에 fileName 을 더해준다거나..)  새로운 변수에 넣거나 할 때 썼다.</p>
-<h2 id="3-jsonignore">3. JsonIgnore</h2>
-<p>엄밀히 말하면 JPA 용 annotation 은 아니지만, 사용할 땐 2번과 연관하여 사용했던 것 같다.</p>
-<p>결과 형태를 json 으로 뿌려줄 때, 해당 변수가 출력되지 않게 함</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@JsonIgnore</span>
-<span class="kd">private</span> <span class="n">Member</span> <span class="n">member</span><span class="o">;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="4-embedded-embeddable">4. Embedded, Embeddable</h2>
-<p>Entity 안에 다른 Entity 를 넣을 경우 해당 annotation 들을 사용, 관련있는 것들을 하나로 묶어서 객체로 사용할 때 사용함</p>
-<p>ex) Article 이라는 클래스가 있고, 해당 등록 정보를 RegInfo 로 관리한다고 하면</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Entity</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Article</span> <span class="o">{</span>
-    <span class="nd">@ID</span>
-    <span class="kd">private</span> <span class="n">Long</span> <span class="n">id</span><span class="o">;</span>
-    
-    <span class="kd">private</span> <span class="n">String</span> <span class="n">content</span><span class="o">;</span>
-    
-    <span class="nd">@Embedded</span>
-    <span class="kd">private</span> <span class="n">RegInfo</span> <span class="n">regInfo</span><span class="o">;</span>
-<span class="o">}</span>
-</code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -491,38 +481,52 @@
 </span><span class="lnt">5
 </span><span class="lnt">6
 </span><span class="lnt">7
-</span><span class="lnt">8
-</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Entity</span>
-<span class="nd">@Embeddable</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RegInfo</span> <span class="o">{</span>
-    <span class="nd">@Column</span><span class="o">(</span><span class="s">&#34;reg_id&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">Long</span> <span class="n">regId</span><span class="o">;</span>
-    
-    <span class="nd">@Column</span><span class="o">(</span><span class="s">&#34;reg_dt&#34;</span><span class="o">)</span>
-    <span class="kd">private</span> <span class="n">LocalDateTime</span> <span class="n">regDt</span><span class="o">;</span>
-<span class="o">}</span>
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">@Test</span>
+<span class="n">@DisplayName</span><span class="p">(</span><span class="s">&#34;업데이트 성공&#34;</span><span class="p">)</span>
+<span class="n">@Transactional</span>
+<span class="k">internal</span> <span class="k">fun</span> <span class="nf">success_update</span><span class="p">(</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">val</span> <span class="py">updateReq</span> <span class="p">=</span> <span class="n">UpdateReq</span><span class="p">(</span><span class="p">)</span>
+    <span class="n">updateService</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">updateReq</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="5-convert">5. Convert</h2>
-<p>DB에서 사용하는 값과 서버에서 사용하는 타입이 서로 달라 값을 변경해줘야 할 때 사용</p>
-<p>주로 IP (127.0.0.1) 같이 String 으로 받은 값인데, DB 에는 Number 형태로 저장하거나 서버에서는 Boolean 값을 사용하는데 DB 에서는 Y/N 값으로 저장할 때 사용하곤 했다.</p>
+</div><ul>
+<li>서비스 코드 부분</li>
+</ul>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Convert</span><span class="o">(</span><span class="n">converter</span> <span class="o">=</span> <span class="n">YNBooleanConverter</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-<span class="nd">@Column</span><span class="o">(</span><span class="s">&#34;use_yn&#34;</span><span class="o">)</span>
-<span class="kd">private</span> <span class="n">Boolean</span> <span class="n">use</span><span class="o">;</span>
+<pre class="chroma"><code class="language-kotlin" data-lang="kotlin"><span class="n">@Transactional</span>
+<span class="k">fun</span> <span class="nf">updateBoard</span><span class="p">(</span><span class="n">req</span><span class="p">:</span> <span class="n">UpdateReq</span><span class="p">)</span> <span class="p">{</span>
+    <span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p">.</span>
+    <span class="k">val</span> <span class="py">board</span> <span class="p">=</span> <span class="n">repository</span><span class="p">.</span><span class="n">findById</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">id</span><span class="p">)</span>
+    <span class="n">board</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
+<span class="p">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>당장 쓰는 것 중에 생소한 것은 이정도 되는 것 같다.</p>
-<p>추후 진행하면서, 새로운 걸 써보면 그 때 추가할 예정.</p>
+</div><p>-&gt; 기존에는 테스트 코드 부분에 Transactional 이 없었기 때문에 서비스 코드 부분의 Transactional 이 계속 진행중? 이었으나, 테스트 코드 부분에 Transactional 을 추가함으로써 서로 격리가 되어, 서비스 부분의 Transactional 이 갖고 있는 context 는 더 진행할 것이 없기 때문에 update 가 되고, 서비스 객체 자체를 Test 의 Transactional 에 넘겨서 Test 에서 처리하게 하는 것이 아닌가 싶다. 아니면 롤백을 할 때는 서비스의 Transactional 을 수행해야 할 것 같으니, 순서? 같은 걸 스냅샷 같은 방법으로 남겨서 넘긴다던가??</p>
+</li>
+</ol>
+<h2 id="conclusion">conclusion</h2>
+<ol>
+<li>추측은 위험하지만, 당장의 지식으로 현 상황(삽질)을 정리하고 팠기에..</li>
+<li>@Transactional 에 대한 정리가 필요하다. (적당히 알았는데, 라이프 사이클이라던가 동작 방식을 확실히 알 필요가 생겼다.)</li>
+<li>자세히 모르고 사용하는 JPA 가 문제인가 싶기도 하다. <code>영속성 컨텍스트</code> 에 대한 이해도 필요하다. (문제해결을 위해 읽어봤으나, 당장 훑어봐서는 이해가 잘 안된다.)
+<ul>
+<li><a href="%5Bhttps://www.popit.kr/jpa-%EC%98%81%EC%86%8D%EC%84%B1-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%A3%BC%EC%9D%98%EC%A0%90%5D(https://www.popit.kr/jpa-%EC%98%81%EC%86%8D%EC%84%B1-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%EC%A3%BC%EC%9D%98%EC%A0%90)">테스트 환경에서 JPA 주의점</a> 을 봤지만 제대로 이해를 못했다. <del>(내가 처한 것과 살짝 다른 것 같은 느낌도 들고 말이지..)</del></li>
+<li><a href="%5Bhttps://www.popit.kr/jpa-%EB%B3%80%EA%B2%BD-%EA%B0%90%EC%A7%80%EC%99%80-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0/%5D(https://www.popit.kr/jpa-%EB%B3%80%EA%B2%BD-%EA%B0%90%EC%A7%80%EC%99%80-%EC%8A%A4%ED%94%84%EB%A7%81-%EB%8D%B0%EC%9D%B4%ED%84%B0/)">JPA 변경 감지</a> 오늘의 글을 쓰게 해준 고마운 아티클 (처음에는 잘 모르는 상태에서 save 를 사용해서 update 를 했음&hellip;)</li>
+</ul>
+</li>
+</ol>
 
     </article>
     
@@ -600,21 +604,14 @@
     <div class="grow"></div>
 <nav class="pagination-single">
   
-    <a href="https://ysjune.github.io/posts/javascript/chapter11/dom-extension/" class="pagination-single__left">
+    <a href="https://ysjune.github.io/posts/javascript/chapter17/error_debug/" class="pagination-single__left">
       <div class="pagination-single__icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
       </div>
-      <div class="pagination-single__left-title">11. DOM 확장</div>      
+      <div class="pagination-single__left-title">17. 에러 처리와 디버깅</div>      
     </a>
   
   <div class="grow"></div>
-  
-    <a href="https://ysjune.github.io/posts/javascript/chapter13/event/" class="pagination-single__right">      
-      <div class="pagination-single__right-title">13. 이벤트</div>
-      <div class="pagination-single__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
-      </div>
-    </a>
   
 </nav>
     
@@ -1264,7 +1261,7 @@
         
           
             
-              <a href="https://ysjune.github.io/posts/java/jpa_annotation/" data-lang="en" class="dropdown-item is-active">English</a>
+              <a href="https://ysjune.github.io/posts/chatter/jpa_update_problem/" data-lang="en" class="dropdown-item is-active">English</a>
             
           
         
@@ -1317,7 +1314,7 @@
             
     
     
-  <a href="https://ysjune.github.io/posts/java/jpa_annotation//index.xml" type="application/rss+xml" title="rss" aria-label="RSS Feed Link">
+  <a href="https://ysjune.github.io/posts/chatter/jpa_update_problem//index.xml" type="application/rss+xml" title="rss" aria-label="RSS Feed Link">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><circle fill="currentColor" cx="6.18" cy="17.82" r="2.18"/><path fill="currentColor" d="M5.59 10.23c-.84-.14-1.59.55-1.59 1.4 0 .71.53 1.28 1.23 1.4 2.92.51 5.22 2.82 5.74 5.74.12.7.69 1.23 1.4 1.23.85 0 1.54-.75 1.41-1.59-.68-4.2-3.99-7.51-8.19-8.18zm-.03-5.71C4.73 4.43 4 5.1 4 5.93c0 .73.55 1.33 1.27 1.4 6.01.6 10.79 5.38 11.39 11.39.07.73.67 1.28 1.4 1.28.84 0 1.5-.73 1.42-1.56-.73-7.34-6.57-13.19-13.92-13.92z"/></svg>
   </a>
 
