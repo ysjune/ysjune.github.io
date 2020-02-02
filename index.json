@@ -9,8 +9,26 @@
 	"content": ""
 },
 {
+	"uri": "https://ysjune.github.io/posts/javascript/chapter22/advanced_technique/",
+	"title": "22. 고급테크닉",
+	"tags": [],
+	"categories": [],
+	"series": ["자바스크립트 프로그래밍"],
+	"description": "",
+	"content": "다루는 내용  고급 함수 쉽게 조작할 수 없는 객체 타이머 조작 커스텀 이벤트  1. 고급 함수  단순한 절차적인 방식, 복잡하고 동적인 방식, 클로저, 함수 포인터 등을 사용하는 다양성  1.1 안전한 타입 탐지   typeof 나 instanceof 처럼 내장된 타입 탐지는 완벽하지 않음\n  Object 의 toString() 메소드를 이용\n1 2 3  Object.prototype.toString.call(value) == \u0026#34;[object Function]\u0026#34; window.JSON \u0026amp;\u0026amp; Object.prototype.toString.call(JSON) == \u0026#34;[object JSON]\u0026#34;     1.2 스코프 확인 생성자 (scope-safe constructor)   new 연산자 없이 객체를 생성하면 this 가 전역에 묶여버리는 문제가 있음\n1 2 3 4 5 6 7 8  function Person(name, age) { if(this instanceof Person) { this.name = name; this.age = age; } else { return new Person(name, age) } }    if/else 를 통해 해결    생성자 훔치기 패턴을 사용할 때에는 프로토 타입 체인이나, 기생 상속을 함께 사용 자세한 내용은 (6장. 객체지향 프로그래밍 참조)\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  function Polygon(sides) { if(this instanceof Polygon) { this.sides = sides; this.getArea = function() { return 0; }; } else { return new Polygon(sides); } } function Rectangle(width, height) { Polygon.call(this, 2); this.width = width; this.height = height; this.getArea = function() { return this.width * this.height; }; } Rectangle.prototype = new Polygon(); var rect = new Rectangle(5, 10); console.log(rect.sides); // 2     1.3 지연 로딩 함수   브라우저 차이 때문에 if 문이 많은데, if 문은 단 하나만 존재해도 속도에 영향을 줄 수 있기 때문에 if 문을 필요할 때만 실행하도록 하는게 권장되고 이를 지연로딩 이라고 함\n   함수를 처음 호출할 때 자기 자신을 수정하도록 만드는 방법  1 2 3 4 5 6 7 8 9 10  function createA() { if(typeof request != \u0026#34;undefined\u0026#34;) { createA = function() { return new Request(); } } else { ... } return createA() }   적절한 함수를 선언하는 즉시 다른 함수를 할당하는 방법  1 2 3 4 5 6 7 8 9  var createA = (function() { if(typeof request != \u0026#34;undefined\u0026#34;) { return function() { return new Request(); } } else { ... } })();     1.4 함수 바인딩   특정한 this 값과 특정한 매개변수를 넘기면서 다른 함수를 호출하는 함수\n  참조 apply, call, bind 에 대해\n1 2 3 4 5 6 7 8 9  var handler = { message: \u0026#34;event\u0026#34;, handleClick: function(event) { console.log(this.message + \u0026#34;:\u0026#34; + event.type); } }; var btn = document.getElementById(\u0026#34;btn\u0026#34;); var bbtn = btn.bind(hadler);     1.5 함수 커링   커링은 단순히 감쌀 함수만 받지만, bind 는 함수와 context 객체를 함께 받음\n1 2 3 4 5 6 7 8 9 10  function add(num1, num2) { return num1 + num2; } function curry(num3) { return add(5, num3); } add(2,3); // 5 curry(3); // 8     2. 쉽게 조작할 수 없는 객체  컨텍스트가 같으면 수정하지 못하게 막을 방법이 없음 일단 객체를 쉽게 조작할 수 없는 객체로 바꾸고나면 이를 취소할 수 없음  2.1 확장 불가능한 객체  Ojbect.preventExtension() 를 통해 프로퍼티나 메소드를 추가할 수 없게 만듦 맴버를 수정하거나 삭제는 가능 Object.isExtensible() 을 통해 확장 여부 확인 가능  2.2 봉인된 객체  Object.seal() 메소드를 사용하며 [[configurable]] 속성이 false 가 됨 Object.isSealed() 를 통해 봉인 여부 확인 가능  2.3 동결된 객체  wirte 조차 불가능한 가장 강력한(?) 객체 ([[set]] 이 지정된 경우만 수정 가능 ) Object.freeze() 를 통해 동결  3. 고급 타이머  setTimeout() 이나 setInterval() 로 타이머를 생성하여 유용한 기능을 만들 수 있지만, 이들은 스레드이며 자바스크립트는 단일 스레드 환경에서 동작함 자바스크립트에서 즉시 실행되는 코드는 존재하지 않음. 모든 코드는 일단 큐에 추가되었다가 실행이 됨 타이머를 15초로 설정하면 코드가 15초 뒤에 실행되는 것이 아니라 15초 뒤에 큐에 추가 되는 것  3.1 타이머 반복   setInterval() 을 사용해 주기적으로 타이머 코드를 큐에 추가 가능\n  타이머 코드가 실행되기 전에 큐에 코드를 삽입할 가능성이 있기 때문에 다른 인스턴스가 큐에 존재하지 않을 때만 추가 하지만, 여기에는 2가지 단점이 있음\n 실행되지 않는 구간이 생길 수 있음 코드 사이의 갭이 예상보다 작을 경우 타이머 코드를 건너뛰게 됨    2번의 경우를 피하려면 setTimeout() 을 재귀호출 해야함\n1 2 3 4 5 6  setTimeout(function() { // sth..  setTimeout(arguments.callee, 50); }, 50);     3.2 프로세스 관리   브라우저는 코드가 일정 시간 이상 실행되거나 일정 숫자 이상의 문장을 실행하지 못하도록 오래 사용되는 스크립트 를 제한 함\n  오래 실행되는 루프의 경우 배열 나누기를 통해 사용자 인터페이스가 잠기는 것을 방지할 수 있음\n1 2 3 4 5 6 7 8  setTimeout(function() { var item = array.shift(); process(item); if(array.length \u0026gt; 0) { setTimeout(arguments.callee, 100); } }, 100)     3.3 함수 감속   짧은 시간 동안 DOM 조작을 너무 많이 하면 브라우저가 멈추기에 타이머를 이용해 감속으로 완화하는 목적\n1 2 3 4 5 6  function throttle(method, context) { clearTimeout(method.tId); methid.tId = setTimeout(function() { method.call(context); }, 100); }     resize 같이 코드를 주기적으로 실행해야 하지만 호출 자체를 제어할 수 없을 때 사용\n  4. 커스텀 이벤트  이벤트는 옵저버 패턴의 일종인데, 코드를 느슨하게 연결하는 테크닉 주체는 이벤트가 일어났음을 알리고, 옵저버는 이들 이벤트를 주시하며 주체를 관찰하기만 함 기본 아이디어는 이벤트를 관리하는 객체를 만들고 다른 객체가 그 이벤트를 주시하게 하는 것 커스텀 이벤트를 사용하면 관련된 객체를 분리하고 기능을 격리하기 쉬움  "
+},
+{
 	"uri": "https://ysjune.github.io/categories/",
 	"title": "Categories",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://ysjune.github.io/categories/javascript/",
+	"title": "javascript",
 	"tags": [],
 	"categories": [],
 	"series": [],
@@ -29,6 +47,15 @@
 {
 	"uri": "https://ysjune.github.io/series/",
 	"title": "Series",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://ysjune.github.io/series/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/",
+	"title": "자바스크립트 프로그래밍",
 	"tags": [],
 	"categories": [],
 	"series": [],
@@ -61,24 +88,6 @@
 	"series": ["자바스크립트 프로그래밍"],
 	"description": "",
 	"content": "다루는 내용  브라우저의 에러 보고에 대한 이해 에러 처리 자바스크립트 코드 디버그  1. 브라우저의 에러 보고에 대한 이해  주요 웹 브라우저는 자바스크립트 에러를 사용자에게 보고하는 기능을 갖추고 있음 대개 개발자에게만 쓸모있는 정보이므로 개발할 때는 에러 보고 기능을 켜야함  2. 에러 처리  기대할 수 있는 최선의 경우는 사용자가 무슨 일이 일어난 건지 모른 채 다시 시도해보는 것이며, 최악의 경우는 화를 내고 다시 방문하지 않는 것  2-1. try-catch   try 절에서 에러가 생기면 코드 실행을 즉시 멈추고, catch 절을 실행\n  catch 에 담기는 정보는 브라우저에 따라 다르지만, message 프로퍼티는 존재\n  finally 절은 항상 실행됨\n1 2 3 4 5 6 7 8 9 10  function trycatchFunction() { try{ return 2; // 무의미  } catch(error) { console.log(error.message); return 1; // 무의미  } finally { return 0; } }     에러 타입에는 Error, EvalError, RangeError, ReferenceError, SyntaxError, TypeError, URIError 이 있으며 모두 Error 타입을 상속\n  try-catch 문은 에러가 발생할 수도 있지만, 개발자가 컨트롤 할 수 없을 때 이상적\n ex) 라이브러리를 사용하고 에러가 날지 확신이 안 나는 상황에서 라이브러리를 직접 수정할 수 없을 때    2.2 에러 반환   throw 를 통해 언제든 커스텀 에러를 반환할 수 있음\n1 2 3 4 5 6 7 8  function CustomError(message) { this.name = \u0026#34;CustomError\u0026#34;; this.message = \u0026#34;message\u0026#34;; } CustomError.prototype = new Error(); throw new CustomError(\u0026#34;CustomError\u0026#34;);     브라우저는 개발자가 알고 있는 조건을 모르므로 불분명한 메시지 밖에 알릴 수가 없는데, 이럴 때 커스텀 메시지를 사용하면 명확한 단서를 제공할 수 있음\n  코드를 다룰 때 각 함수가 제대로 실행될 수 없는 상황에 대해 특히 주의!\n  커스텀 에러와 try-catch 문을 선택하는 최선의 기준은 해당 에러를 어떻게 처리할지 정확히 알고 있느냐 이다. try-catch 는 브라우저가 에러를 기본 방식대로 처리하지 못하게 막는 것이고, 커스텀 에러의 목적은 에러가 일어난 이유를 제공하는 것\n  2-3. error 이벤트   onerror 이벤트는 DOM 레벨 2 이벤트 표준을 따르지 않으므로 DOM 레벨 0 테크닉을 써서 할당해야 함\n1 2 3  window.onerror = function(message, url, line) { console.log(message); }     try-catch 문을 올바르게 사용사면 에러가 브라우저까지 전달되지 않으며, error 이벤트도 발생하지 않음\n  2-4. 에러 처리 전략  웹 애플리케이션의 자바 스크립트 레벨에서도 에러 처리 전략을 세워야 하며 그 중요성은 서버 레벨과 다르지 않음 미세한 자바스크립트 에러도 웹 페이지의 동작을 멈추게 할 수 있으므로 에러가 왜, 언제 일어나는지 파악해야 함  타입 강제 에러  값의 데이터 타입을 자동으로 바꾸는 연산자나 기타 언어 구조를 사용했을 때 발생 주로 == 와 != 연산자 혹은 if, for 같은 흐름 제어문에서 불리언이 아닌 값을 사용했을 때   데이터 타입 에러  느슨한 타입을 사용하므로 에러가 생기지 않도록 데이터 타입을 체크해줘야 함   통신 에러  URL 이나 데이터 형식이 잘못된 경우 서버의 응답이 예상과 다를 때 발생      2-5. 심각한 에러와 그렇지 않은 에러 구별   심각하지 않은 에러\n 사용자의 주요 작업을 방해하지 않는 에러 페이지의 일부분에만 영향을 끼치는 에러 복구 가능한 에러 다시 시도해보면 일어나지 않을 수 있는 에러    심각한 에러\n 애플리케이션 진행을 완전히 막는 에러 사용자의 주요 목적을 뚜렷이 방해하는 에러 다른 에러를 일으키는 에러    try-catch 를 사용해 에러가 발생해도 독립적으로 처리할 수 있도록 함\n1 2 3 4 5 6 7  for(var i=0, len=mods.length; i\u0026lt;len; i++) { try { modes[i].init(); } catch(ex) { //handle error  } }     3. 자바스크립트 코드 디버그  결국 디버그 정보를 표시할 코드에 삽입하는 식  3-1. 콘솔에 기록   개발자가 직접 콘솔에 기록하는 방식 (책의 예제 코드는 대부분 alert 였는데, 여태 console 로 했던 것)\n  error, info, log, warn 4가지 메소드가 있음\n1 2 3 4 5  var message = \u0026#34;console message\u0026#34; console.error(message); console.info(message); console.log(message); console.warn(message);     디버그가 편해지지만 배포할 때는 반드시 메시지를 모두 제거해야 함\n  alert 보다 더 나은 방법인 이유는 alert 이 프로그램 실행 흐름에 끼어들기 때문에 비동기적 프로세스에서는 결과가 달라질 수 있기 때문\n  3-2 페이지에 메시지 기록  innerHTML 을 통해 기록 콘솔을 지원하지 않는 브라우저에서 디버그 할 때 유용  "
-},
-{
-	"uri": "https://ysjune.github.io/categories/javascript/",
-	"title": "javascript",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://ysjune.github.io/series/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/",
-	"title": "자바스크립트 프로그래밍",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
 },
 {
 	"uri": "https://ysjune.github.io/posts/javascript/chapter13/event/",

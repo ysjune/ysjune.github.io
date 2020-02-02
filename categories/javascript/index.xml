@@ -9,12 +9,21 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 19 Jan 2020 15:20:37 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 02 Feb 2020 16:43:07 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>22. 고급테크닉</title>
+        <link>https://ysjune.github.io/posts/javascript/chapter22/advanced_technique/</link>
+        <pubDate>Sun, 02 Feb 2020 16:43:07 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/javascript/chapter22/advanced_technique/</guid>
+        <description>다루는 내용 고급 함수 쉽게 조작할 수 없는 객체 타이머 조작 커스텀 이벤트 1. 고급 함수 단순한 절차적인 방식, 복잡하고 동</description>
+      </item>
       
       <item>
         <title>17. 에러 처리와 디버깅</title>
