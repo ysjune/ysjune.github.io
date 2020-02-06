@@ -9,12 +9,21 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 02 Feb 2020 16:43:07 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 06 Feb 2020 23:39:52 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>5장. 회귀</title>
+        <link>https://ysjune.github.io/posts/ml/regression/</link>
+        <pubDate>Thu, 06 Feb 2020 23:39:52 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/ml/regression/</guid>
+        <description>파이썬 머신러닝 완벽가이드 5장. 회귀 발표 자료 입니다. 5장 회귀.pdf</description>
+      </item>
       
       <item>
         <title>22. 고급테크닉</title>

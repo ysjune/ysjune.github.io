@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>머신러닝 on Lazy Snack</title>
+    <link>https://ysjune.github.io/categories/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/</link>
+    <description>Recent content in 머신러닝 on Lazy Snack</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>windsyou@gmail.com (snack)</managingEditor>
+    <webMaster>windsyou@gmail.com (snack)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 06 Feb 2020 23:39:52 +0900</lastBuildDate>
+    
+        <atom:link href="https://ysjune.github.io/categories/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+      
+      <item>
+        <title>5장. 회귀</title>
+        <link>https://ysjune.github.io/posts/ml/regression/</link>
+        <pubDate>Thu, 06 Feb 2020 23:39:52 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/ml/regression/</guid>
+        <description>파이썬 머신러닝 완벽가이드 5장. 회귀 발표 자료 입니다. 5장 회귀.pdf</description>
+      </item>
+      
+    
+  </channel>
+</rss>
