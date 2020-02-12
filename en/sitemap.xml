@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://ysjune.github.io/</loc>
-    <lastmod>2020-02-06T23:39:52+09:00</lastmod>
+    <lastmod>2020-02-12T23:26:47+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -18,13 +18,8 @@
   </url>
   
   <url>
-    <loc>https://ysjune.github.io/posts/ml/regression/</loc>
-    <lastmod>2020-02-06T23:39:52+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ysjune.github.io/categories/</loc>
-    <lastmod>2020-02-06T23:39:52+09:00</lastmod>
+    <lastmod>2020-02-12T23:26:47+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -38,13 +33,18 @@
   </url>
   
   <url>
+    <loc>https://ysjune.github.io/categories/java/</loc>
+    <lastmod>2020-02-12T23:26:47+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ysjune.github.io/posts/</loc>
-    <lastmod>2020-02-06T23:39:52+09:00</lastmod>
+    <lastmod>2020-02-12T23:26:47+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/series/</loc>
-    <lastmod>2020-02-06T23:39:52+09:00</lastmod>
+    <lastmod>2020-02-12T23:26:47+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ko"
@@ -55,6 +55,21 @@
                 hreflang="en"
                 href="https://ysjune.github.io/series/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/posts/java/springboot_actuator/</loc>
+    <lastmod>2020-02-12T23:26:47+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/posts/java/eventlistener/</loc>
+    <lastmod>2020-02-11T22:27:00+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/posts/ml/regression/</loc>
+    <lastmod>2020-02-06T23:39:52+09:00</lastmod>
   </url>
   
   <url>
@@ -95,11 +110,6 @@
   <url>
     <loc>https://ysjune.github.io/posts/javascript/chapter13/event/</loc>
     <lastmod>2020-01-12T15:08:17+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ysjune.github.io/categories/java/</loc>
-    <lastmod>2020-01-10T18:52:51+09:00</lastmod>
   </url>
   
   <url>

@@ -9,12 +9,21 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Thu, 06 Feb 2020 23:39:52 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2020 23:26:47 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>java</title>
+        <link>https://ysjune.github.io/categories/java/</link>
+        <pubDate>Wed, 12 Feb 2020 23:26:47 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/categories/java/</guid>
+        <description></description>
+      </item>
       
       <item>
         <title>머신러닝</title>
@@ -40,15 +49,6 @@
         <pubDate>Thu, 30 Jan 2020 23:59:35 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
         <guid>https://ysjune.github.io/categories/%EC%82%BD%EC%A7%88-log/</guid>
-        <description></description>
-      </item>
-      
-      <item>
-        <title>java</title>
-        <link>https://ysjune.github.io/categories/java/</link>
-        <pubDate>Fri, 10 Jan 2020 18:52:51 +0900</pubDate>
-        <author>windsyou@gmail.com (snack)</author>
-        <guid>https://ysjune.github.io/categories/java/</guid>
         <description></description>
       </item>
       

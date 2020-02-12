@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>5장. 회귀 – Lazy Snack</title>
+    <title>SpringBoot Actuator – Lazy Snack</title>
     
 
 <script>
@@ -196,13 +196,13 @@
 
     <meta name="description" content="" />
 <meta name="keywords" content="">
-<meta name="created" content="2020-02-06T23:39:52&#43;0900">
-<meta name="modified" content="2020-02-06T23:39:52&#43;0900">
+<meta name="created" content="2020-02-12T23:26:47&#43;0900">
+<meta name="modified" content="2020-02-12T23:26:47&#43;0900">
 
 
 <meta property="og:site_name" content="Lazy Snack">
-<meta property="og:title" content="5장. 회귀">
-<meta property="og:url" content="https://ysjune.github.io/posts/ml/regression/">
+<meta property="og:title" content="SpringBoot Actuator">
+<meta property="og:url" content="https://ysjune.github.io/posts/java/springboot_actuator/">
 <meta property="og:type" content="article">
 
 <meta name="generator" content="Hugo 0.60.1" />
@@ -210,18 +210,18 @@
 <meta name="theme-color" content="#ffffff">
 
 
-<link rel="canonical" href="https://ysjune.github.io/posts/ml/regression/">
+<link rel="canonical" href="https://ysjune.github.io/posts/java/springboot_actuator/">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "5장. 회귀",
-    "datePublished": "2020-02-06T23:39:52+09:00",
-    "dateModified": "2020-02-06T23:39:52+09:00",
-    "url" : "https://ysjune.github.io/posts/ml/regression/",
-    "description": "파이썬 머신러닝 완벽가이드 5장. 회귀 발표 자료 입니다. 5장 회귀.pdf",
+    "headline": "SpringBoot Actuator",
+    "datePublished": "2020-02-12T23:26:47+09:00",
+    "dateModified": "2020-02-12T23:26:47+09:00",
+    "url" : "https://ysjune.github.io/posts/java/springboot_actuator/",
+    "description": "1. Spring Boot Actuator 일단.. 생소한Actuator 이란?? An actuator is a manufacturing term that refers to a mechanical device for moving or controlling something. Actuators can …",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://ysjune.github.io/"
@@ -392,7 +392,7 @@
   
   <li  class="is-active" >    
     
-      <a href="https://ysjune.github.io/posts/ml/regression/">5장. 회귀</a>
+      <a href="https://ysjune.github.io/posts/java/springboot_actuator/">SpringBoot Actuator</a>
         
   </li>
   
@@ -401,17 +401,468 @@
 </nav>
   
   <div class="single">
-    <h2 class="single__title">5장. 회귀</h2>
+    <h2 class="single__title">SpringBoot Actuator</h2>
     <div class="single__meta">
-      🕓 Feb 6, 2020 · ☕1 min read
+      🕓 Feb 12, 2020 · ☕3 min read
       <div class="single__tags caption">
 
 </div>
     </div>    
     <article class="single__contents">
-      <h4 id="--">파이썬 머신러닝 완벽가이드</h4>
-<h4 id="5----">5장. 회귀 발표 자료 입니다.</h4>
-<h4 id="5-pdfimagesresourceschapter5regressionpdf"><a href="/images/resources/chapter5_regression.pdf">5장 회귀.pdf</a></h4>
+      <h3 id="1-spring-boot-actuator">1. Spring Boot Actuator</h3>
+<ul>
+<li>
+<p>일단.. 생소한Actuator 이란??</p>
+<blockquote>
+<p>An actuator is a manufacturing term that refers to a mechanical device for moving or controlling something. Actuators can generate a large amount of motion from a small change.</p>
+<p>물건을 움직이거나 컨트롤하기 위한 장치를 의미하는 제조 용어로, 작은 변화로 큰 변화를 일으킬 수 있다.</p>
+</blockquote>
+</li>
+<li>
+<p>앱을 모니터링 하거나 메트릭을 수집하거나 트래픽 혹은 데이터 베이스 상태를 이해하는 것을 쉽게 하는 것</p>
+</li>
+<li>
+<p>설명만 봐선 알듯말듯하게 모르겠고, 정리를 하는 시점에도 딱 이거다! 하고 떠오르질 않네요.</p>
+</li>
+<li>
+<p><code>모든 내용은 spring boot2.x 를 기반으로 작성했습니다. 1.x 하고는 약간 달라요</code></p>
+</li>
+</ul>
+<h3 id="2--">2. 의존성 추가</h3>
+<ul>
+<li>maven 일 경우</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependencies</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+        <span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-boot-starter-actuator<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>Gradle 일 경우</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml">dependencies<span class="w"> </span>{<span class="w">
+</span><span class="w">    </span>compile(<span class="s2">&#34;org.springframework.boot:spring-boot-starter-actuator&#34;</span>)<span class="w">
+</span><span class="w"></span>}<span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-endpoints">3. Endpoints</h3>
+<ul>
+<li>
+<p>엔드포인트를 사용하면 애플리케이션을 모니터링하고 상호 작용할 수 있음</p>
+</li>
+<li>
+<p>spring boot 2.x 에서는 <code>/health</code>,  <code>/info</code> 2개만 기본적으로 제공</p>
+</li>
+<li>
+<p>모든 기능을 사용하려면 프로퍼티에 추가</p>
+<pre><code class="language-properties" data-lang="properties">management.endpoints.web.exposure.include = *
+</code></pre></li>
+<li>
+<p>기본적인 /health 를 하면</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&#34;status&#34;</span><span class="p">:</span> <span class="s2">&#34;UP&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>만 나오며 healthIndicator 을 구현하여 추가적으로 커스텀도 가능</p>
+</li>
+<li>
+<p>ex)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyHealthIndicator</span> <span class="kd">implements</span> <span class="n">HealthIndicator</span> <span class="o">{</span>
+  
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">Health</span> <span class="nf">health</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">errorCode</span> <span class="o">=</span> <span class="n">check</span><span class="o">(</span><span class="o">)</span><span class="o">;</span> <span class="c1">// perform some specific health check
+</span><span class="c1"></span>        <span class="k">if</span> <span class="o">(</span><span class="n">errorCode</span> <span class="o">!</span><span class="o">=</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">Health</span><span class="o">.</span><span class="na">down</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">withDetail</span><span class="o">(</span><span class="s">&#34;Error Code&#34;</span><span class="o">,</span> <span class="n">errorCode</span><span class="o">)</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">Health</span><span class="o">.</span><span class="na">up</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">build</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+  
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="4-metrics">4. Metrics</h3>
+<ul>
+<li>
+<p>Micrometer 지원, 직접 상호작용</p>
+</li>
+<li>
+<p>MeterRegistry 유형의 Bean 이 자동 구성</p>
+</li>
+<li>
+<p><del>이번 글을 쓰게 된 이유</del></p>
+</li>
+<li>
+<p>/metrics 를 하면</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&#34;http.server.requests&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;jdbc.connections.idle&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;tomcat.sessions.rejected&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;hikaricp.connections.max&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;hikaricp.connections.min&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;process.cpu.usage&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;jvm.memory.max&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;jvm.threads.states&#34;</span><span class="p">,</span>
+        <span class="err">/</span><span class="err">/</span><span class="err">.</span><span class="err">.</span><span class="err">.</span><span class="err">.</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>이런 식으로 뜨고, 실제 값을 얻으려면 원하는 메트릭 (/actuator/metrics/jvm.memory.max) 으로 이동해야 됨</p>
+</li>
+<li>
+<p>/actuator/metrics/jvm.memory.max 의 경우</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;jvm.memory.max&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="s2">&#34;The maximum amount of memory in bytes that can be used for memory management&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;baseUnit&#34;</span><span class="p">:</span> <span class="s2">&#34;bytes&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;measurements&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+        <span class="nt">&#34;statistic&#34;</span><span class="p">:</span> <span class="s2">&#34;VALUE&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="mi">9860284415</span>
+        <span class="p">}</span>
+    <span class="p">]</span><span class="p">,</span>
+    <span class="nt">&#34;availableTags&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+        <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;area&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;values&#34;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="s2">&#34;heap&#34;</span>
+            <span class="err">/</span><span class="err">/</span><span class="err">.</span><span class="err">.</span><span class="err">.</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>당연하게도 커스텀 메트릭 또한 추가 가능</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SampleBean</span> <span class="o">{</span>
+  
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Counter</span> <span class="n">counter</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Tag</span> <span class="n">tag</span> <span class="o">=</span> <span class="n">Tag</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">&#34;status&#34;</span><span class="o">,</span> <span class="s">&#34;ok&#34;</span><span class="o">)</span>
+  
+    <span class="kd">public</span> <span class="nf">SampleBean</span><span class="o">(</span><span class="n">MeterRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">counter</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="na">counter</span><span class="o">(</span><span class="s">&#34;received.message&#34;</span><span class="o">,</span> <span class="s">&#34;status&#34;</span><span class="o">,</span> <span class="s">&#34;all&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+  
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleMessage</span><span class="o">(</span><span class="n">String</span> <span class="n">message</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">counter</span><span class="o">.</span><span class="na">increment</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="c1">// handle message implementation
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>metrics 에 등록된 것 확인</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;names&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&#34;http.server.requests&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;jdbc.connections.idle&#34;</span><span class="p">,</span>
+        <span class="s2">&#34;tomcat.sessions.rejected&#34;</span><span class="p">,</span>
+        <span class="err">/</span><span class="err">/</span><span class="err">.</span><span class="err">.</span><span class="err">.</span><span class="err">.</span>
+        <span class="s2">&#34;received.message&#34;</span>
+        <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>/actuator/metrics/received.message 에서 내용을 확인해보면</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;received.message&#34;</span><span class="p">,</span>
+    <span class="nt">&#34;description&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&#34;baseUnit&#34;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+    <span class="nt">&#34;measurements&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+        <span class="nt">&#34;statistic&#34;</span><span class="p">:</span> <span class="s2">&#34;COUNT&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;value&#34;</span><span class="p">:</span> <span class="mi">1</span>  <span class="err">/</span><span class="err">/</span> <span class="err">호</span><span class="err">출</span> <span class="err">횟</span><span class="err">수</span>
+        <span class="p">}</span>
+    <span class="p">]</span><span class="p">,</span>
+    <span class="nt">&#34;availableTags&#34;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+        <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;server_name&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;values&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;sample-api&#34;</span>
+            <span class="p">]</span>
+        <span class="p">}</span><span class="p">,</span>
+        <span class="p">{</span>
+        <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;profile&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;values&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;local&#34;</span>
+            <span class="p">]</span>
+        <span class="p">}</span><span class="p">,</span>
+        <span class="p">{</span>
+        <span class="nt">&#34;tag&#34;</span><span class="p">:</span> <span class="s2">&#34;status&#34;</span><span class="p">,</span>
+        <span class="nt">&#34;values&#34;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">&#34;all&#34;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>이런 식으로 정보를 알 수 있음</p>
+</li>
+</ul>
+<h3 id="5-custom-endpoint-">5. Custom Endpoint 생성</h3>
+<ul>
+<li>
+<p>커스텀 앤드 포인트를 생성하는 것이 가능</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Component</span>
+<span class="nd">@Endpoint</span><span class="o">(</span><span class="n">id</span> <span class="o">=</span> <span class="s">&#34;features&#34;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">FeaturesEndpoint</span> <span class="o">{</span>
+   
+    <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Feature</span><span class="o">&gt;</span> <span class="n">features</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ConcurrentHashMap</span><span class="o">&lt;</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+   
+    <span class="nd">@ReadOperation</span>
+    <span class="kd">public</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Feature</span><span class="o">&gt;</span> <span class="nf">features</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">features</span><span class="o">;</span>
+    <span class="o">}</span>
+   
+    <span class="nd">@ReadOperation</span>
+    <span class="kd">public</span> <span class="n">Feature</span> <span class="nf">feature</span><span class="o">(</span><span class="nd">@Selector</span> <span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">features</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">name</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+   
+    <span class="nd">@WriteOperation</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">configureFeature</span><span class="o">(</span><span class="nd">@Selector</span> <span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">Feature</span> <span class="n">feature</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">features</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">feature</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+   
+    <span class="nd">@DeleteOperation</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deleteFeature</span><span class="o">(</span><span class="nd">@Selector</span> <span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">features</span><span class="o">.</span><span class="na">remove</span><span class="o">(</span><span class="n">name</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+   
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Feature</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="n">Boolean</span> <span class="n">enabled</span><span class="o">;</span>
+   
+        <span class="c1">// [...] getters and setters 
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>위의 경우는 /actuator/features 로 접속 가능</p>
+<blockquote>
+<ul>
+<li><em>@ReadOperation –</em> HTTP <em>GET에</em> 매핑</li>
+<li><em>@WriteOperation</em> – HTTP <em>POST에</em> 매핑</li>
+<li><em>@DeleteOperation</em> – HTTP <em>DELETE에</em> 매핑</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>이 외에도 actuator 에 대한 많은 기능들이 있습니다. 엔드포인트를 확장한다거나 logger 에 관련된 것이라던가, 보안과 관련된 기능이라던가&hellip;</p>
+</li>
+<li>
+<p>메트릭 설정을 추가하면서 맛보기로 알아본 것들을 api 문서 참고하면서 작성했기 때문에 빈약하거나, 잘못된 내용이 있을 수 있습니다.</p>
+</li>
+</ul>
+<blockquote>
+<p>참고</p>
+<ul>
+<li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready">https://docs.spring.io/spring-boot/docs/current/reference/html/production-ready-features.html#production-ready</a></li>
+<li><a href="https://www.baeldung.com/spring-boot-actuators#boot-2x-actuator">https://www.baeldung.com/spring-boot-actuators#boot-2x-actuator</a></li>
+</ul>
+</blockquote>
 
     </article>
     
@@ -489,21 +940,14 @@
     <div class="grow"></div>
 <nav class="pagination-single">
   
-    <a href="https://ysjune.github.io/posts/javascript/chapter22/advanced_technique/" class="pagination-single__left">
+    <a href="https://ysjune.github.io/posts/java/eventlistener/" class="pagination-single__left">
       <div class="pagination-single__icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
       </div>
-      <div class="pagination-single__left-title">22. 고급테크닉</div>      
+      <div class="pagination-single__left-title">eventPublisher 와 eventListenr 사용</div>      
     </a>
   
   <div class="grow"></div>
-  
-    <a href="https://ysjune.github.io/posts/java/eventlistener/" class="pagination-single__right">      
-      <div class="pagination-single__right-title">eventPublisher 와 eventListenr 사용</div>
-      <div class="pagination-single__icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
-      </div>
-    </a>
   
 </nav>
     
@@ -1153,7 +1597,7 @@
         
           
             
-              <a href="https://ysjune.github.io/posts/ml/regression/" data-lang="en" class="dropdown-item is-active">English</a>
+              <a href="https://ysjune.github.io/posts/java/springboot_actuator/" data-lang="en" class="dropdown-item is-active">English</a>
             
           
         
@@ -1206,7 +1650,7 @@
             
     
     
-  <a href="https://ysjune.github.io/posts/ml/regression//index.xml" type="application/rss+xml" title="rss" aria-label="RSS Feed Link">
+  <a href="https://ysjune.github.io/posts/java/springboot_actuator//index.xml" type="application/rss+xml" title="rss" aria-label="RSS Feed Link">
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><circle fill="currentColor" cx="6.18" cy="17.82" r="2.18"/><path fill="currentColor" d="M5.59 10.23c-.84-.14-1.59.55-1.59 1.4 0 .71.53 1.28 1.23 1.4 2.92.51 5.22 2.82 5.74 5.74.12.7.69 1.23 1.4 1.23.85 0 1.54-.75 1.41-1.59-.68-4.2-3.99-7.51-8.19-8.18zm-.03-5.71C4.73 4.43 4 5.1 4 5.93c0 .73.55 1.33 1.27 1.4 6.01.6 10.79 5.38 11.39 11.39.07.73.67 1.28 1.4 1.28.84 0 1.5-.73 1.42-1.56-.73-7.34-6.57-13.19-13.92-13.92z"/></svg>
   </a>
 

@@ -9,12 +9,30 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Fri, 10 Jan 2020 18:52:51 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2020 23:26:47 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>SpringBoot Actuator</title>
+        <link>https://ysjune.github.io/posts/java/springboot_actuator/</link>
+        <pubDate>Wed, 12 Feb 2020 23:26:47 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/java/springboot_actuator/</guid>
+        <description>1. Spring Boot Actuator 일단.. 생소한Actuator 이란?? An actuator is a manufacturing term that refers to a mechanical device for moving or controlling something. Actuators can generate a large amount of motion from a</description>
+      </item>
+      
+      <item>
+        <title>eventPublisher 와 eventListenr 사용</title>
+        <link>https://ysjune.github.io/posts/java/eventlistener/</link>
+        <pubDate>Tue, 11 Feb 2020 22:27:00 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/java/eventlistener/</guid>
+        <description>서론 최근 마이크로미터를 사용하여 해당 서비스의 접속 카운트를 표시할까 해봤다. (오로지 흥미 위주로..) 처음에</description>
+      </item>
       
       <item>
         <title>JPA 어노테이션</title>
