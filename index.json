@@ -9,17 +9,17 @@
 	"content": ""
 },
 {
-	"uri": "https://ysjune.github.io/categories/",
-	"title": "Categories",
+	"uri": "https://ysjune.github.io/posts/chatter/apache_loadmodule/",
+	"title": "Apache mod_proxy 문제",
 	"tags": [],
 	"categories": [],
-	"series": [],
+	"series": [""],
 	"description": "",
-	"content": ""
+	"content": "문제   아파치 프록시를 설정할 일이 생겨서 conf 파일에 아래와 같이 location 설정을 추가 해줬으나\n1 2 3 4 5 6 7 8 9  \u0026lt;VirtualHost *:80\u0026gt; ServerName www.api.com //... \u0026lt;Location \u0026#34;/event/\u0026#34;\u0026gt; ProxyPass http://112.13.14.15/event/ ttl=30 ProxyPassReverse http://112.13.14.15/event/ ProxyPreserveHost On \u0026lt;/Location\u0026gt; \u0026lt;/VirtualHost\u0026gt;   서버에서 500 에러가 발생, 프록시가 된 프로젝트를 직접 호출, 프록시하는 프로젝트의 다른 경로는 호출해도 문제가 없는 상황.\n  게다가 다른 에러가 아닌 500 서버 에러가 난다는 점이 이상했다. 전혀 갈피를 못 찾다가 아파치 access.log 를 확인해보라는 말에 확인해보니\nNo protocol handler was valid for the URL /event/books. If you are using a DSO version of mod_proxy, make sure the proxy submodules are included in the configuration using LoadModule.  mod_proxy 의 DSO 버전을 사용하려면 LoadModule 의 서브모듈을 포함시켜야 한다고 한다.    해결   무슨 말인지 모르겠으니.. 검색을 해보면\n  httpd.conf 파일에서 mod_proxy 와 관련된 주석을 해제하거나 추가 해주면 된다.\nLoadModule proxy_module modules/mod_proxy.so LoadModule proxy_http_module modules/mod_proxy_http.so LoadModule proxy_ajp_module modules/mod_proxy_ajp.so   그리고 나서 apachectl 을 재실행 해주면 완료\n  "
 },
 {
-	"uri": "https://ysjune.github.io/categories/java/",
-	"title": "java",
+	"uri": "https://ysjune.github.io/categories/",
+	"title": "Categories",
 	"tags": [],
 	"categories": [],
 	"series": [],
@@ -38,6 +38,24 @@
 {
 	"uri": "https://ysjune.github.io/series/",
 	"title": "Series",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://ysjune.github.io/categories/%EC%82%BD%EC%A7%88-log/",
+	"title": "삽질 Log",
+	"tags": [],
+	"categories": [],
+	"series": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "https://ysjune.github.io/categories/java/",
+	"title": "java",
 	"tags": [],
 	"categories": [],
 	"series": [],
@@ -101,15 +119,6 @@
 {
 	"uri": "https://ysjune.github.io/series/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/",
 	"title": "자바스크립트 프로그래밍",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "https://ysjune.github.io/categories/%EC%82%BD%EC%A7%88-log/",
-	"title": "삽질 Log",
 	"tags": [],
 	"categories": [],
 	"series": [],
