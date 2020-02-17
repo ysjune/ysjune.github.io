@@ -9,12 +9,21 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 17 Feb 2020 22:23:28 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2020 00:20:44 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     
+      
+      <item>
+        <title>1. 도메인 모델 시작</title>
+        <link>https://ysjune.github.io/posts/ddd/chapter1/domian_model/</link>
+        <pubDate>Tue, 18 Feb 2020 00:20:44 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <guid>https://ysjune.github.io/posts/ddd/chapter1/domian_model/</guid>
+        <description>도메인 모델 시작 도메인 모델 엔티티와 밸류 도메인 용어 1 도메인 모델 도메인 개발자 입장에서 온라인 서점은 구현해야 할</description>
+      </item>
       
       <item>
         <title>Apache mod_proxy 문제</title>
