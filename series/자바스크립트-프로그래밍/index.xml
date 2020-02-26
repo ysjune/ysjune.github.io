@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>자바스크립트 프로그래밍 on Lazy Snack</title>
     <link>https://ysjune.github.io/series/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
@@ -15,14 +20,36 @@
     
     
     
+
       
       <item>
         <title>22. 고급테크닉</title>
         <link>https://ysjune.github.io/posts/javascript/chapter22/advanced_technique/</link>
         <pubDate>Sun, 02 Feb 2020 16:43:07 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 02 Feb 2020 16:43:07 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/javascript/chapter22/advanced_technique/</guid>
-        <description>다루는 내용 고급 함수 쉽게 조작할 수 없는 객체 타이머 조작 커스텀 이벤트 1. 고급 함수 단순한 절차적인 방식, 복잡하고 동</description>
+        <description>다루는 내용 고급 함수 쉽게 조작할 수 없는 객체 타이머 조작 커스텀 이벤트 1. 고급 함수 단순한 절차적인 방식, 복잡하고 동적인 방식, 클로저, 함수 포인터 등을 사용하는</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>자바스크립트 프로그래밍</category>
+            
+          
+        
       </item>
       
       <item>
@@ -30,8 +57,29 @@
         <link>https://ysjune.github.io/posts/javascript/chapter17/error_debug/</link>
         <pubDate>Sun, 19 Jan 2020 15:20:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 19 Jan 2020 15:20:37 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/javascript/chapter17/error_debug/</guid>
-        <description>다루는 내용 브라우저의 에러 보고에 대한 이해 에러 처리 자바스크립트 코드 디버그 1. 브라우저의 에러 보고에 대한 이해 주</description>
+        <description>다루는 내용 브라우저의 에러 보고에 대한 이해 에러 처리 자바스크립트 코드 디버그 1. 브라우저의 에러 보고에 대한 이해 주요 웹 브라우저는 자바스크립트 에러를 사용자에</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>자바스크립트 프로그래밍</category>
+            
+          
+        
       </item>
       
       <item>
@@ -39,8 +87,29 @@
         <link>https://ysjune.github.io/posts/javascript/chapter13/event/</link>
         <pubDate>Sun, 12 Jan 2020 15:08:17 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 12 Jan 2020 15:08:17 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/javascript/chapter13/event/</guid>
-        <description>다루는 내용 이벤트 흐름에 대한 이해 이벤트 핸들러 다루기 여러 가지 타입의 이벤트 메모리와 성능 1. 이벤트 흐름에 대한 이</description>
+        <description>다루는 내용 이벤트 흐름에 대한 이해 이벤트 핸들러 다루기 여러 가지 타입의 이벤트 메모리와 성능 1. 이벤트 흐름에 대한 이해 자바스크립트와 HTML 의 상호작용은 문서나 브라</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>자바스크립트 프로그래밍</category>
+            
+          
+        
       </item>
       
       <item>
@@ -48,8 +117,29 @@
         <link>https://ysjune.github.io/posts/javascript/chapter11/dom-extension/</link>
         <pubDate>Sat, 04 Jan 2020 22:53:51 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sat, 04 Jan 2020 22:53:51 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/javascript/chapter11/dom-extension/</guid>
-        <description>다루는 내용 선택자 API 에 대한 이해 HTML5 DOM 확장 사용 브라우저 전용 DOM 확장 사용 1. 선택자 API CSS 선택자로 패턴을 만들고 그에 맞</description>
+        <description>다루는 내용 선택자 API 에 대한 이해 HTML5 DOM 확장 사용 브라우저 전용 DOM 확장 사용 1. 선택자 API CSS 선택자로 패턴을 만들고 그에 맞는 DOM 요소를 선택하는 능력 (Ex. jQuery) 1-1 querySelector() CSS 쿼리를 받</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>자바스크립트 프로그래밍</category>
+            
+          
+        
       </item>
       
       <item>
@@ -57,8 +147,29 @@
         <link>https://ysjune.github.io/posts/javascript/chapter10/dom/</link>
         <pubDate>Sun, 29 Dec 2019 12:55:43 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 29 Dec 2019 12:55:43 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/javascript/chapter10/dom/</guid>
-        <description>DOM 을 노드의 계층 구조로 이해 다양한 노드 타입 브라우저들 간의 비호환성을 우회하는 DOM 코딩 1. 노드의 계층 구조 HTML 과 XML 문</description>
+        <description>DOM 을 노드의 계층 구조로 이해 다양한 노드 타입 브라우저들 간의 비호환성을 우회하는 DOM 코딩 1. 노드의 계층 구조 HTML 과 XML 문서는 모두 DOM 을 통해 노드의 계층 구조로 표현 가능</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>자바스크립트 프로그래밍</category>
+            
+          
+        
       </item>
       
       <item>
@@ -66,8 +177,29 @@
         <link>https://ysjune.github.io/posts/javascript/chapter8/bom/</link>
         <pubDate>Mon, 16 Dec 2019 23:25:39 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Mon, 16 Dec 2019 23:25:39 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/javascript/chapter8/bom/</guid>
-        <description>다루는 내용 BOM 의 핵심인 window 객체에 대한 이해 창과 프레임, 팝업 컨트롤 location 객체에서 얻는 페이지 정보 navigator 객체를 통한 브라우</description>
+        <description>다루는 내용 BOM 의 핵심인 window 객체에 대한 이해 창과 프레임, 팝업 컨트롤 location 객체에서 얻는 페이지 정보 navigator 객체를 통한 브라우저 이해 1. window 객체 웹페이지에서 정의한 모든 객체</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>자바스크립트 프로그래밍</category>
+            
+          
+        
       </item>
       
       <item>
@@ -75,8 +207,29 @@
         <link>https://ysjune.github.io/posts/javascript/chapter7/function/</link>
         <pubDate>Sun, 08 Dec 2019 13:24:59 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 08 Dec 2019 13:24:59 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/javascript/chapter7/function/</guid>
-        <description>다루는 내용 함수 표현식의 특징 함수와 재귀 클로저를 이용한 고유(프라이빗) 변수 1. 함수 표현식의 특징 함수를 정의하</description>
+        <description>다루는 내용 함수 표현식의 특징 함수와 재귀 클로저를 이용한 고유(프라이빗) 변수 1. 함수 표현식의 특징 함수를 정의하는 방법은 함수 선언과 함수 표현식 2가지가 있음</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>자바스크립트 프로그래밍</category>
+            
+          
+        
       </item>
       
       <item>
@@ -84,8 +237,29 @@
         <link>https://ysjune.github.io/posts/javascript/chapter2/chapter2/</link>
         <pubDate>Sun, 08 Dec 2019 01:52:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 08 Dec 2019 01:52:37 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/javascript/chapter2/chapter2/</guid>
-        <description>다루는 내용 &amp;lt;script&amp;gt; 요소 사용 인라인 스크립트와 외부 스크립트의 비교 문서 모드가 자바스크립트에 미치는 영향 자바스크립트</description>
+        <description>다루는 내용 &amp;lt;script&amp;gt; 요소 사용 인라인 스크립트와 외부 스크립트의 비교 문서 모드가 자바스크립트에 미치는 영향 자바스크립트가 비활성화된 상황에 대한 대비 1. &amp;lt;Script&amp;gt; 요소 여섯가</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>자바스크립트 프로그래밍</category>
+            
+          
+        
       </item>
       
       <item>
@@ -93,8 +267,29 @@
         <link>https://ysjune.github.io/posts/javascript/chapter3/basic_of_language/</link>
         <pubDate>Sun, 08 Dec 2019 01:52:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 08 Dec 2019 01:52:37 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/javascript/chapter3/basic_of_language/</guid>
-        <description>다루는 내용 문법 데이터 타입 제어문 함수 1. 문법 대소문자를 구분 식별자 -&amp;gt; 변수, 함수, 프로퍼티, 함수 매개변수의 이</description>
+        <description>다루는 내용 문법 데이터 타입 제어문 함수 1. 문법 대소문자를 구분 식별자 -&amp;gt; 변수, 함수, 프로퍼티, 함수 매개변수의 이름으로 관습적으로 카멜 케이스를 사용 camelCase 스트릭</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>자바스크립트 프로그래밍</category>
+            
+          
+        
       </item>
       
       <item>
@@ -102,8 +297,29 @@
         <link>https://ysjune.github.io/posts/javascript/chapter4/variable_scope_memory/</link>
         <pubDate>Sun, 08 Dec 2019 01:52:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 08 Dec 2019 01:52:37 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/javascript/chapter4/variable_scope_memory/</guid>
-        <description>다루는 내용 변수의 원시값과 참조값 실행 컨텍스트의 이해 가비지 컬렉션의 이해 1. 원시값과 참조값 원시값은 기본타입(</description>
+        <description>다루는 내용 변수의 원시값과 참조값 실행 컨텍스트의 이해 가비지 컬렉션의 이해 1. 원시값과 참조값 원시값은 기본타입(문자열, null, undefined etc), 참조값은 메모리에 저장된 객체</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>자바스크립트 프로그래밍</category>
+            
+          
+        
       </item>
       
       <item>
@@ -111,8 +327,29 @@
         <link>https://ysjune.github.io/posts/javascript/chapter5/reference_type/</link>
         <pubDate>Sun, 08 Dec 2019 01:52:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 08 Dec 2019 01:52:37 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/javascript/chapter5/reference_type/</guid>
-        <description>다루는 내용 객체로 작업하기 배열 생성하고 조작하기 자바스크립트의 데이터 타입 이해 원시 데이터 및 원시 래퍼로 작업하</description>
+        <description>다루는 내용 객체로 작업하기 배열 생성하고 조작하기 자바스크립트의 데이터 타입 이해 원시 데이터 및 원시 래퍼로 작업하기 1. 객체로 작업하기 객체란 참조 타입이며 클래</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>자바스크립트 프로그래밍</category>
+            
+          
+        
       </item>
       
       <item>
@@ -120,10 +357,32 @@
         <link>https://ysjune.github.io/posts/javascript/chapter6/object_oriented/</link>
         <pubDate>Sun, 08 Dec 2019 01:52:37 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 08 Dec 2019 01:52:37 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/javascript/chapter6/object_oriented/</guid>
-        <description>다루는 내용 객체 프로퍼티의 이해 객체의 이해와 생성 상속의 이해 1. 객체 프로퍼티의 이해 객체는 특별한 순서가 없는 값의</description>
+        <description>다루는 내용 객체 프로퍼티의 이해 객체의 이해와 생성 상속의 이해 1. 객체 프로퍼티의 이해 객체는 특별한 순서가 없는 값의 배열 (key-value 쌍의 그룹) 가장 단순한 방법은 1 2 3 4</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>javascript</category>
+            
+          
+        
+        
+          
+            
+              <category>자바스크립트 프로그래밍</category>
+            
+          
+        
       </item>
       
+
     
   </channel>
 </rss>

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>환경 설정 on Lazy Snack</title>
     <link>https://ysjune.github.io/categories/%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95/</link>
@@ -15,14 +20,34 @@
     
     
     
+
       
       <item>
         <title>mariaDB 설치 (feat. Docker)</title>
         <link>https://ysjune.github.io/posts/setting/docker/mariadb_setting/</link>
         <pubDate>Sun, 08 Dec 2019 01:16:31 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 08 Dec 2019 01:16:31 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/setting/docker/mariadb_setting/</guid>
-        <description>이상하게 맥에서 로컬 mysql 이든 mariadb든 다 제대로 설치가 안되서, 주변에서 도커로 설치해보라는 얘기를 듣고&amp;</description>
+        <description>이상하게 맥에서 로컬 mysql 이든 mariadb든 다 제대로 설치가 안되서, 주변에서 도커로 설치해보라는 얘기를 듣고&amp;hellip; 도커로 설치 진행 (현재 진행된</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>환경 설정</category>
+            
+          
+        
+        
+          
+            
+          
+        
       </item>
       
       <item>
@@ -30,8 +55,27 @@
         <link>https://ysjune.github.io/posts/setting/setress_test/ngrinder/</link>
         <pubDate>Sun, 08 Dec 2019 01:16:31 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 08 Dec 2019 01:16:31 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/setting/setress_test/ngrinder/</guid>
-        <description>nGrinder 란? Stress Test Platform 테스트 스크립트 작성, 테스트 실행, 대상 서버 모니터링 및 결과 작성 nGrinder Github nGrinder 구조 Controller : 테스팅을 위한 인터</description>
+        <description>nGrinder 란? Stress Test Platform 테스트 스크립트 작성, 테스트 실행, 대상 서버 모니터링 및 결과 작성 nGrinder Github nGrinder 구조 Controller : 테스팅을 위한 인터페이스 제공 (스크립트 작성 및 수정, 테스트 코</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>환경 설정</category>
+            
+          
+        
+        
+          
+            
+          
+        
       </item>
       
       <item>
@@ -39,10 +83,30 @@
         <link>https://ysjune.github.io/posts/setting/apache_dev/apache/</link>
         <pubDate>Sun, 08 Dec 2019 01:16:31 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 08 Dec 2019 01:16:31 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/setting/apache_dev/apache/</guid>
-        <description>이번 개발 서버를 구성하면서 설정했던 것들을 까먹지 않도록 작성. 목표 - QA 용 관리자 서버 구성 필요한 단계 톰캣 설정 아</description>
+        <description>이번 개발 서버를 구성하면서 설정했던 것들을 까먹지 않도록 작성. 목표 - QA 용 관리자 서버 구성 필요한 단계 톰캣 설정 아파치 설정 젠킨스 배포 설정 DNS 추가 1. 톰캣 설정 톰</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>환경 설정</category>
+            
+          
+        
+        
+          
+            
+          
+        
       </item>
       
+
     
   </channel>
 </rss>

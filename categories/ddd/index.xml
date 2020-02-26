@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
     <title>DDD on Lazy Snack</title>
     <link>https://ysjune.github.io/categories/ddd/</link>
@@ -15,16 +20,37 @@
     
     
     
+
       
       <item>
         <title>1. 도메인 모델 시작</title>
         <link>https://ysjune.github.io/posts/ddd/chapter1/domian_model/</link>
         <pubDate>Tue, 18 Feb 2020 00:20:44 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Tue, 18 Feb 2020 00:20:44 +0900</atom:modified>
         <guid>https://ysjune.github.io/posts/ddd/chapter1/domian_model/</guid>
-        <description>도메인 모델 시작 도메인 모델 엔티티와 밸류 도메인 용어 1 도메인 모델 도메인 개발자 입장에서 온라인 서점은 구현해야 할</description>
+        <description>도메인 모델 시작 도메인 모델 엔티티와 밸류 도메인 용어 1 도메인 모델 도메인 개발자 입장에서 온라인 서점은 구현해야 할 소프트웨어의 대상이 된다. 온라인 서점 소프트</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>DDD</category>
+            
+          
+        
+        
+          
+            
+          
+        
       </item>
       
+
     
   </channel>
 </rss>
