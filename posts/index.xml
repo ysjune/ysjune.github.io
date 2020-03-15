@@ -14,13 +14,41 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Tue, 18 Feb 2020 00:20:44 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 00:10:11 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>요즘 무기력에 대한 단상</title>
+        <link>https://ysjune.github.io/posts/chatter/20200315_daily/</link>
+        <pubDate>Mon, 16 Mar 2020 00:10:11 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Mon, 16 Mar 2020 00:10:11 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/chatter/20200315_daily/</guid>
+        <description>학생 때 직업 검사? 같은 느낌으로 하는 검사를 보면 항상 분석력과 자아성찰에 대해 높은 점수가 나오곤 했다. 그리고 대학생 때는 학교의 심리센터? 같은 데 가서 거기 선생</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>일상</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>1. 도메인 모델 시작</title>
