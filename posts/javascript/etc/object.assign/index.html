@@ -2221,9 +2221,9 @@ document.addEventListener('DOMContentLoaded', function () {
   
   
 
-  var enableToc = JSON.parse("false");
+  var enableToc = JSON.parse("true");
   var toc = JSON.parse("null");
-  var tocPosition = JSON.parse("\"inner\"");
+  var tocPosition = JSON.parse("\"outer\"");
   
   var singleMainElem = document.querySelector('.single__main');
   var singleSideElem = document.querySelector('.single__side');
@@ -2336,9 +2336,9 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
     
-    var enableToc = JSON.parse("false");
+    var enableToc = JSON.parse("true");
     var toc = JSON.parse("null");
-    var hideToc = JSON.parse("true");
+    var hideToc = JSON.parse("false");
     var tocFlexbox = document.querySelector('.toc__flexbox');
     var tocFlexboxOuter = document.querySelector('.toc__flexbox--outer');
     var tocFolding = JSON.parse("null");
@@ -2976,6 +2976,44 @@ document.addEventListener('DOMContentLoaded', function () {
         
 <div class="wrapper__right hide" dir="ltr">
   <script>document.querySelector('.wrapper__right').classList.remove('hide')</script>
+  
+    
+      
+        <div class="toc__flexbox--outer" data-position="fixed" data-dir="ltr" data-ani="true">
+          <h6 class="toc__title toc__title--outer" data-ani="true">What&#39;s on this Page</h6>
+          
+          <label class="switch" data-ani="true">
+            <input id="visible-toc" aria-label="Visible TOC" type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+          
+        </div>
+        <div class="toc toc__outer " data-dir="ltr" data-folding="false" data-ani="true">
+          <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#objectassign">Object.assign()</a>
+              <ul>
+                <li><a href="#1--">1. 객체 병합</a></li>
+                <li><a href="#2----">2. 심볼 타입 프로퍼티 복사</a></li>
+                <li><a href="#3-------">3. 프로토타입 체인의 속성, 열거불가 프로퍼티는 복사 불가</a></li>
+                <li><a href="#4----">4. 프리미티브 는 객체로 래핑</a></li>
+                <li><a href="#5---">5. 복사중 예외 발생</a></li>
+                <li><a href="#6--">6. 접근자 복사</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+      
+    
   
 </div>
 

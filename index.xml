@@ -14,7 +14,7 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 16 Mar 2020 00:10:11 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 23:25:19 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -24,6 +24,34 @@
       
       
 
+      
+      <item>
+        <title>Mockito 정리 (1)</title>
+        <link>https://ysjune.github.io/posts/java/mockito_1/</link>
+        <pubDate>Sun, 29 Mar 2020 23:25:19 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 29 Mar 2020 23:25:19 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/java/mockito_1/</guid>
+        <description>Mockito 란? 자바에서 단위 테스트를 위한 Mocking framework tastes really good(?!) (개인적으론) 간편하게 사용할 수 있어서 테스트코드 작성할 때 즐겨 사용하는 편입니다. 1. 의존성 추가 1 2 3 4 5 6</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>JAVA</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>요즘 무기력에 대한 단상</title>

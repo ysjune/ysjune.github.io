@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>4장. 프로세스 스케쥴러 – Lazy Snack</title>
+    <title>Mockito 정리 (1) – Lazy Snack</title>
     
 
 
@@ -543,7 +543,7 @@
 
   
     
-    var permalink = JSON.parse("\"https://ysjune.github.io/posts/linux/book/chapter4/\"");
+    var permalink = JSON.parse("\"https://ysjune.github.io/posts/java/mockito_1/\"");
     var searchResults = null;
     var searchMenu = null;
     var searchText = null;
@@ -1197,16 +1197,16 @@
     
 <meta name="description" content="The Lazy Snack&#39;s Cargo" />
 <meta name="keywords" content="">
-<meta name="created" content="2019-12-08T01:35:37&#43;0900">
-<meta name="modified" content="2019-12-08T01:35:37&#43;0900">
-<meta property="article:published_time" content="2019-12-08T01:35:37&#43;0900">
+<meta name="created" content="2020-03-29T23:25:19&#43;0900">
+<meta name="modified" content="2020-03-29T23:25:19&#43;0900">
+<meta property="article:published_time" content="2020-03-29T23:25:19&#43;0900">
 
 <meta name="author" content="snack">
 
 
 <meta property="og:site_name" content="Lazy Snack">
-<meta property="og:title" content="4장. 프로세스 스케쥴러">
-<meta property="og:url" content="https://ysjune.github.io/posts/linux/book/chapter4/">
+<meta property="og:title" content="Mockito 정리 (1)">
+<meta property="og:url" content="https://ysjune.github.io/posts/java/mockito_1/">
 <meta property="og:type" content="article">
 <meta property="og:description" content="The Lazy Snack&#39;s Cargo">
 
@@ -1218,7 +1218,7 @@
 <meta name="msapplication-navbutton-color" content="#fff">
 
 <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
-<link rel="canonical" href="https://ysjune.github.io/posts/linux/book/chapter4/">
+<link rel="canonical" href="https://ysjune.github.io/posts/java/mockito_1/">
 <link rel="manifest" href="/manifest.json">
 
   
@@ -1231,11 +1231,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "4장. 프로세스 스케쥴러",
-    "datePublished": "2019-12-08T01:35:37+09:00",
-    "dateModified": "2019-12-08T01:35:37+09:00",
-    "url" : "https://ysjune.github.io/posts/linux/book/chapter4/",
-    "description": "프로세스 스케줄러 여러 프로그램을 동시에 동작 시킴 (정확히는 동시에 동작하는 것처럼 보이게 함) 하나의 CPU는 동시에 하나의 프로세스만 처리 가능 하나의 CPU",
+    "headline": "Mockito 정리 (1)",
+    "datePublished": "2020-03-29T23:25:19+09:00",
+    "dateModified": "2020-03-29T23:25:19+09:00",
+    "url" : "https://ysjune.github.io/posts/java/mockito_1/",
+    "description": "Mockito 란? 자바에서 단위 테스트를 위한 Mocking framework tastes really good(?!) (개인적으론) 간편하게 사용할 수 있어서 테스트코드 작성할 때 즐겨 사용하는 편입니다. 1. 의존성 추가 1 2 3 4 5 6",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://ysjune.github.io/"
@@ -1470,7 +1470,7 @@
   
   <li  class="is-active" >
     
-      <span>4장. 프로세스 스케쥴러</span>
+      <span>Mockito 정리 (1)</span>
     
   </li>
   
@@ -1483,11 +1483,11 @@
   </noscript>
   <div class="single hide">
     <script>document.querySelector('.single').classList.remove('hide')</script>
-    <h2 class="single__title" data-ani="true">4장. 프로세스 스케쥴러</h2>
+    <h2 class="single__title" data-ani="true">Mockito 정리 (1)</h2>
     <div class="single__meta">
       
 <div class="single__infos">
-  <time class="single__info" title="Written At">📅&nbsp;Dec 8, 2019 </time>  &middot; <span class="single__info" title="Reading Time"> ☕ 3 min read </span>
+  <time class="single__info" title="Written At">📅&nbsp;Mar 29, 2020 </time>  &middot; <span class="single__info" title="Reading Time"> ☕ 4 min read </span>
   <span class="single__info">
      &middot; 👀<span id="busuanzi_value_page_pv">...</span> views
   </span>
@@ -1499,75 +1499,468 @@
     </div>
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
-      <h2 id="-">프로세스 스케줄러</h2>
-<p>여러 프로그램을 동시에 동작 시킴 (정확히는 동시에 동작하는 것처럼 보이게 함)</p>
+      <h3 id="mockito-">Mockito 란?</h3>
 <ul>
-<li>하나의 CPU는 동시에 하나의 프로세스만 처리 가능</li>
-<li>하나의 CPU에 여러 개의 프로세스를 실행해야 할 때는 각 프로세스를 적절한 시간으로 쪼개서 (타임 슬라이스) 번갈아 처리</li>
+<li>자바에서 단위 테스트를 위한 Mocking framework</li>
+<li><a href="https://site.mockito.org/">tastes really good(?!)</a></li>
+<li>(개인적으론) 간편하게 사용할 수 있어서 테스트코드 작성할 때 즐겨 사용하는 편입니다.</li>
 </ul>
-<h3 id="--">첫 번째 실험</h3>
-<p>스케줄러의 동작 확인을 위한 실험, 1개의 논리 CPU 에서만 수행.<br />
-(실험을 진행하는 동안에서는 시스템에서 다른 프로그램이 동작하지 않아야 정확성이 올라감. 이는 보통 설능 측정 실험을 할 때의 기본 원칙)</p>
+<h3 id="1--">1. 의존성 추가</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.mockito<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>mockito-core<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version</span><span class="nt">&gt;</span>3.0.0<span class="nt">&lt;/version&gt;</span>
+    <span class="nt">&lt;scope</span><span class="nt">&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+<span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>버전에 대해
 <ul>
-<li>실험 4-A : 동작 프로세스 1개</li>
-<li>실험 4-B : 동작 프로세스 2개</li>
-<li>실험 4-C : 동작 프로세스 3개</li>
+<li>mockito 의 버전은 1.x, 2.x, 3.x 로 총 3개가 있습니다. 공식 <a href="%5Bhttps://github.com/mockito/mockito/wiki/What%27s-new-in-Mockito-2%5D(https://github.com/mockito/mockito/wiki/What's-new-in-Mockito-2)">wiki</a> 에 따르면 1과 2는 맞지 않는(Incompatible) 것도 있다고 합니다. 2와 3은 API 로는 변경된 것이 없으나, Java8 에 맞춰졌다고 합니다.</li>
 </ul>
-<h5 id="-4a">실험 4-A</h5>
-<ol>
-<li>1개의 프로세스가 항상 동작</li>
-<li>1개의 프로세스 외에는 동작하는 프로세스가 없으므로 진행도는 단순 경과시간에 의해 비례</li>
-</ol>
-<h5 id="-4b">실험 4-B</h5>
-<ol>
-<li>2개의 프로세스가 서로 번갈아가며 CPU 사용 (다시 말하면 동시에 사용하는 것은 아님)</li>
-<li>2개의 프로세스는 대략 같은 양의 타임 슬라이스를 가짐</li>
-<li>단위 시간별 진행도는 프로세스가 1개일 때와 비교하여 약 절반, 처리 완료까지 걸린 시간은 4-A 보다 2배</li>
-</ol>
-<h5 id="-4c">실험 4-C</h5>
-<ol>
-<li>각 프로세스가 동시에 동작하는 일은 없음. 또한 1회마다 타임 슬라이스는 매우 적지만, 균등하게 CPU를 사용</li>
-<li>경과 시간은 프로세스가 1개 (실험 4-A)일 때보다 약 4배 걸림</li>
-</ol>
-<h5 id="heading">고찰</h5>
-<ol>
-<li>동시에 프로세스를 여러개 실행하더라도 특정 순간에 논리 CPU에서 동작되는 프로세스는 1개 뿐</li>
-<li>첫 번째 프로세스부터 마지막 프로세스까지 한 바퀴 돌면 다시 첫 번째로 가는 라운드로빈 방식</li>
-<li>각 프로세스는 대략 같은 타임 슬라이스</li>
-<li>종료할 때 까지의 경과 시간은 프로세스 수에 비례 하여 증가</li>
-</ol>
-<h3 id="-1">컨텍스트 스위치</h3>
-<p>논리 CPU 상에서 동작하는 프로세스가 바뀌는 것을 칭함.<br />
-어떤 프로세스가 어떤 프로그램을 실행 중이더라도 타임 슬라이스를 모두 소비하면 발생. But, foo() 직후에 바로 bar() 가 실행된다고는 보장 못함<br />
-이 문제를 이해하면 이후에 처리 시간이 오래 걸렸을 때, 처리 자체의 문제보다는 &lsquo;처리 중에 컨텍스트 스위치가 발생해서 다른 프로세스가 움직였다&rsquo; 라는 관점도 가질 수 있음</p>
-<h3 id="-2">프로세스의 상태</h3>
-<pre><code>ps ax | wc -l</code></pre>  
+</li>
+</ul>
+<h3 id="2----">2.  사용  방법</h3>
+<h4 id="21-verify">2-1. verify</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// mock 등의 코드를 깔끔하게 하기 위해 static import
+</span><span class="c1"></span><span class="kn">import static</span> <span class="nn">org.mockito.Mockito.mock</span><span class="o">;</span>
+<span class="kn">import static</span> <span class="nn">org.mockito.Mockito.verify</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MockitoTest</span> <span class="o">{</span>
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">verify_테스트</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//mock 객체 생성
+</span><span class="c1"></span>        <span class="n">List</span> <span class="n">mockedList</span> <span class="o">=</span> <span class="n">mock</span><span class="o">(</span><span class="n">List</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+
+        <span class="n">mockedList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;one&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">mockedList</span><span class="o">.</span><span class="na">clear</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        
+		<span class="c1">// 검증
+</span><span class="c1"></span>        <span class="n">verify</span><span class="o">(</span><span class="n">mockedList</span><span class="o">)</span><span class="o">.</span><span class="na">clear</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">verify</span><span class="o">(</span><span class="n">mockedList</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;one&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">verify</span><span class="o">(</span><span class="n">mockedList</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;two&#34;</span><span class="o">)</span><span class="o">;</span> <span class="c1">// 검증 실패 (호출된 적이 없기 때문에)
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>생성되면 mock 은 모든 상호작용을 기억합니다. 어떤 메소드가 실행되었는지 <code>verify</code> 로 검증할 수 있으며, 검증에는 순서를 따지지 않는 것을 확인할 수 있습니다.</li>
+</ul>
+<h4 id="22-stubbing">2-2. stubbing</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">stubbing_테스트</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="n">LinkedList</span> <span class="n">mockedList</span> <span class="o">=</span> <span class="n">mock</span><span class="o">(</span><span class="n">LinkedList</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+    
+    <span class="c1">// stubbing
+</span><span class="c1"></span>    <span class="n">when</span><span class="o">(</span><span class="n">mockedList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">thenReturn</span><span class="o">(</span><span class="s">&#34;first&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">when</span><span class="o">(</span><span class="n">mockedList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">1</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">thenThrow</span><span class="o">(</span><span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="s">&#34;not bound index&#34;</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="c1">// 첫번째 first 호출
+</span><span class="c1"></span>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">mockedList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">)</span><span class="o">)</span><span class="o">;</span> <span class="c1">// first
+</span><span class="c1"></span>
+    <span class="c1">// stub 해주지 않았으므로 null 호출
+</span><span class="c1"></span>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">mockedList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">999</span><span class="o">)</span><span class="o">)</span><span class="o">;</span> <span class="c1">// null
+</span><span class="c1"></span>
+    <span class="c1">// runtimeException 발생
+</span><span class="c1"></span>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">mockedList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">1</span><span class="o">)</span><span class="o">)</span><span class="o">;</span> <span class="c1">// java.lang.RuntimeException: not bound index
+</span><span class="c1"></span><span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>stub 라는 단어는 한글로 해석하면 <code>그루터기</code> 라는 뜻인데, 모르겠싶어 관련내용을 wiki 에서 찾아보면 <a href="https://en.wikipedia.org/wiki/Test_stub">Test Stub</a> 이 있는데요. 내용을 보면</p>
 <blockquote>
-<p>실행 상태 - 현재 논리 CPU를 사용하고 있습니다.<br />
-실행 대기 상태 - CPU 시간이 할당되기를 기다리고 있습니다.<br />
-슬립 상태 - 이벤트가 발생하기를 기다리고 있으며 이벤트 발생까지는 CPU 시간을 사용하지 않습니다.<br />
-좀비 상태 - 프로세스가 종료된 뒤 부모 프로세스가 종료 상태를 인식할 때까지 기다리고 있습니다.</p>
+<p>Test stubs provide <a href="https://en.wikipedia.org/wiki/Canned_response">canned answers</a> to calls made during the test, usually not responding at all to anything outside what's programmed in for the test.</p>
 </blockquote>
-<ul>
-<li>STAT 필드의 첫 글자가 장시간 동안 D인 상태로 있다면</li>
+<p>여기서 나오는 canned answer 이라는 건 <code>정해진 답</code> 으로 stubbing 이란 정해진 응답을 주도록 하는 것이라 볼 수 있겠습니다. <del>(자꼬치기?)</del></p>
+<h4 id="23-argument-matchers">2-3. Argument matchers</h4>
+</li>
 </ul>
-<ol>
-<li>스토리지의 I/O가 종료되지 않은 상태로 되어 있음</li>
-<li>커널 내의 뭔가 문제가 발생하고 있음</li>
-</ol>
-<h3 id="-3">상태 변환</h3>
-<p>프로세스는 살아 있는 동안 실행, 실행 가능, 슬립 상태를 몇 번이고 오간다.</p>
-<h3 id="idle-">idle 상태</h3>
-<p>프로세스가 CPU에서 &lsquo;아무것도 하지 않는&rsquo; 특수한 상태<br />
-논리 CPU를 휴식 상태로 만들어 하나 이상의 프로세스가 실행 가능한 상태가 될 때까지 소비 전력을 낮춰 대기 상태로 만듦</p>
-<h3 id="-4">스루풋과 레이턴시</h3>
-<ul>
-<li>스루풋 : 단위 시간당 처리된 일의 양으로 높을수록 좋습니다. (완료된 프로세스의 수 / 경과 시간)</li>
-<li>레이턴시 : 각각의 처리가 시작부터 종료까지의 경과된 시간으로 짧을수록 좋습니다. (처리 종료 시간 - 처리 시작 시간)</li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">argument_matchers_테스트</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="n">LinkedList</span> <span class="n">mockedList</span> <span class="o">=</span> <span class="n">mock</span><span class="o">(</span><span class="n">LinkedList</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+    
+    <span class="n">when</span><span class="o">(</span><span class="n">mockedList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">anyInt</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">thenReturn</span><span class="o">(</span><span class="s">&#34;element&#34;</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">mockedList</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">999</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>stubbing 을 할 때 입력 파라미터 인자를 유연하게 하고 싶을 때 사용합니다.</li>
+<li>argument matchers 의 anyX() 메소드들은 테스트를 편하게 도와주긴 하지만, 경함상 Int 파라미터가 필요한 자리에 any() 를 쓰면 에러가 났던 걸로 기억합니다. (제네릭인줄 알았는데 말이죠.)</li>
+<li>arugment matcher를 사용하려면 모든 파라미터는 matcher 로 전달되어야 합니다. 즉, String 문자열을 넣을 땐 <code>eq()</code> 로 감싸주어야 합니다.</li>
 </ul>
-<h3 id="-cpu-----">논리 CPU가 여러 개 일 때의 스케쥴링</h3>
-<p>스케줄러 안의 논리 CPU를 여러 개 다루기 위해 &lsquo;로드밸런서&rsquo; 혹은 &lsquo;글로벌 스케줄러&rsquo; 라는 기능이 동작<br />
-로드밸런서를 간단하게 설명하면, 여러 개의 논리 CPU에 프로세스를 공평하게 분배해주는 역할</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">when</span><span class="o">(</span><span class="n">someMethod</span><span class="o">.</span><span class="na">call</span><span class="o">(</span><span class="n">anyInt</span><span class="o">(</span><span class="o">)</span><span class="o">,</span> <span class="s">&#34;url&#34;</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">thenReturn</span><span class="o">(</span><span class="s">&#34;OK&#34;</span><span class="o">)</span><span class="o">;</span> <span class="c1">// error
+</span><span class="c1"></span><span class="n">when</span><span class="o">(</span><span class="n">someMethod</span><span class="o">.</span><span class="na">call</span><span class="o">(</span><span class="n">anyInt</span><span class="o">(</span><span class="o">)</span><span class="o">,</span> <span class="n">eq</span><span class="o">(</span><span class="s">&#34;url&#34;</span><span class="o">)</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">thenReturn</span><span class="o">(</span><span class="s">&#34;OK&#34;</span><span class="o">)</span><span class="o">;</span> <span class="c1">// 정상 동작
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="24-----">2-4.  호출 여부에 대한 검증</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">times_검증테스트</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">LinkedList</span> <span class="n">mockedList</span> <span class="o">=</span> <span class="n">mock</span><span class="o">(</span><span class="n">LinkedList</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="n">mockedList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;once&#34;</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="n">mockedList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;twice&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">mockedList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;twice&#34;</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="n">mockedList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;three times&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">mockedList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;three times&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">mockedList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;three times&#34;</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="c1">// 지정한 횟수만큼 호출되었는지 검사
+</span><span class="c1"></span>    <span class="n">verify</span><span class="o">(</span><span class="n">mockedList</span><span class="o">,</span> <span class="n">times</span><span class="o">(</span><span class="n">1</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;once&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">verify</span><span class="o">(</span><span class="n">mockedList</span><span class="o">,</span> <span class="n">times</span><span class="o">(</span><span class="n">2</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;twice&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">verify</span><span class="o">(</span><span class="n">mockedList</span><span class="o">,</span> <span class="n">times</span><span class="o">(</span><span class="n">3</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;three times&#34;</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="c1">// never() == times(0)
+</span><span class="c1"></span>    <span class="n">verify</span><span class="o">(</span><span class="n">mockedList</span><span class="o">,</span> <span class="n">never</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;never&#34;</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="n">verify</span><span class="o">(</span><span class="n">mockedList</span><span class="o">,</span> <span class="n">atLeastOnce</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;three times&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">verify</span><span class="o">(</span><span class="n">mockedList</span><span class="o">,</span> <span class="n">atLeast</span><span class="o">(</span><span class="n">2</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;six times&#34;</span><span class="o">)</span><span class="o">;</span> <span class="c1">// times(0) 검증 실패
+</span><span class="c1"></span>    <span class="n">verify</span><span class="o">(</span><span class="n">mockedList</span><span class="o">,</span> <span class="n">atMost</span><span class="o">(</span><span class="n">5</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;three times&#34;</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>메소드 호출 횟수와 호출 여부를 확인할 수 있습니다. times(1) 의 경우는 default 이므로 생략 가능합니다.</li>
+</ul>
+<h4 id="25-void-method-with-exception">2-5. void method with exception</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">void_exception_테스트</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">LinkedList</span> <span class="n">mockedList</span> <span class="o">=</span> <span class="n">mock</span><span class="o">(</span><span class="n">LinkedList</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="n">doThrow</span><span class="o">(</span><span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">when</span><span class="o">(</span><span class="n">mockedList</span><span class="o">)</span><span class="o">.</span><span class="na">clear</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="n">mockedList</span><span class="o">.</span><span class="na">clear</span><span class="o">(</span><span class="o">)</span><span class="o">;</span> <span class="c1">// runtimeException
+</span><span class="c1"></span><span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>void 메소드에서 exception 을 던질 때 사용합니다.</li>
+</ul>
+<h4 id="26--">2-6. 순서 검증하기</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">순서검증하기_테스트</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">List</span> <span class="n">firstMock</span> <span class="o">=</span> <span class="n">mock</span><span class="o">(</span><span class="n">List</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">List</span> <span class="n">secondMock</span> <span class="o">=</span> <span class="n">mock</span><span class="o">(</span><span class="n">List</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="n">firstMock</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;first call&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">secondMock</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;second call&#34;</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="n">InOrder</span> <span class="n">inOrder</span> <span class="o">=</span> <span class="n">inOrder</span><span class="o">(</span><span class="n">firstMock</span><span class="o">,</span> <span class="n">secondMock</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="n">inOrder</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">firstMock</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;first call&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">inOrder</span><span class="o">.</span><span class="na">verify</span><span class="o">(</span><span class="n">secondMock</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;second call&#34;</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>mock 들이 순서대로 실행되는지 검증하는 방식입니다.</li>
+<li>inOrder 에 들어가는 순서는 상관없네요. verify 를 통해 순서대로 실행되는지 확인할 수 있습니다.</li>
+</ul>
+<h4 id="27----stubbing">2-7.  연속적인 콜 stubbing</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">연속적인_콜_stubbing</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">MockingExample</span> <span class="n">mockingExample</span> <span class="o">=</span> <span class="n">mock</span><span class="o">(</span><span class="n">MockingExample</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">when</span><span class="o">(</span><span class="n">mockingExample</span><span class="o">.</span><span class="na">someMethod</span><span class="o">(</span><span class="n">eq</span><span class="o">(</span><span class="s">&#34;some arg&#34;</span><span class="o">)</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">thenThrow</span><span class="o">(</span><span class="k">new</span> <span class="n">RuntimeException</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">thenReturn</span><span class="o">(</span><span class="s">&#34;foo&#34;</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="c1">// 첫번째 호출 runtime Exception
+</span><span class="c1"></span>    <span class="n">mockingExample</span><span class="o">.</span><span class="na">someMethod</span><span class="o">(</span><span class="s">&#34;some arg&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="c1">// &#39;foo&#39; 호출
+</span><span class="c1"></span>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">mockingExample</span><span class="o">.</span><span class="na">someMethod</span><span class="o">(</span><span class="s">&#34;some arg&#34;</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+    <span class="c1">// 이후 모든 호출은 마지막 stubbing 인 &#39;foo&#39; 호출
+</span><span class="c1"></span>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">mockingExample</span><span class="o">.</span><span class="na">someMethod</span><span class="o">(</span><span class="s">&#34;some arg&#34;</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+    <span class="c1">// 다음과 같이 간략화 가능
+</span><span class="c1"></span>    <span class="n">when</span><span class="o">(</span><span class="n">mockingExample</span><span class="o">.</span><span class="na">someMethod</span><span class="o">(</span><span class="n">eq</span><span class="o">(</span><span class="s">&#34;some arg&#34;</span><span class="o">)</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">thenReturn</span><span class="o">(</span><span class="s">&#34;one&#34;</span><span class="o">,</span> <span class="s">&#34;two&#34;</span><span class="o">,</span> <span class="s">&#34;three&#34;</span><span class="o">)</span><span class="o">;</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>해당 메소드를 호출할 때마다 다른 return 값을 보여주기 위해 사용합니다.</li>
+<li>이런 경우는 거의 없다고 하지만, 알아두는 것도 나쁘지 않을 것 같네요.</li>
+</ul>
+<h4 id="28---">2-8. 실제 객체 감시하기</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">spy_테스트</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">List</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">List</span> <span class="n">spy</span> <span class="o">=</span> <span class="n">spy</span><span class="o">(</span><span class="n">list</span><span class="o">)</span><span class="o">;</span>
+    <span class="c1">// 특정 메소드 stub 
+</span><span class="c1"></span>    <span class="n">when</span><span class="o">(</span><span class="n">spy</span><span class="o">.</span><span class="na">size</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">thenReturn</span><span class="o">(</span><span class="n">100</span><span class="o">)</span><span class="o">;</span>
+    <span class="c1">// real method 호출
+</span><span class="c1"></span>    <span class="n">spy</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;one&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">spy</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;two&#34;</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">spy</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+    <span class="c1">// stub 된 size() 가 호출
+</span><span class="c1"></span>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">spy</span><span class="o">.</span><span class="na">size</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+
+    <span class="n">verify</span><span class="o">(</span><span class="n">spy</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;one&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">verify</span><span class="o">(</span><span class="n">spy</span><span class="o">)</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="s">&#34;two&#34;</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>real 객체에 대해 감시할 수 있다고 합니다. method 가 stub 되지 않았을 경우 실제 method 가 호출이 됩니다. 위의 경우에서는 size() 에 대해서만 stub 을 했습니다. 자주 사용하지 않아서 그런지 알쏭달쏭 합니다.</li>
+<li>&ldquo;partial mocking&rdquo; 이라는 개념과 연관되어 있다고 합니다.</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">List</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="n">List</span> <span class="n">spy</span> <span class="o">=</span> <span class="n">spy</span><span class="o">(</span><span class="n">list</span><span class="o">)</span><span class="o">;</span>
+   
+<span class="c1">// spy.get(0)은 list가 아직 비어있으므로 IndexOutOfBoundsException
+</span><span class="c1"></span><span class="n">when</span><span class="o">(</span><span class="n">spy</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">thenReturn</span><span class="o">(</span><span class="s">&#34;foo&#34;</span><span class="o">)</span><span class="o">;</span>
+   
+<span class="c1">// doReturn을 이용해 stubbing
+</span><span class="c1"></span><span class="n">doReturn</span><span class="o">(</span><span class="s">&#34;foo&#34;</span><span class="o">)</span><span class="o">.</span><span class="na">when</span><span class="o">(</span><span class="n">spy</span><span class="o">)</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">)</span><span class="o">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>부분만 mocking 한다는 건 이런 문제점이 발생할 수 있기에 잘 써야 할 것 같네요.</li>
+</ul>
+<h4 id="29-stubbing------">2-9. stubbing 되지 않은 메소드에 기본 리턴값 설정</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">stubbing_기본값_설정_테스트</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">MockingExample</span> <span class="n">mock</span> <span class="o">=</span> <span class="n">mock</span><span class="o">(</span><span class="n">MockingExample</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">Mockito</span><span class="o">.</span><span class="na">RETURNS_SMART_NULLS</span><span class="o">)</span><span class="o">;</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">mock</span><span class="o">.</span><span class="na">someMethod</span><span class="o">(</span><span class="s">&#34;test&#34;</span><span class="o">)</span><span class="o">)</span><span class="o">;</span> <span class="c1">// &#34;&#34;
+</span><span class="c1"></span><span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>stub 되지 않은 method 를 호출할 때 리턴되는 값을 정해줄 수 있습니다.</li>
+<li>좋은 테스트를 위해 꼭 필요한 기능은 아니지만, 레거시 시스템에는 유용하게 사용될 수 있다고 합니다..만, 어디에 사용할지 딱 하고 느낌이 오진 않네요.</li>
+</ul>
+<h4 id="210--aliases-for-behavior-driven-development">2-10.  Aliases for Behavior Driven Development</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">shouldBuyBread</span><span class="o">(</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="c1">//given
+</span><span class="c1"></span>    <span class="n">given</span><span class="o">(</span><span class="n">seller</span><span class="o">.</span><span class="na">askForBread</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">willReturn</span><span class="o">(</span><span class="k">new</span> <span class="n">Bread</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+    
+    <span class="c1">//when
+</span><span class="c1"></span>    <span class="n">Goods</span> <span class="n">goods</span> <span class="o">=</span> <span class="n">shop</span><span class="o">.</span><span class="na">buyBread</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    
+    <span class="c1">//then
+</span><span class="c1"></span>    <span class="n">then</span><span class="o">(</span><span class="n">goods</span><span class="o">)</span><span class="o">.</span><span class="na">should</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">containBread</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>BDD 스타일의 테스트 작성 방법은 테스트 method 에 기본으로 //given, //when, //then 이라고 주석을 달아주는 것이라 합니다. (저도 모르게 BDD 방식을 사용해 테스트 코드를 작성하고 있었네요.)</li>
+<li>BDDMockito.given(Object) 를 제공해 BDD 스타일의 테스트를 만들 수 있다고 합니다.</li>
+</ul>
+<h3 id="reference">Reference</h3>
+<ul>
+<li><a href="https://javadoc.io/static/org.mockito/mockito-core/3.3.3/org/mockito/Mockito.html">https://javadoc.io/static/org.mockito/mockito-core/3.3.3/org/mockito/Mockito.html</a></li>
+<li><a href="https://github.com/mockito/mockito/wiki/Mockito-features-in-Korean">https://github.com/mockito/mockito/wiki/Mockito-features-in-Korean</a></li>
+</ul>
 
     </article>
     
@@ -1629,7 +2022,7 @@
     
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fysjune.github.io%2fposts%2flinux%2fbook%2fchapter4%2f" title="Facebook" aria-label="Facebook Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fysjune.github.io%2fposts%2fjava%2fmockito_1%2f" title="Facebook" aria-label="Facebook Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
           <svg data-name="facebook" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/></svg>
         </a>
       
@@ -1719,21 +2112,14 @@
 <nav class="pagination-single">
   
     
-      <a href="https://ysjune.github.io/posts/linux/book/chapter6/" class="pagination-single__left">
+      <a href="https://ysjune.github.io/posts/chatter/20200315_daily/" class="pagination-single__left">
         <div class="pagination-single__icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
         </div>
-        <div class="pagination-single__left-title">6장. 메모리 계층</div>      
+        <div class="pagination-single__left-title">요즘 무기력에 대한 단상</div>      
       </a>
     
     <div class="grow"></div>
-    
-      <a href="https://ysjune.github.io/posts/linux/book/chapter3/" class="pagination-single__right">      
-        <div class="pagination-single__right-title">3장. 프로세스 관리</div>
-        <div class="pagination-single__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
-        </div>
-      </a>
     
   
 </nav>
@@ -2881,26 +3267,25 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul>
     <li>
       <ul>
-        <li><a href="#-">프로세스 스케줄러</a>
+        <li>
           <ul>
-            <li><a href="#--">첫 번째 실험</a>
+            <li><a href="#mockito-">Mockito 란?</a></li>
+            <li><a href="#1--">1. 의존성 추가</a></li>
+            <li><a href="#2----">2.  사용  방법</a>
               <ul>
-                <li>
-                  <ul>
-                    <li><a href="#-4a">실험 4-A</a></li>
-                    <li><a href="#-4b">실험 4-B</a></li>
-                    <li><a href="#-4c">실험 4-C</a></li>
-                    <li><a href="#heading">고찰</a></li>
-                  </ul>
-                </li>
+                <li><a href="#21-verify">2-1. verify</a></li>
+                <li><a href="#22-stubbing">2-2. stubbing</a></li>
+                <li><a href="#23-argument-matchers">2-3. Argument matchers</a></li>
+                <li><a href="#24-----">2-4.  호출 여부에 대한 검증</a></li>
+                <li><a href="#25-void-method-with-exception">2-5. void method with exception</a></li>
+                <li><a href="#26--">2-6. 순서 검증하기</a></li>
+                <li><a href="#27----stubbing">2-7.  연속적인 콜 stubbing</a></li>
+                <li><a href="#28---">2-8. 실제 객체 감시하기</a></li>
+                <li><a href="#29-stubbing------">2-9. stubbing 되지 않은 메소드에 기본 리턴값 설정</a></li>
+                <li><a href="#210--aliases-for-behavior-driven-development">2-10.  Aliases for Behavior Driven Development</a></li>
               </ul>
             </li>
-            <li><a href="#-1">컨텍스트 스위치</a></li>
-            <li><a href="#-2">프로세스의 상태</a></li>
-            <li><a href="#-3">상태 변환</a></li>
-            <li><a href="#idle-">idle 상태</a></li>
-            <li><a href="#-4">스루풋과 레이턴시</a></li>
-            <li><a href="#-cpu-----">논리 CPU가 여러 개 일 때의 스케쥴링</a></li>
+            <li><a href="#reference">Reference</a></li>
           </ul>
         </li>
       </ul>

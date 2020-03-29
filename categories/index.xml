@@ -14,13 +14,31 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 16 Mar 2020 00:10:11 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 23:25:19 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>java</title>
+        <link>https://ysjune.github.io/categories/java/</link>
+        <pubDate>Sun, 29 Mar 2020 23:25:19 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        
+        <guid>https://ysjune.github.io/categories/java/</guid>
+        <description></description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>일상</title>
@@ -65,24 +83,6 @@
         <author>windsyou@gmail.com (snack)</author>
         
         <guid>https://ysjune.github.io/categories/%EC%82%BD%EC%A7%88-log/</guid>
-        <description></description>
-        
-        <dc:creator>snack</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>java</title>
-        <link>https://ysjune.github.io/categories/java/</link>
-        <pubDate>Wed, 12 Feb 2020 23:26:47 +0900</pubDate>
-        <author>windsyou@gmail.com (snack)</author>
-        
-        <guid>https://ysjune.github.io/categories/java/</guid>
         <description></description>
         
         <dc:creator>snack</dc:creator>

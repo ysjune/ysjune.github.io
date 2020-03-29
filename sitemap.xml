@@ -4,22 +4,32 @@
   
   <url>
     <loc>https://ysjune.github.io/</loc>
-    <lastmod>2020-03-16T00:10:11+09:00</lastmod>
+    <lastmod>2020-03-29T23:25:19+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/categories/</loc>
-    <lastmod>2020-03-16T00:10:11+09:00</lastmod>
+    <lastmod>2020-03-29T23:25:19+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/categories/java/</loc>
+    <lastmod>2020-03-29T23:25:19+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/posts/java/mockito_1/</loc>
+    <lastmod>2020-03-29T23:25:19+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/posts/</loc>
-    <lastmod>2020-03-16T00:10:11+09:00</lastmod>
+    <lastmod>2020-03-29T23:25:19+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/series/</loc>
-    <lastmod>2020-03-16T00:10:11+09:00</lastmod>
+    <lastmod>2020-03-29T23:25:19+09:00</lastmod>
   </url>
   
   <url>
@@ -50,11 +60,6 @@
   <url>
     <loc>https://ysjune.github.io/categories/%EC%82%BD%EC%A7%88-log/</loc>
     <lastmod>2020-02-17T22:23:28+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ysjune.github.io/categories/java/</loc>
-    <lastmod>2020-02-12T23:26:47+09:00</lastmod>
   </url>
   
   <url>
