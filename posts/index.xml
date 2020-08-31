@@ -14,13 +14,41 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Wed, 01 Apr 2020 23:34:06 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2020 20:09:02 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>Trie 자료구조</title>
+        <link>https://ysjune.github.io/posts/algorithm/trie/</link>
+        <pubDate>Mon, 31 Aug 2020 20:09:02 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Mon, 31 Aug 2020 20:09:02 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/algorithm/trie/</guid>
+        <description>Trie 자료 구조 1. 개요 문자열을 다루는 작업은 정수나 실수 등의 다른 자료형을 다루는 것과는 다르다. 왜냐하면 정수나 실수형 변수는 그 크기가 정해져 있어 비교에 상수 시간</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>Algorithm</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>소프트웨어 아키텍처 10가지 정리</title>

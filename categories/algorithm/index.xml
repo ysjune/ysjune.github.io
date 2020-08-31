@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>Algorithm on Lazy Snack</title>
+    <link>https://ysjune.github.io/categories/algorithm/</link>
+    <description>Recent content in Algorithm on Lazy Snack</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>windsyou@gmail.com (snack)</managingEditor>
+    <webMaster>windsyou@gmail.com (snack)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Mon, 31 Aug 2020 20:09:02 +0900</lastBuildDate>
+    
+        <atom:link href="https://ysjune.github.io/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>Trie 자료구조</title>
+        <link>https://ysjune.github.io/posts/algorithm/trie/</link>
+        <pubDate>Mon, 31 Aug 2020 20:09:02 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Mon, 31 Aug 2020 20:09:02 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/algorithm/trie/</guid>
+        <description>Trie 자료 구조 1. 개요 문자열을 다루는 작업은 정수나 실수 등의 다른 자료형을 다루는 것과는 다르다. 왜냐하면 정수나 실수형 변수는 그 크기가 정해져 있어 비교에 상수 시간</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>Algorithm</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
