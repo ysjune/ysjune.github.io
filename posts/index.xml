@@ -14,13 +14,41 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 31 Aug 2020 20:09:02 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2020 21:16:41 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>Brute Force</title>
+        <link>https://ysjune.github.io/posts/algorithm/brute-force/</link>
+        <pubDate>Mon, 07 Sep 2020 21:16:41 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Mon, 07 Sep 2020 21:16:41 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/algorithm/brute-force/</guid>
+        <description>Brute Force (무식하게 풀기) 1. 개요 사람들이 가장 많이 하는 실수는 쉬운 문제를 어렵게 푸는 것 문제를 마주하고 나면 가장 먼저 무식하게 풀 수 있을까 라는 질문을 스스로에게 하</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>Algorithm</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>Trie 자료구조</title>
