@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>HTTP 완벽 가이드 on Lazy Snack</title>
+    <link>https://ysjune.github.io/categories/http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C/</link>
+    <description>Recent content in HTTP 완벽 가이드 on Lazy Snack</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>windsyou@gmail.com (snack)</managingEditor>
+    <webMaster>windsyou@gmail.com (snack)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Sun, 13 Sep 2020 21:27:25 +0900</lastBuildDate>
+    
+        <atom:link href="https://ysjune.github.io/categories/http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>1. HTTP 개관</title>
+        <link>https://ysjune.github.io/posts/http/http%E1%84%80%E1%85%A2%E1%84%80%E1%85%AA%E1%86%AB/</link>
+        <pubDate>Sun, 13 Sep 2020 21:27:25 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sun, 13 Sep 2020 21:27:25 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/http/http%E1%84%80%E1%85%A2%E1%84%80%E1%85%AA%E1%86%AB/</guid>
+        <description>1. HTTP HTTP 는 신뢰성 있는 데이터 전송 프로토콜을 사용한다. 따라서 전송 중 데이터가 손상되거나 꼬이지 않음을 보장한다. 개발자는 인터넷의 결함이나 약점에 대한 걱정 없</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>HTTP 완벽 가이드</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
