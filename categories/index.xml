@@ -14,7 +14,7 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 13 Sep 2020 21:27:25 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2020 21:32:01 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -23,12 +23,12 @@
 
       
       <item>
-        <title>HTTP 완벽 가이드</title>
-        <link>https://ysjune.github.io/categories/http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C/</link>
-        <pubDate>Sun, 13 Sep 2020 21:27:25 +0900</pubDate>
+        <title>Algorithm</title>
+        <link>https://ysjune.github.io/categories/algorithm/</link>
+        <pubDate>Mon, 21 Sep 2020 21:32:01 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
         
-        <guid>https://ysjune.github.io/categories/http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C/</guid>
+        <guid>https://ysjune.github.io/categories/algorithm/</guid>
         <description></description>
         
         <dc:creator>snack</dc:creator>
@@ -41,12 +41,12 @@
       </item>
       
       <item>
-        <title>Algorithm</title>
-        <link>https://ysjune.github.io/categories/algorithm/</link>
-        <pubDate>Mon, 07 Sep 2020 21:16:41 +0900</pubDate>
+        <title>HTTP 완벽 가이드</title>
+        <link>https://ysjune.github.io/categories/http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C/</link>
+        <pubDate>Sun, 13 Sep 2020 21:27:25 +0900</pubDate>
         <author>windsyou@gmail.com (snack)</author>
         
-        <guid>https://ysjune.github.io/categories/algorithm/</guid>
+        <guid>https://ysjune.github.io/categories/http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C/</guid>
         <description></description>
         
         <dc:creator>snack</dc:creator>

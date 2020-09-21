@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>1. HTTP 개관 – Lazy Snack</title>
+    <title>DFS (깊이 우선 탐색) – Lazy Snack</title>
     
 
 
@@ -543,7 +543,7 @@
 
   
     
-    var permalink = JSON.parse("\"https://ysjune.github.io/posts/http/http%E1%84%80%E1%85%A2%E1%84%80%E1%85%AA%E1%86%AB/\"");
+    var permalink = JSON.parse("\"https://ysjune.github.io/posts/algorithm/dfs/\"");
     var searchResults = null;
     var searchMenu = null;
     var searchText = null;
@@ -1197,16 +1197,16 @@
     
 <meta name="description" content="The Lazy Snack&#39;s Cargo" />
 <meta name="keywords" content="">
-<meta name="created" content="2020-09-13T21:27:25&#43;0900">
-<meta name="modified" content="2020-09-13T21:27:25&#43;0900">
-<meta property="article:published_time" content="2020-09-13T21:27:25&#43;0900">
+<meta name="created" content="2020-09-21T21:32:01&#43;0900">
+<meta name="modified" content="2020-09-21T21:32:01&#43;0900">
+<meta property="article:published_time" content="2020-09-21T21:32:01&#43;0900">
 
 <meta name="author" content="snack">
 
 
 <meta property="og:site_name" content="Lazy Snack">
-<meta property="og:title" content="1. HTTP 개관">
-<meta property="og:url" content="https://ysjune.github.io/posts/http/http%E1%84%80%E1%85%A2%E1%84%80%E1%85%AA%E1%86%AB/">
+<meta property="og:title" content="DFS (깊이 우선 탐색)">
+<meta property="og:url" content="https://ysjune.github.io/posts/algorithm/dfs/">
 <meta property="og:type" content="article">
 <meta property="og:description" content="The Lazy Snack&#39;s Cargo">
 
@@ -1218,7 +1218,7 @@
 <meta name="msapplication-navbutton-color" content="#fff">
 
 <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
-<link rel="canonical" href="https://ysjune.github.io/posts/http/http%E1%84%80%E1%85%A2%E1%84%80%E1%85%AA%E1%86%AB/">
+<link rel="canonical" href="https://ysjune.github.io/posts/algorithm/dfs/">
 <link rel="manifest" href="/manifest.json">
 
   
@@ -1231,11 +1231,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "1. HTTP 개관",
-    "datePublished": "2020-09-13T21:27:25+09:00",
-    "dateModified": "2020-09-13T21:27:25+09:00",
-    "url" : "https://ysjune.github.io/posts/http/http%E1%84%80%E1%85%A2%E1%84%80%E1%85%AA%E1%86%AB/",
-    "description": "1. HTTP HTTP 는 신뢰성 있는 데이터 전송 프로토콜을 사용한다. 따라서 전송 중 데이터가 손상되거나 꼬이지 않음을 보장한다. 개발자는 인터넷의 결함이나 약점에 대한 걱정 없",
+    "headline": "DFS (깊이 우선 탐색)",
+    "datePublished": "2020-09-21T21:32:01+09:00",
+    "dateModified": "2020-09-21T21:32:01+09:00",
+    "url" : "https://ysjune.github.io/posts/algorithm/dfs/",
+    "description": "깊이 우선 탐색 (Depth-First Search) 1. 개요 그래프의 모든 정점을 발견하는 가장 단순하고 고전적인 방법 현재 정점과 인접한 간선들을 하나씩 검사하다가, 아직 방문하지 않은 정점으로 향",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://ysjune.github.io/"
@@ -1470,7 +1470,7 @@
   
   <li  class="is-active" >
     
-      <span>1. HTTP 개관</span>
+      <span>DFS (깊이 우선 탐색)</span>
     
   </li>
   
@@ -1483,11 +1483,11 @@
   </noscript>
   <div class="single hide">
     <script>document.querySelector('.single').classList.remove('hide')</script>
-    <h2 class="single__title" data-ani="true">1. HTTP 개관</h2>
+    <h2 class="single__title" data-ani="true">DFS (깊이 우선 탐색)</h2>
     <div class="single__meta">
       
 <div class="single__infos">
-  <time class="single__info" title="Written At">📅&nbsp;Sep 13, 2020 </time>  &middot; <span class="single__info" title="Reading Time"> ☕ 3 min read </span>
+  <time class="single__info" title="Written At">📅&nbsp;Sep 21, 2020 </time>  &middot; <span class="single__info" title="Reading Time"> ☕ 2 min read </span>
   <span class="single__info">
      &middot; 👀<span id="busuanzi_value_page_pv">...</span> views
   </span>
@@ -1499,164 +1499,211 @@
     </div>
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
-      <h2 id="1-http">1. HTTP</h2>
+      <h2 id="---depthfirst-search">깊이 우선 탐색 (Depth-First Search)</h2>
+<h3 id="1-">1. 개요</h3>
 <ul>
-<li>HTTP 는 신뢰성 있는 데이터 전송 프로토콜을 사용한다. 따라서 전송 중 데이터가 손상되거나 꼬이지 않음을 보장한다.</li>
-<li>개발자는 인터넷의 결함이나 약점에 대한 걱정 없이 애플리케이션 고유의 기능을 구현하는 데 집중할 수 있다.</li>
-</ul>
-<h2 id="2---">2. 웹 클라이언트와 서버</h2>
+<li>그래프의 모든 정점을 발견하는 가장 단순하고 고전적인 방법</li>
+<li>현재 정점과 인접한 간선들을 하나씩 검사하다가, 아직 방문하지 않은 정점으로 향하는 간선이 있다면 그 간선을 무조건 따라가는 것</li>
+<li>중요한 특성은 더 따라갈 간선이 없을 경우 이전으로 돌아간다는 점</li>
+<li>그렇기 때문에 재귀호출로 구현하는 경우가 많으며, 어떤 노드를 방문했는지 여부를 검사해야 한다.</li>
+<li><img src="https://upload.wikimedia.org/wikipedia/commons/7/7f/Depth-First-Search.gif" alt="출처 : 위키" />
 <ol>
-<li>웹 서버 :
-<ul>
-<li>HTTP 프로토콜로 의사소통하기 때문에 보통 HTTP 서버라고 불리며, 웹 콘텐츠는 이 웹 서버에 존재한다.</li>
-<li>인터넷의 데이터를 저장하고, HTTP 클라이언트가 요청한 데이터를 제공한다.</li>
-<li>HTTP 클라이언트와 함께 월드 와이드 웹 (WWW) 의 기본 요소</li>
-</ul>
-</li>
-<li>웹 클라이언트
-<ul>
-<li>가장 흔한 클라이언트는 인터넷 익스플로러, 크롬 등의 웹 브라우저</li>
-<li>서버에게 HTTP 객체를 요청하고 사용자의 화면에 보여줌</li>
-</ul>
-</li>
+<li>1을 방문 -&gt; 2를 방문 -&gt; 3을 방문 -&gt; 4를 방문</li>
+<li>더이상 갈 곳이 없으므로 3으로 back, 3에서 2로 back, 2에서 1로 back</li>
+<li>1에서 인접한 노드인 5로 방문 -&gt; 6을 방문 &hellip;..</li>
 </ol>
-<h2 id="3-">3. 리소스</h2>
-<ul>
-<li>웹 서버는 웹 리소스를 관리하고 제공한다.</li>
-<li>가장 단순한 웹 리소스는 HTML, PNG, MP4 등의 정적 파일이다.</li>
-<li>물론 정작 파일만 존재하는 것이 아닌, 동적으로 만들어주는 프로그램이 될 수도 있다.</li>
+</li>
 </ul>
+<h3 id="2--pseudocode">2. 의사 코드(pseudocode)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="n">Node</span> <span class="n">root</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">if</span><span class="o">(</span><span class="n">root</span> <span class="o">=</span><span class="o">=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="c1">// index 방문 후 방문 표시
+</span><span class="c1"></span>  <span class="n">visit</span><span class="o">(</span><span class="n">root</span><span class="o">)</span><span class="o">;</span>
+  <span class="c1">// root 노드와 인접노드 방문
+</span><span class="c1"></span>  <span class="k">for</span><span class="o">(</span><span class="n">Node</span> <span class="n">n</span> <span class="o">:</span> <span class="n">root</span><span class="o">.</span><span class="na">rootList</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span><span class="o">(</span><span class="o">!</span><span class="n">n</span><span class="o">.</span><span class="na">visited</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">// 방문하지 않았을 경우 재귀 탐색
+</span><span class="c1"></span>      <span class="n">dfs</span><span class="o">(</span><span class="n">n</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3--">3. 시간 복잡도</h3>
+<ul>
+<li>어떤 그래프 표현 방식을 사용하느냐에 따라 다르다.
 <ol>
-<li>
-<p>미디어 타입</p>
+<li>인접 리스트로 표현하는 경우
 <ul>
-<li>웹 서버는 모든 HTTP 객체에 MIME (Multipurpose Internet Mail Extensions, 다목적 인터넷 메일 확장) 타입을 붙인다. 이를 통해 웹브라우저는 자신이 다룰 수 있는 객체인지를 확인한다.</li>
-</ul>
-<blockquote>
-<p>Ex) text/html, image/gif</p>
-</blockquote>
-</li>
-<li>
-<p>URI</p>
-<ul>
-<li>웹 서버 리소스는 각자 이름을 갖고 있기 때문에, 클라이언트는 관심 있는 리소스를 지목할 수 있고, 서버 리소스 이름은 통합 자원 식별자(URI : uniform resource identifier) 로 불린다.</li>
-</ul>
-<blockquote>
-<p>Ex) 이미지 리소스에 대한 URI</p>
-<p><a href="https://ysjune.github.io/images/whoami/avatar.jpg">https://ysjune.github.io/images/whoami/avatar.jpg</a></p>
-</blockquote>
-<ul>
-<li>URI 에는 URL 과 URN 이라는 것이 있다.</li>
-</ul>
-<ol>
-<li>
-<p>URI (uniform resource locator)</p>
-<ul>
-<li>리소스 식별자의 가장 흔한 형태로 위치를 나타낸다.</li>
-<li>대부분의 URL 은 세 부분으로 이루어진 표준 포멧을 따른다.</li>
+<li>dfs 는 한 정점마다 한 번씩 호출되고(V번),</li>
+<li>dfs 한 번은 모든 인접 간선을 검사하는 for에 의해 결정된다. (E번)</li>
+<li>따라서 O(V+E)</li>
 </ul>
 </li>
-</ol>
-<blockquote>
-<p>첫 번째 부분</p>
-<blockquote>
-<p>스킴(scheme) 라고 불리며, 리소스에 접근하기 위해 사용되는 프로토콜</p>
-<blockquote>
-<p>https://</p>
-</blockquote>
-</blockquote>
-<p>두 번째 부분</p>
-<blockquote>
-<p>서버의 인터넷 주소를 제공</p>
-<blockquote>
-<p>ysjune.github.io</p>
-</blockquote>
-</blockquote>
-<p>세 번째 부분</p>
-<blockquote>
-<p>웹 서버의 리소스를 가리킴</p>
-<blockquote>
-<p>/images/whoami/avatar.jpg</p>
-</blockquote>
-</blockquote>
-</blockquote>
+<li>인접 행렬을 사용하는 경우
 <ul>
-<li>오늘날 대부분의 URI 는 URL 이다.</li>
-</ul>
-<ol start="2">
-<li>
-<p>URN (uniform resource name)</p>
-<ul>
-<li>콘텐츠를 이루는 한 리소스에 대해, 그 리소스의 위치에 영향 받지 않는 유밀무이한 이름</li>
-<li>아직 실험 중인 상태이고, 널리 채택되지 않았음. 인프라의 지원이 늦는 것도 한 몫</li>
+<li>dfs 의 호출 횟수는 그대로 (V번)</li>
+<li>dfs 내부에서 다른 모든 정점을 순회하며 두 정점 사이에 간선이 있는가를 확인해야 하기 떄문에 O(V) 만큼의 시간이 걸림</li>
+<li>따라서 O(V^2)</li>
 </ul>
 </li>
 </ol>
 </li>
-</ol>
-<h2 id="4-">4. 트랜잭션</h2>
-<ul>
-<li>HTTP 트랜잭션은 요청 명령(클라이언트 -&gt; 서버) 과 응답 결과 (서버 -&gt; 클라이언트) 로 구성</li>
-<li>이런 상호작용은 HTTP 메시지라고 불리는 정형화된 데이터 덩어리를 이용해 이루어짐</li>
-<li>GET, PUT, DELETE, POST 등의 메서드를 통해 요청 명령을 지원</li>
-<li>응답을 할 때는 <code>200</code>, <code>404</code> 등의 상태 코드와 함께 반환된다.</li>
-<li>애플리케이션은 보통 하나의 작업을 수행하기 위해 여러 HTTP 트랜잭션을 수행한다.   (한 페이지를 불러오기 위해 HTML 파일, 이미지파일, JSON 데이터 등을 가져옴)</li>
 </ul>
-<h2 id="5-">5. 메시지</h2>
-<ul>
-<li>HTTP 메시지는 단순한 줄 단위의 문자열으로, 일반 텍스트이기 때문에 사람이 읽고 쓰기 쉽다.</li>
-<li>웹 클라이언트에서 서버로 보낸 HTTP 메시지를 요청 메시지라고 부르고, 그 반대를 응답 메시지라고 부른다.</li>
-<li>시작줄, 헤더, 본문 세 단위로 나뉜다.</li>
-</ul>
-<blockquote>
-<p>Ex) 요청 메시지</p>
-<p>시작줄 : GET /test/hi.txt HTTP/1.0</p>
-<p>헤더 : Accept: text/*</p>
-<p>본문 : 없음</p>
-<br>
-<p>응답 메시지</p>
-<p>시작줄 : HTTP/1.0 200 OK</p>
-<p>헤더 : Content-type : text/plain</p>
-<p>본문 : hi every~</p>
-</blockquote>
-<h2 id="6-tcp-">6. TCP 커넥션</h2>
+<h3 id="4----httpsprogrammerscokrlearncourses30lessons43164">4. 예제) <a href="https://programmers.co.kr/learn/courses/30/lessons/43164">여행 경로 짜기</a></h3>
 <ul>
 <li>
-<p>HTTP는 애플리케이션 계층 프로토콜이므로 네트워크 통신의 세부사항에 대해 신경쓰지 않는다.</p>
+<p>주어진 항공권을 모두 이용하여 여행경로를 짜려고 합니다. 항상 ICN 공항에서 출발합니다.</p>
+<p>항공권 정보가 담긴 2차원 배열 tickets가 매개변수로 주어질 때, 방문하는 공항 경로를 배열에 담아 return 하도록 solution 함수를 작성해주세요.</p>
 </li>
 <li>
-<p>신뢰성 있는 TCP/IP 통신을 사용한다.</p>
+<h5 id="-">입출력 예</h5>
+<table>
+<thead>
+<tr>
+<th>tickets</th>
+<th>return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[[ICN, JFK], [HND, IAD], [JFK, HND]]</td>
+<td>[ICN, JFK, HND, IAD]</td>
+</tr>
+<tr>
+<td>[[ICN, SFO], [ICN, ATL], [SFO, ATL], [ATL, ICN], [ATL,SFO]]</td>
+<td>[ICN, ATL, ICN, SFO, ATL, SFO]</td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
-<p>TCP 커넥션이 맺어지면, 클라이언트와 서버 컴퓨터 간에 교환되는 메시지가 없어지거나, 손상되거나, 순서가 뒤바뀌어 수신되는 일은 결코 없다.</p>
-</li>
-<li>
-<p>텔넷 유틸리티를 통해 웹서버와 직접 대화할 수 있다.</p>
-<blockquote>
-<p>Ex) telnet <a href="http://www.joes-hardware.com">www.joes-hardware.com</a> 80</p>
-<p>&hellip;</p>
-<p>&hellip;</p>
-<p>GET /tools.html HTTP/1.1</p>
-<p>Host: <a href="http://www.joes-hardware.com">www.joes-hardware.com</a></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="7--">7. 프로토콜 버전</h2>
-<ul>
-<li>HTTP/0.9 버전부터 HTTP/1.0, 1.1, 2.0 등이 있다.</li>
-<li>(90년대 초부터 후반에 거의 다 나온 것들이다.. 현재는 20년&hellip;)</li>
-</ul>
-<h2 id="8---">8. 웹의 구성 요소</h2>
-<ul>
-<li>추후에 자세히 다루겠지만, 트랜잭션에서 주고받는 메시지에 중점을 두어 간략히 설명한다.
-<ol>
-<li>프록시 : 클라이언트와 서버 사이에 위치한 HTTP 중개자</li>
-<li>캐시 : 많이 찾는 웹페이지를 클라이언트 가까이에 보관하는 HTTP 창고</li>
-<li>게이트웨이 : 다른 애플리케이션과 연결된 특별한 웹 서버</li>
-<li>터널 : 단순히 HTTP 통신을 전달하기만 하는 특별한 프록시</li>
-<li>에이전트 : 자동화된 HTTP 요청을 만드는 준지능적 웹클라이언트</li>
-</ol>
-</li>
+<p>풀이)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">여행경로</span> <span class="o">{</span>
+  
+    <span class="kd">static</span> <span class="kt">boolean</span> <span class="n">visit</span><span class="o">[</span><span class="o">]</span><span class="o">;</span>
+    <span class="kd">static</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="kd">static</span> <span class="n">String</span> <span class="n">route</span> <span class="o">=</span> <span class="s">&#34;&#34;</span><span class="o">;</span>
+  
+    <span class="kd">public</span> <span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="nf">solution</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span><span class="o">[</span><span class="o">]</span> <span class="n">tickets</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">visit</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">boolean</span><span class="o">[</span><span class="n">tickets</span><span class="o">.</span><span class="na">length</span><span class="o">]</span><span class="o">;</span>
+  
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tickets</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">+</span><span class="o">+</span><span class="o">)</span> <span class="o">{</span>
+  
+            <span class="n">String</span> <span class="n">start</span> <span class="o">=</span> <span class="n">tickets</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="o">;</span>
+            <span class="n">String</span> <span class="n">desti</span> <span class="o">=</span> <span class="n">tickets</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="o">;</span>
+  
+            <span class="k">if</span><span class="o">(</span><span class="n">start</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">&#34;ICN&#34;</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">visit</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+                <span class="n">route</span> <span class="o">=</span> <span class="n">desti</span> <span class="o">+</span> <span class="s">&#34;,&#34;</span><span class="o">;</span>
+                <span class="n">dfs</span><span class="o">(</span><span class="n">tickets</span><span class="o">,</span> <span class="n">desti</span><span class="o">,</span> <span class="n">1</span><span class="o">)</span><span class="o">;</span>
+                <span class="n">visit</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+  
+        <span class="n">Collections</span><span class="o">.</span><span class="na">sort</span><span class="o">(</span><span class="n">list</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">answer</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">0</span><span class="o">)</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&#34;,&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">answer</span><span class="o">;</span>
+    <span class="o">}</span>
+  
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dfs</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span><span class="o">[</span><span class="o">]</span> <span class="n">tickets</span><span class="o">,</span> <span class="n">String</span> <span class="n">end</span><span class="o">,</span> <span class="kt">int</span> <span class="n">count</span><span class="o">)</span> <span class="o">{</span>
+  
+        <span class="n">route</span> <span class="o">+</span><span class="o">=</span> <span class="n">end</span> <span class="o">+</span> <span class="s">&#34;,&#34;</span><span class="o">;</span>
+  
+        <span class="k">if</span><span class="o">(</span><span class="n">count</span><span class="o">=</span><span class="o">=</span><span class="n">tickets</span><span class="o">.</span><span class="na">length</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">route</span><span class="o">)</span><span class="o">;</span>
+            <span class="k">return</span><span class="o">;</span>
+        <span class="o">}</span>
+  
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">0</span> <span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tickets</span><span class="o">.</span><span class="na">length</span> <span class="o">;</span> <span class="n">i</span><span class="o">+</span><span class="o">+</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">String</span> <span class="n">start</span> <span class="o">=</span> <span class="n">tickets</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="o">;</span>
+            <span class="n">String</span> <span class="n">desti</span> <span class="o">=</span> <span class="n">tickets</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="o">;</span>
+  
+            <span class="k">if</span><span class="o">(</span><span class="n">end</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">start</span><span class="o">)</span> <span class="o">&amp;</span><span class="o">&amp;</span> <span class="o">!</span><span class="n">visit</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">visit</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+                <span class="n">dfs</span><span class="o">(</span><span class="n">tickets</span><span class="o">,</span> <span class="n">desti</span><span class="o">,</span> <span class="n">count</span><span class="o">+</span><span class="n">1</span><span class="o">)</span><span class="o">;</span>
+                <span class="n">visit</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+                <span class="n">route</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="n">0</span><span class="o">,</span> <span class="n">route</span><span class="o">.</span><span class="na">length</span><span class="o">(</span><span class="o">)</span><span class="o">-</span><span class="n">4</span><span class="o">)</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ul>
 
     </article>
@@ -1719,7 +1766,7 @@
     
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fysjune.github.io%2fposts%2fhttp%2fhttp%25E1%2584%2580%25E1%2585%25A2%25E1%2584%2580%25E1%2585%25AA%25E1%2586%25AB%2f" title="Facebook" aria-label="Facebook Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fysjune.github.io%2fposts%2falgorithm%2fdfs%2f" title="Facebook" aria-label="Facebook Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
           <svg data-name="facebook" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/></svg>
         </a>
       
@@ -1809,21 +1856,14 @@
 <nav class="pagination-single">
   
     
-      <a href="https://ysjune.github.io/posts/algorithm/brute-force/" class="pagination-single__left">
+      <a href="https://ysjune.github.io/posts/http/http%E1%84%80%E1%85%A2%E1%84%80%E1%85%AA%E1%86%AB/" class="pagination-single__left">
         <div class="pagination-single__icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
         </div>
-        <div class="pagination-single__left-title">Brute Force</div>      
+        <div class="pagination-single__left-title">1. HTTP 개관</div>      
       </a>
     
     <div class="grow"></div>
-    
-      <a href="https://ysjune.github.io/posts/algorithm/dfs/" class="pagination-single__right">      
-        <div class="pagination-single__right-title">DFS (깊이 우선 탐색)</div>
-        <div class="pagination-single__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
-        </div>
-      </a>
     
   
 </nav>
@@ -2971,14 +3011,22 @@ document.addEventListener('DOMContentLoaded', function () {
   <ul>
     <li>
       <ul>
-        <li><a href="#1-http">1. HTTP</a></li>
-        <li><a href="#2---">2. 웹 클라이언트와 서버</a></li>
-        <li><a href="#3-">3. 리소스</a></li>
-        <li><a href="#4-">4. 트랜잭션</a></li>
-        <li><a href="#5-">5. 메시지</a></li>
-        <li><a href="#6-tcp-">6. TCP 커넥션</a></li>
-        <li><a href="#7--">7. 프로토콜 버전</a></li>
-        <li><a href="#8---">8. 웹의 구성 요소</a></li>
+        <li><a href="#---depthfirst-search">깊이 우선 탐색 (Depth-First Search)</a>
+          <ul>
+            <li><a href="#1-">1. 개요</a></li>
+            <li><a href="#2--pseudocode">2. 의사 코드(pseudocode)</a></li>
+            <li><a href="#3--">3. 시간 복잡도</a></li>
+            <li><a href="#4----httpsprogrammerscokrlearncourses30lessons43164">4. 예제) 여행 경로 짜기</a>
+              <ul>
+                <li>
+                  <ul>
+                    <li><a href="#-">입출력 예</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
