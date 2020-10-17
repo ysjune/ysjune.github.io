@@ -14,7 +14,7 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Mon, 21 Sep 2020 21:32:01 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 17 Oct 2020 14:45:56 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -24,6 +24,62 @@
       
       
 
+      
+      <item>
+        <title>Immutable Object란?</title>
+        <link>https://ysjune.github.io/posts/interview/immutable_object/</link>
+        <pubDate>Sat, 17 Oct 2020 14:45:56 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sat, 17 Oct 2020 14:45:56 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/interview/immutable_object/</guid>
+        <description>Q. Immutable Object (불변객체) 에 대해 설명하고, 자바 클래스 중 대표적인 사례를 알려주세요. A. 객체 지향 프로그래밍에 있어 불변 객체는 생성 후 그 상태를 바꿀 수 없는 객체를 말</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>interview</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>Transactional 정리</title>
+        <link>https://ysjune.github.io/posts/interview/transactional/</link>
+        <pubDate>Sat, 17 Oct 2020 14:41:11 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sat, 17 Oct 2020 14:41:11 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/interview/transactional/</guid>
+        <description>Q. 스프링 프레임워크에서는 트랜잭션을 처리할 때 @Trasnactional 을 사용하는데, 이 @Transactional 어노테이션에는 7가지 전파 방법이 있다, 어떤 것들이 있는가? A. @Transactional 어노테이션을 사용하면</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>interview</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>DFS (깊이 우선 탐색)</title>
