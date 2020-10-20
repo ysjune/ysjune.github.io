@@ -14,13 +14,41 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 17 Oct 2020 14:45:56 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2020 22:29:28 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/categories/interview/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>10월 10일 정리</title>
+        <link>https://ysjune.github.io/posts/interview/10-20/</link>
+        <pubDate>Tue, 20 Oct 2020 22:29:28 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Tue, 20 Oct 2020 22:29:28 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/interview/10-20/</guid>
+        <description>Q. 객체 지향 설계 5원칙 A. SRP (Single Responsibility Principle) : 단일 책임 원칙 클래스는 단 하나의 책을 가져야 하며 클래스를 변경하는 이유는 단 하나의 이유여야 한다. OCP (Open-Closed Principle) : 개방-페쇄 원칙</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>interview</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>Immutable Object란?</title>
