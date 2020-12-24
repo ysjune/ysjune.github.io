@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>JAVA on Lazy Snack</title>
+    <link>https://ysjune.github.io/series/java/</link>
+    <description>Recent content in JAVA on Lazy Snack</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>windsyou@gmail.com (snack)</managingEditor>
+    <webMaster>windsyou@gmail.com (snack)</webMaster>
+    <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
+    <lastBuildDate>Thu, 24 Dec 2020 18:38:51 +0900</lastBuildDate>
+    
+        <atom:link href="https://ysjune.github.io/series/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>orElse 와 orElseGet 무슨 차이가 있을까?</title>
+        <link>https://ysjune.github.io/posts/java/orelsenorelseget/</link>
+        <pubDate>Thu, 24 Dec 2020 18:38:51 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Thu, 24 Dec 2020 18:38:51 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/java/orelsenorelseget/</guid>
+        <description>Java 8을 쓰면서 null 에 대한 처리를 위해서 Optional 을 많이 쓸 텐데요. 저도 꽤 즐겨 쓰는 편입니다. (보통 null 을 반환하는 로직을 짜고 싶지 않겠지만, 그게 항상 마음대로 되지는 않</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+          
+        
+        
+          
+            
+              <category>JAVA</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
