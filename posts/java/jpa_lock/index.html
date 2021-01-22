@@ -1512,7 +1512,7 @@
 <p>이번엔 JPA 의 락에 대해서 알아보려고 합니다.</p>
 <h1 id="1------">1. 락 없이 동시 접근을 했을 때</h1>
 <p>동일한 데이터에 접근하여 수정하는 예로는 아래와 같은 상황이 나올 수 있는데요.</p>
-<p><img src="/Users/ysj/lazysnack/static/images/resources/jpa_lock1.jpg" alt="jpa_lock1" /></p>
+<p><img src="/images/resources/jpa_lock1.jpg" alt="jpa_lock1" /></p>
 <p>10,000 이 들어있는 계좌에 접근하는 두 개의 트랜잭션에 있습니다.  하나는 8,000 을 출금하고, 다른 하나는 5,000 을 입금합니다.</p>
 <p>통상적으로 생각하면 10,000 + 5,000 - 8,000 으로 7,000 이 계좌에 남아있을 것이라고 생각할 수 있는데요. 8,000 을 출금한 트랜잭션은 잔고가 15,000 인 계좌를 조회한 것이 아니라 10,000 인 계좌를 조회한 것이 되므로 남은 잔고가 2,000 이 될 수도 있고, 비슷하게 출금을 먼저 했을 경우, 7,000 인 계좌가 15,000 이 될 수도 있습니다.</p>
 <p>OS와 관련된 책에서 임계 영역(<em>Critical Section</em>)하면 나오는 예였던 것 같네요.</p>
@@ -1529,7 +1529,7 @@
 <h1 id="2--pessimistic-lock">2. 비관적 락(Pessimistic Lock)</h1>
 <p>먼저 데이터에 접근한 트랜잭션이 우선순위를 갖는 잠금 방식으로 다른 말로는 <code>선점 잠금</code>이라고도 합니다.</p>
 <p>우선 이해를 돕기 위해 그림을 먼저 보면</p>
-<p><img src="/Users/ysj/lazysnack/static/images/resources/jpa_lock2.jpeg" alt="jpa_lock2" /></p>
+<p><img src="/images/resources/jpa_lock2.jpeg" alt="jpa_lock2" /></p>
 <p>왼쪽 트랜잭션이 먼저 잔고에 접근했다고 했을 때, 오른쪽 트랜잭션은 왼쪽 트랜잭션의 일이 끝날 때까지 대기해야 합니다. 그리고 왼쪽  트랜잭션이 끝나면 오른쪽 트랜잭션이 접근하여 선점할 수 있는 것이죠. 이렇게 서로 다른 두 트랜잭션이 동시에 동일 데이터에 접근하여 수정하는 것을 방지하여, 데이터의 일관성이 깨지는 것을 막아줍니다.</p>
 <p>이론은 여기까지 하고, 그럼 이걸 JPA 환경에서 어떻게 사용하느냐 인데요.</p>
 <blockquote>
@@ -1578,7 +1578,7 @@
 <h1 id="3--optimistic-lock">3. 낙관적 락(Optimistic Lock)</h1>
 <p>먼저 데이터를 수정한 트랜잭션이 우선순위를 갖는 것으로 <code>비선점 잠금</code> 이라고도 합니다.</p>
 <p>이번에도 먼저 그림을 보면</p>
-<p><img src="/Users/ysj/lazysnack/static/images/resources/jpa_lock3.jpeg" alt="jpa_lock3" /></p>
+<p><img src="/images/resources/jpa_lock3.jpeg" alt="jpa_lock3" /></p>
 <p>우선 눈에 띄는게 버전이라는 것입니다.</p>
 <p>낙관적 락을 사용하려면 버전 값을 저정할 컬럼이 필요하고, 조회할 때 버전 값을 같이 조회합니다. 그리고 업데이를 할 때 버전도 같이 업데이트를 합니다. 그렇게 하여 왼쪽 트랜잭션이 업데이트를 하려고 하면, 버전 값이 달라서(업데이트된 버전 : 2, 왼족이 조회한 계좌 잔고에 대한 버전 : 1) 업데이트에 실패하게 됩니다.</p>
 <p>JPA 에서 낙관적 락을 사용하려면 다음과 같습니다.</p>
