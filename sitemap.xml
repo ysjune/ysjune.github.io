@@ -4,31 +4,36 @@
   
   <url>
     <loc>https://ysjune.github.io/</loc>
-    <lastmod>2021-01-22T20:28:23+09:00</lastmod>
+    <lastmod>2021-02-07T13:04:53+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/categories/</loc>
-    <lastmod>2021-01-22T20:28:23+09:00</lastmod>
+    <lastmod>2021-02-07T13:04:53+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/categories/java/</loc>
-    <lastmod>2021-01-22T20:28:23+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ysjune.github.io/posts/java/jpa_lock/</loc>
-    <lastmod>2021-01-22T20:28:23+09:00</lastmod>
+    <lastmod>2021-02-07T13:04:53+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/posts/</loc>
-    <lastmod>2021-01-22T20:28:23+09:00</lastmod>
+    <lastmod>2021-02-07T13:04:53+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://ysjune.github.io/series/</loc>
+    <lastmod>2021-02-07T13:04:53+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/posts/java/aysnc_1/</loc>
+    <lastmod>2021-02-07T13:04:53+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ysjune.github.io/posts/java/jpa_lock/</loc>
     <lastmod>2021-01-22T20:28:23+09:00</lastmod>
   </url>
   

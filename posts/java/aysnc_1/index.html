@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>JPA 락에 대해 – Lazy Snack</title>
+    <title>자바 비동기 (1) – Lazy Snack</title>
     
 
 
@@ -543,7 +543,7 @@
 
   
     
-    var permalink = JSON.parse("\"https://ysjune.github.io/posts/java/jpa_lock/\"");
+    var permalink = JSON.parse("\"https://ysjune.github.io/posts/java/aysnc_1/\"");
     var searchResults = null;
     var searchMenu = null;
     var searchText = null;
@@ -1197,16 +1197,16 @@
     
 <meta name="description" content="The Lazy Snack&#39;s Cargo" />
 <meta name="keywords" content="">
-<meta name="created" content="2021-01-22T20:28:23&#43;0900">
-<meta name="modified" content="2021-01-22T20:28:23&#43;0900">
-<meta property="article:published_time" content="2021-01-22T20:28:23&#43;0900">
+<meta name="created" content="2021-02-07T13:04:53&#43;0900">
+<meta name="modified" content="2021-02-07T13:04:53&#43;0900">
+<meta property="article:published_time" content="2021-02-07T13:04:53&#43;0900">
 
 <meta name="author" content="snack">
 
 
 <meta property="og:site_name" content="Lazy Snack">
-<meta property="og:title" content="JPA 락에 대해">
-<meta property="og:url" content="https://ysjune.github.io/posts/java/jpa_lock/">
+<meta property="og:title" content="자바 비동기 (1)">
+<meta property="og:url" content="https://ysjune.github.io/posts/java/aysnc_1/">
 <meta property="og:type" content="article">
 <meta property="og:description" content="The Lazy Snack&#39;s Cargo">
 
@@ -1218,7 +1218,7 @@
 <meta name="msapplication-navbutton-color" content="#fff">
 
 <meta name="apple-mobile-web-app-status-bar-style" content="#fff">
-<link rel="canonical" href="https://ysjune.github.io/posts/java/jpa_lock/">
+<link rel="canonical" href="https://ysjune.github.io/posts/java/aysnc_1/">
 <link rel="manifest" href="/manifest.json">
 
   
@@ -1231,11 +1231,11 @@
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "headline": "JPA 락에 대해",
-    "datePublished": "2021-01-22T20:28:23+09:00",
-    "dateModified": "2021-01-22T20:28:23+09:00",
-    "url" : "https://ysjune.github.io/posts/java/jpa_lock/",
-    "description": "트랜잭션에 대해서 이야기 하다보면은 항상 나오는 얘기가 있는 것 같습니다. 대량의 트래픽이 한 번에 들어왔을 때 어떻게 줄을 세울 것인가? 물론 아닐 수도 있지만, 면접",
+    "headline": "자바 비동기 (1)",
+    "datePublished": "2021-02-07T13:04:53+09:00",
+    "dateModified": "2021-02-07T13:04:53+09:00",
+    "url" : "https://ysjune.github.io/posts/java/aysnc_1/",
+    "description": "최근 학생들에게 학습을 추천해주는 것과 관련된 작업을 하고 있는데요. 주 단위로 추천이 되어 매주 배치를 통해서 추천 학습이 들어가지만, 신규 회원일 경우 배치에서 누",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://ysjune.github.io/"
@@ -1470,7 +1470,7 @@
   
   <li  class="is-active" >
     
-      <span>JPA 락에 대해</span>
+      <span>자바 비동기 (1)</span>
     
   </li>
   
@@ -1483,11 +1483,11 @@
   </noscript>
   <div class="single hide">
     <script>document.querySelector('.single').classList.remove('hide')</script>
-    <h2 class="single__title" data-ani="true">JPA 락에 대해</h2>
+    <h2 class="single__title" data-ani="true">자바 비동기 (1)</h2>
     <div class="single__meta">
       
 <div class="single__infos">
-  <time class="single__info" title="Written At">📅&nbsp;Jan 22, 2021 </time>  &middot; <span class="single__info" title="Reading Time"> ☕ 5 min read </span>
+  <time class="single__info" title="Written At">📅&nbsp;Feb 7, 2021 </time>  &middot; <span class="single__info" title="Reading Time"> ☕ 5 min read </span>
   <span class="single__info">
      &middot; 👀<span id="busuanzi_value_page_pv">...</span> views
   </span>
@@ -1499,46 +1499,21 @@
     </div>
     <article class="single__contents" data-dir="ltr" data-ani="true">
       
-      <p>트랜잭션에 대해서 이야기 하다보면은 항상 나오는 얘기가 있는 것 같습니다.</p>
-<p><code>대량의 트래픽이 한 번에 들어왔을 때 어떻게 줄을 세울 것인가?</code></p>
-<p><del>물론 아닐 수도 있지만, 면접때는 거의 항상 비슷한 내용을 물어봤던 것 같습니다</del></p>
-<p>여러 방법이 있을 것 같습니다.</p>
-<ol>
-<li>DB 의 isolation level 을 조정한다던가 (하지만, 심각하게 느려지므로 비추인 것 같습니다.)</li>
-<li>JPA 의 낙/비관적 락을 사용한다던가</li>
-<li>레디스를 통해 받는다던가 (클러스터를 사용하면 zookeeper 를 사용해야 한다던가 하는데, 자세히는 모르겠네요.)</li>
-</ol>
-<p>알아본 혹은 알고 있는 방법으로는 3가지 정도가 있는 것 같습니다.</p>
-<p>이번엔 JPA 의 락에 대해서 알아보려고 합니다.</p>
-<h1 id="1------">1. 락 없이 동시 접근을 했을 때</h1>
-<p>동일한 데이터에 접근하여 수정하는 예로는 아래와 같은 상황이 나올 수 있는데요.</p>
-<p><img src="/images/resources/jpa_lock1.jpg" alt="jpa_lock1" /></p>
-<p>10,000 이 들어있는 계좌에 접근하는 두 개의 트랜잭션에 있습니다.  하나는 8,000 을 출금하고, 다른 하나는 5,000 을 입금합니다.</p>
-<p>통상적으로 생각하면 10,000 + 5,000 - 8,000 으로 7,000 이 계좌에 남아있을 것이라고 생각할 수 있는데요. 8,000 을 출금한 트랜잭션은 잔고가 15,000 인 계좌를 조회한 것이 아니라 10,000 인 계좌를 조회한 것이 되므로 남은 잔고가 2,000 이 될 수도 있고, 비슷하게 출금을 먼저 했을 경우, 7,000 인 계좌가 15,000 이 될 수도 있습니다.</p>
-<p>OS와 관련된 책에서 임계 영역(<em>Critical Section</em>)하면 나오는 예였던 것 같네요.</p>
-<p>뭐하튼, 이외 같은 문제를 막기 위해선 가장 쉬운 방법은 역시 1번 DB 격리 레벨을 올리는 것입니다.</p>
-<p>(<a href="https://ysjune.github.io/posts/interview/transactional/">DB 격리 레벨에 대해선 여기에</a>)</p>
-<p>하지만, 느려진다는 성능상의 이슈가 있기 때문에 대규모 트래픽에서는 어울리지 않습니다.</p>
-<p>그렇기 때문에 동시 접근을 서비스단에서 처리하기 위해 잠금 기법이 존재합니다. JPA 에서는 두 가지 잠금 기법을 제공하는데</p>
-<ol>
-<li>먼저 데이터에 접근한 트랜잭션이 우선선위를 갖는 비관적 락(Pessimistic Lock)</li>
-<li>먼저 데이터를 수정한 트랜잭션이 우선순위를 갖는 낙관적 락(Optimistic Lock)</li>
-</ol>
-<p>이 있습니다.</p>
-<p>이 두 가지 방법을 좀 더 자세히 살펴보면&hellip;</p>
-<h1 id="2--pessimistic-lock">2. 비관적 락(Pessimistic Lock)</h1>
-<p>먼저 데이터에 접근한 트랜잭션이 우선순위를 갖는 잠금 방식으로 다른 말로는 <code>선점 잠금</code>이라고도 합니다.</p>
-<p>우선 이해를 돕기 위해 그림을 먼저 보면</p>
-<p><img src="/images/resources/jpa_lock2.jpeg" alt="jpa_lock2" /></p>
-<p>왼쪽 트랜잭션이 먼저 잔고에 접근했다고 했을 때, 오른쪽 트랜잭션은 왼쪽 트랜잭션의 일이 끝날 때까지 대기해야 합니다. 그리고 왼쪽  트랜잭션이 끝나면 오른쪽 트랜잭션이 접근하여 선점할 수 있는 것이죠. 이렇게 서로 다른 두 트랜잭션이 동시에 동일 데이터에 접근하여 수정하는 것을 방지하여, 데이터의 일관성이 깨지는 것을 막아줍니다.</p>
-<p>이론은 여기까지 하고, 그럼 이걸 JPA 환경에서 어떻게 사용하느냐 인데요.</p>
-<blockquote>
-<ol>
-<li>EntityManager.find() 를 사용할 경우</li>
-<li>annotation 을 사용할 경우</li>
-</ol>
-</blockquote>
-<p>가 있습니다. 코드로 보면</p>
+      <p>최근 학생들에게 학습을 추천해주는 것과 관련된 작업을 하고 있는데요.</p>
+<p>주 단위로 추천이 되어 매주 배치를 통해서 추천 학습이 들어가지만, 신규 회원일 경우 배치에서 누락되는 경우가 있어서, 로그인 등의 행위를 했을 때 비동기적으로 데이터를 쌓아줄까 고민을 하고 있습니다.</p>
+<p>프로젝트는 Java - Spring 을 기반으로 하고 있는데, 잠깐만 찾아봐도 방법이 많습니다.</p>
+<p>이번 글에서는 비동기에 대한 정의 및 올드한 내용에 대해 다뤄볼까 합니다.</p>
+<h1 id="1--">1. 비동기 프로그래밍이란?</h1>
+<p>일단, 비동기를 논하기 전에 왜 비동기가 나왔는지부터 알아야 할 것 같습니다.</p>
+<p>기본적으로 메소드를 실행한다는 것은 메소드가 완료될 때까지 그 메소드를 호출한 코드는 기다려야 함(블록킹 blocking) 을 의미합니다. 얼핏 들으면 당연해보입니다. 결과가 나와야 그 결과를 가지고 뭘 할테니까요.</p>
+<p>하지만, 그렇지 않아야 할 때도 있습니다. 가령 쇼핑몰에서 상품을 사기 위해서 상품 목록을 보는데, 상품 목록을 전부 가져올 때까지 기다린다고 생각해보세요. 사용자는 통신이 완료될 때까지 로딩 중이라는 하얀 화면만 봐야할테고, 대부분의 사용자는 기다리지 않고 나갈테죠.</p>
+<p>이런 경우 떄문에 우리는 UI 쪽에서는 주로 AJAX(Asynchronous Javascript and XML) 를 통해 위와 같은 문제를 해결합니다.</p>
+<p>또 다른 경우라면, 서버에서 사용자의 로그를 쌓을 때도 비동기로 할 수 있겠네요.</p>
+<p>비동기 프로그래밍은 기본적으로 Fire-and-Forget (저지르고 잊기) 입니다, 즉 작업을 붙잡지 않고 흘려보낸다음 결과가 준비되면 그제야 가져옵니다.</p>
+<p>서로 함께 움직일 필요가 없는 작업을 분리할 때 좋은 선택지라고 할 수 있습니다.</p>
+<h1 id="2-thread-runnable">2. Thread, Runnable</h1>
+<p>취준생 시절, 비동기에 대한 질문이 오면 항상 나왔던 내용이 바로 Thread 와 Runnable 에 대한 내용이었는데요.</p>
+<p>자바에서는 위의 두 클래스와 인터페이스를 각각 상속, 구현하는 형태로 비동기 코드를 간단하게 실행할 수 있습니다.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -1550,45 +1525,16 @@
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 1. EntityManager.find() 의 경우
-</span><span class="c1"></span><span class="n">EntityManager</span> <span class="n">entityManager</span> <span class="o">=</span> <span class="n">Persistence</span><span class="o">.</span><span class="na">createEntityManagerFactory</span><span class="o">(</span><span class="s">&#34;lockTest&#34;</span><span class="o">)</span><span class="o">.</span><span class="na">createEntityManager</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-<span class="n">entityManager</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">Account</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">dipositNum</span><span class="o">,</span> <span class="n">LockModeType</span><span class="o">.</span><span class="na">PESSIMISTIC_WRITE</span><span class="o">)</span><span class="o">;</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">AsyncRunnable</span> <span class="kd">implements</span> <span class="n">Runnable</span> <span class="o">{</span>
 
-<span class="c1">// annotation 사용
-</span><span class="c1"></span><span class="nd">@Lock</span><span class="o">(</span><span class="n">LockModeType</span><span class="o">.</span><span class="na">PESSIMISTIC_WRITE</span><span class="o">)</span>
-<span class="n">Account</span> <span class="nf">find</span><span class="o">(</span><span class="kt">int</span> <span class="n">depositNum</span><span class="o">)</span><span class="o">;</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;run!&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>이렇게 사용합니다.</p>
-<p>어노테이션으로 간단하게 할 수 있다보니, 책을 통해서 배울 때 말고는 엔티티 매니저를 직접 호출해서 사용한 적은 없네요.</p>
-<p>하지만, 비관적 락을 사용할 때, 주의할 점이 있는데요. 바로 <code>교착 상태 (deadlock)</code> 에 빠질 수 있다는 것입니다.</p>
-<blockquote>
-<p>교착 상태 (deadlock) 란?</p>
-<p>두 개 이상의 작업이 서로 상대방의 작업이 끝나기 만을 기다리고 있기 때문에 결과적으로 아무것도 완료되지 못하는 상태를 가리킨다.</p>
-<p>예를 들어 A,B 트랜잭션이 계좌 정보와 사용자 정보에 접근한다고 했을 때,</p>
-<ol>
-<li>A : 계좌 정보에 접근하여 계좌 잠금</li>
-<li>B : 사용자 정보에 접근하여 사용자 정보 잠금</li>
-<li>A: 사용자 정보에 접근 시도</li>
-<li>B : 계좌 정보에 접근 시도</li>
-</ol>
-<p>A는 계좌를 잠금했고, 사용자 정보를 가져오기 위해 대기를 하고, B는 사용자 정보를 잠금했고, 계좌 정보를 가져오기 위해 대기를 한다. 서로 끝나지 않는 상황 발생</p>
-</blockquote>
-<p>이런 경우 때문에 보통, DB 커넥션 수준에서 잠금 대기 시간을 설정 (혹은 커넥션 타임 설정?) 등을 통해 해당 상황을 대비하는 것 같습니다.</p>
-<h1 id="3--optimistic-lock">3. 낙관적 락(Optimistic Lock)</h1>
-<p>먼저 데이터를 수정한 트랜잭션이 우선순위를 갖는 것으로 <code>비선점 잠금</code> 이라고도 합니다.</p>
-<p>이번에도 먼저 그림을 보면</p>
-<p><img src="/images/resources/jpa_lock3.jpeg" alt="jpa_lock3" /></p>
-<p>우선 눈에 띄는게 버전이라는 것입니다.</p>
-<p>낙관적 락을 사용하려면 버전 값을 저정할 컬럼이 필요하고, 조회할 때 버전 값을 같이 조회합니다. 그리고 업데이를 할 때 버전도 같이 업데이트를 합니다. 그렇게 하여 왼쪽 트랜잭션이 업데이트를 하려고 하면, 버전 값이 달라서(업데이트된 버전 : 2, 왼족이 조회한 계좌 잔고에 대한 버전 : 1) 업데이트에 실패하게 됩니다.</p>
-<p>JPA 에서 낙관적 락을 사용하려면 다음과 같습니다.</p>
-<blockquote>
-<ol>
-<li>버전 값을 저장할 컬럼을 DB Table 에 추가</li>
-<li>해당 컬럼에 @Version 어노테이션 설정</li>
-</ol>
-</blockquote>
-<div class="highlight"><div class="chroma">
+</div><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
@@ -1598,15 +1544,48 @@
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">create</span> <span class="k">table</span> <span class="n">ACCOUNT</span><span class="p">(</span>
-  <span class="n">id</span> <span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">not</span> <span class="k">null</span> <span class="k">primary</span> <span class="k">key</span>
-  <span class="n">balance</span> <span class="nb">int</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span> <span class="k">default</span> <span class="mi">0</span>
-  <span class="p">.</span><span class="p">.</span><span class="p">.</span>
-  <span class="n">ver</span> <span class="nb">int</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="k">default</span> <span class="mi">0</span>
-<span class="p">)</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">HelloThread</span> <span class="kd">extends</span> <span class="n">Thread</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">run</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;run!&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
 </div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 실행
+</span><span class="c1"></span><span class="k">new</span> <span class="n">Thread</span><span class="o">(</span><span class="k">new</span> <span class="n">AsyncRunnable</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">start</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+
+<span class="n">AsyncRunnable</span> <span class="n">asyncRunnable</span> <span class="o">=</span> <span class="k">new</span> <span class="n">AsyncRunnable</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<span class="n">asyncRunnable</span><span class="o">.</span><span class="na">run</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+
+<span class="k">new</span> <span class="n">HelloThread</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">start</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>위의 Thread 를 다루는 메소드도 존재하는데요.</p>
+<p>대표적인 메소드가 sleep() 입니다.</p>
+<p>이런 메소드들은 간략하게 살펴보면</p>
+<blockquote>
+<ol>
+<li>sleep(mills) : 지정한 시간동안 쓰레드를 잠재웁니다.</li>
+<li>join() : 쓰레드를 동기(?) 적으로 처리할 수 있습니다. 예를 들어 t2 의 값을 t1 이 받아서 작업을 해야 할 경우 t2.join() 을 통해 t2의 값을 가져와서 t1이 마저 작업을 할 수 있습니다.</li>
+<li>yield() : 실행 중인 쓰레드가 동일 또는 높은 우선순위 쓰레드에게 양보할 때 사용합니다.</li>
+</ol>
+</blockquote>
+<h1 id="3-futurev">3. Future<V></h1>
+<p>자바 1.5에서 등장한 비동기 계산의 결과를 나타내는 interface 입니다.</p>
+<p>보통 어노테이션을 붙여 비동기로 실행할 방법이 마땅치 않아 프레임워크의 일부인 ExecutorService 와 함께 엮어 사용합니다.</p>
+<div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
 </span><span class="lnt"> 2
@@ -1621,36 +1600,227 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Entity</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Account</span> <span class="o">{</span>
-  <span class="nd">@Id</span>
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">id</span><span class="o">;</span>
-  
-  <span class="nd">@Column</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#34;balance&#34;</span><span class="o">)</span>
-  <span class="kd">private</span> <span class="kt">int</span> <span class="n">balance</span><span class="o">;</span>
-  
-  <span class="nd">@Version</span>
-  <span class="kd">private</span> <span class="kt">int</span> <span class="n">ver</span><span class="o">;</span>
-  
-  <span class="o">.</span><span class="o">.</span><span class="o">.</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FutureService</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">future</span><span class="o">(</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ExecutionException</span><span class="o">,</span> <span class="n">InterruptedException</span> <span class="o">{</span>
+
+        <span class="n">ExecutorService</span> <span class="n">executorService</span> <span class="o">=</span> <span class="n">Executors</span><span class="o">.</span><span class="na">newSingleThreadExecutor</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+
+        <span class="n">Future</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">reference</span> <span class="o">=</span> <span class="n">executorService</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span>
+                <span class="k">new</span> <span class="n">Callable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="n">String</span> <span class="nf">call</span><span class="o">(</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                        <span class="k">return</span> <span class="s">&#34;Hello&#34;</span><span class="o">;</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+        <span class="o">)</span><span class="o">;</span>
+        
+        <span class="k">if</span><span class="o">(</span><span class="n">reference</span><span class="o">.</span><span class="na">isDone</span><span class="o">(</span><span class="o">)</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">reference</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><p>이렇게 하면 낙관적 락이 적용됩니다.</p>
-<p>@Version 으로 설정할 수 있는 데이터 타입은 <em>int, Integer, short, Short, long, Long,  java.sql.Timestamp</em> 이 있습니다.</p>
-<h1 id="4-">4. 정리</h1>
-<p>JPA 에서 사용하는 락 방법인 비관적 락 과 낙관적 락에 대해서 알아봤습니다.</p>
-<p>해당 내용을 실제로 접해본 적은 없어서 그런가보다 하는 감이 없잖아 있지만, 대규모 트래픽을 생각한다면 짚고 넘어가야 할 내용은 맞는 것 같습니다.</p>
-<p>참고로 JPA 를 사용할 때 추천하는 전략은 낙관적 락 이라고 합니다. 교착 상태의 비용이 커서 그런건가 싶기도 하네요. (실제로 학부에서 OS를 배울 때 교착 상태에 대해 중요하게 배우기도 했고요.)</p>
-<p>그라고 비관적 락을 사용할 때, <code>LockModeType.PESSIMISTIC_WRITE</code> 라고 적었는데, 락모드타입에도 몇 가지 종류가 있다고 합니다.  (나중에 필요할 때 읽어보면 될 것 같습니다.)</p>
+</div><p>값을 리턴하기 위해 callable 인터페이스를 사용하였고, 값을 가져오기 위해 get() 메소드를 사용한 것을 알 수 있습니다.</p>
+<p>하지만, get() 메소드를 호출하면 비동기 작업이 완료될 때까지 해당 쓰레드가 블록킹이 되며, 이미 완료되었는지 확인하는 isDone() 가 있는 것을 확인 할 수 있습니다.</p>
+<h1 id="4-futuretask">4. FutureTask</h1>
+<p>Future<T> 인터페이스를 구현한 클래스로 러너블 인터페이스를 구현해서 직접 실행시킬 수 있습니다.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">FutureService</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">futureTask</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+
+        <span class="n">ExecutorService</span> <span class="n">executorService</span> <span class="o">=</span> <span class="n">Executors</span><span class="o">.</span><span class="na">newSingleThreadExecutor</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+
+        <span class="n">FutureTask</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">reference</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FutureTask</span><span class="o">&lt;</span><span class="o">&gt;</span><span class="o">(</span>
+                <span class="k">new</span> <span class="n">Callable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="nd">@Override</span>
+                    <span class="kd">public</span> <span class="n">String</span> <span class="nf">call</span><span class="o">(</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+                        <span class="k">return</span> <span class="s">&#34;Hello&#34;</span><span class="o">;</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+        <span class="o">)</span><span class="o">;</span>
+
+        <span class="n">executorService</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">reference</span><span class="o">)</span><span class="o">;</span>
+        <span class="c1">//reference.cancel(true);
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>위의 Future 와 비교하면 executorService.execute 를 통해 직접 실행시킬 수 있는 것을 알 수 있습니다.</p>
+<p>실행을 취소하려면 cancel(boolean mayInterruptIfRunning) 메소드를 호출하면 됩니다.</p>
+<blockquote>
+<p>제가 참고한 책에서는 자바EE에서는 @Asynchronous 라는 어노테이션이 사용했습니다만, 확인해보니 해당 어노테이션이 있는 javax.ejb 패키지가 1.7(java7) 이후로는 deprecated 된 패키지 이므로 java8 이전에는 그런 것도 있었구나 하고 넘어가면 될 것 같습니다.</p>
+</blockquote>
+<h1 id="5--">5. 비동기 서블릿</h1>
+<p>아마 요즘 환경에서는 websocket, socket.io 등의 기술 덕분에 쓰지 않을 방법이겠지만, 공부차 이 방법도 한 번 짚고 넘어가려고 합니다.</p>
+<p>(실은 요즘은 2~4번 방법도 안 쓰지 않을까 싶어요.)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@WebServlet</span><span class="o">(</span><span class="n">urlPatterns</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;/async&#34;</span><span class="o">}</span><span class="o">,</span> <span class="n">asyncSupported</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AsyncServlet</span> <span class="kd">extends</span> <span class="n">HttpServlet</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+
+        <span class="kd">final</span> <span class="n">AsyncContext</span> <span class="n">asyncContext</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">startAsync</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+
+        <span class="n">asyncContext</span><span class="o">.</span><span class="na">addListener</span><span class="o">(</span><span class="k">new</span> <span class="n">AsyncListener</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="n">AsyncEvent</span> <span class="n">asyncEvent</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+                <span class="c1">// ...
+</span><span class="c1"></span>            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onTimeout</span><span class="o">(</span><span class="n">AsyncEvent</span> <span class="n">asyncEvent</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+                <span class="c1">// ...
+</span><span class="c1"></span>            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onError</span><span class="o">(</span><span class="n">AsyncEvent</span> <span class="n">asyncEvent</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+                <span class="c1">// ...
+</span><span class="c1"></span>            <span class="o">}</span>
+
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStartAsync</span><span class="o">(</span><span class="n">AsyncEvent</span> <span class="n">asyncEvent</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+                <span class="c1">// ...
+</span><span class="c1"></span>            <span class="o">}</span>
+        <span class="o">}</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>startAsync() 를 통해 비동기 작업이 가능하며, AsyncListener 에는 4개의 메소드가 존재하는데, 각각 살펴보면</p>
+<blockquote>
+<ul>
+<li>onComplete() : 실행이 끝날 때 한 번만 실행</li>
+<li>onTimeout() : 타임아웃이 발생할 때만 실행</li>
+<li>onError() : 에러를 받았을 때만 실행</li>
+<li>onStartAsync() : 비동기 컨텍스트가 시작될 때 실행</li>
+</ul>
+</blockquote>
+<p>이름만 보면 어떤 행동을 할지 알 수 있습니다. (이름의 중요성&hellip;)</p>
+<p>다른 방법으로는 ExecutorService 에 위임해주는 방법인데요. 살펴보면</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@WebServlet</span><span class="o">(</span><span class="n">urlPatterns</span> <span class="o">=</span> <span class="o">{</span><span class="s">&#34;/async&#34;</span><span class="o">}</span><span class="o">,</span> <span class="n">asyncSupported</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AsyncServlet</span> <span class="kd">extends</span> <span class="n">HttpServlet</span> <span class="o">{</span>
+    
+    <span class="nd">@Resource</span>
+    <span class="kd">private</span> <span class="n">ExecutorService</span> <span class="n">executorService</span><span class="o">;</span>
+    
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">resp</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span><span class="o">,</span> <span class="n">IOException</span> <span class="o">{</span>
+
+        <span class="n">AsyncContext</span> <span class="n">asyncContext</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">startAsync</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="kd">final</span> <span class="n">PrintWriter</span> <span class="n">writer</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="na">getWriter</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        
+        <span class="n">executorService</span><span class="o">.</span><span class="na">submit</span><span class="o">(</span><span class="o">(</span><span class="o">)</span> <span class="o">-</span><span class="o">&gt;</span> <span class="o">{</span>
+            <span class="n">writer</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;end&#34;</span><span class="o">)</span><span class="o">;</span>
+            <span class="n">asyncContext</span><span class="o">.</span><span class="na">complete</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="o">}</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>쓰레드 생성/시동을 ExecutorService 에 맡기고, 서블릿 관련 코드만 처리하는 것으로,</p>
+<p>Future<V> 를 사용했을 때와 비슷하게 사용할 수 있는 것을 알 수 있습니다.</p>
+<h1 id="6-">6. 정리</h1>
+<p>비동기 작업은 실행이 다 끝난 후 응답을 반환하는 거의 모든 경우에 쓰입니다. 비동기 작업을 하면 하위 작업을 다른 쓰레드에 맡김으로써 응답 시간을 단축시킬 수 있습니다.</p>
+<p>하지만, 비동기 실행을 하면 쓰레드를 새로 만들어야 하기 때문에 JVM 은 비동기 메소드 갯수만큼 컨텍스트 스위칭 횟수가 늘어납니다. 컨텍스트 스위칭이 너무 잦아지면 쓰레드가 바닥나거나 성능이 외려 동기 실행보다 못할 수도 있다고 합니다. (책 여러 권을 병렬로 읽는다고 생각해보세요. 혹은 프로젝트 6개를 병렬로 처리한다거나&hellip;) 그리고, 실행 순서를 보장할 수 없기 때문에 디버깅이 어렵다는 단점도 있네요.</p>
+<p>그렇기에 원리를 잘 알고 사용해야 함에는 틀림 없는 것 같습니다. 관련 기술도 많구요.</p>
+<p>다음에는 java8에서 생긴 CompletableFutre, Spring 의 @Async 등 좀 더 근대적인(?) 방법에 대해 소개해볼까 합니다.</p>
 <ul>
 <li>Reference
 <ul>
-<li><a href="https://g.co/kgs/JC3xuR">JPA 프로그래밍 입문</a></li>
-<li><a href="https://www.baeldung.com/jpa-pessimistic-locking">Baeldung Pessimistic Locking</a></li>
-<li><a href="https://www.baeldung.com/jpa-optimistic-locking">Baeldung Optimistic Locking</a></li>
+<li><a href="http://www.yes24.com/Product/Goods/38880496">JavaEE 디자인 패턴</a></li>
+<li><a href="https://jongmin92.github.io/2019/03/31/Java/java-async-1/">자바와 스프링의 비동기 기술</a></li>
+<li><a href="https://javacan.tistory.com/entry/Servlet-3-Async">서블릿 3.0의 비동기 처리</a></li>
 </ul>
 </li>
 </ul>
@@ -1715,7 +1885,7 @@
     
     
       
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fysjune.github.io%2fposts%2fjava%2fjpa_lock%2f" title="Facebook" aria-label="Facebook Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fysjune.github.io%2fposts%2fjava%2faysnc_1%2f" title="Facebook" aria-label="Facebook Share Button" class="donation__item" target="_blank" rel="noreferrer" data-type="share">
           <svg data-name="facebook" enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="35" height="35" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/></svg>
         </a>
       
@@ -1805,21 +1975,14 @@
 <nav class="pagination-single">
   
     
-      <a href="https://ysjune.github.io/posts/chatter/2020retrospect/" class="pagination-single__left">
+      <a href="https://ysjune.github.io/posts/java/jpa_lock/" class="pagination-single__left">
         <div class="pagination-single__icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M19 11H7.83l4.88-4.88c.39-.39.39-1.03 0-1.42-.39-.39-1.02-.39-1.41 0l-6.59 6.59c-.39.39-.39 1.02 0 1.41l6.59 6.59c.39.39 1.02.39 1.41 0 .39-.39.39-1.02 0-1.41L7.83 13H19c.55 0 1-.45 1-1s-.45-1-1-1z"/></svg>
         </div>
-        <div class="pagination-single__left-title">2020년 회고</div>      
+        <div class="pagination-single__left-title">JPA 락에 대해</div>      
       </a>
     
     <div class="grow"></div>
-    
-      <a href="https://ysjune.github.io/posts/java/aysnc_1/" class="pagination-single__right">      
-        <div class="pagination-single__right-title">자바 비동기 (1)</div>
-        <div class="pagination-single__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentColor" d="M5 13h11.17l-4.88 4.88c-.39.39-.39 1.03 0 1.42.39.39 1.02.39 1.41 0l6.59-6.59c.39-.39.39-1.02 0-1.41l-6.58-6.6c-.39-.39-1.02-.39-1.41 0-.39.39-.39 1.02 0 1.41L16.17 11H5c-.55 0-1 .45-1 1s.45 1 1 1z"/></svg>
-        </div>
-      </a>
     
   
 </nav>
@@ -2965,10 +3128,12 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="toc toc__outer " data-dir="ltr" data-folding="false" data-ani="true">
           <nav id="TableOfContents">
   <ul>
-    <li><a href="#1------">1. 락 없이 동시 접근을 했을 때</a></li>
-    <li><a href="#2--pessimistic-lock">2. 비관적 락(Pessimistic Lock)</a></li>
-    <li><a href="#3--optimistic-lock">3. 낙관적 락(Optimistic Lock)</a></li>
-    <li><a href="#4-">4. 정리</a></li>
+    <li><a href="#1--">1. 비동기 프로그래밍이란?</a></li>
+    <li><a href="#2-thread-runnable">2. Thread, Runnable</a></li>
+    <li><a href="#3-futurev">3. Future</a></li>
+    <li><a href="#4-futuretask">4. FutureTask</a></li>
+    <li><a href="#5--">5. 비동기 서블릿</a></li>
+    <li><a href="#6-">6. 정리</a></li>
   </ul>
 </nav>
         </div>
