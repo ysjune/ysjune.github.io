@@ -14,13 +14,41 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 20 Feb 2021 22:28:19 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 20 Mar 2021 11:54:46 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>REST (1)</title>
+        <link>https://ysjune.github.io/posts/design/rest_1/</link>
+        <pubDate>Sat, 20 Mar 2021 11:54:46 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sat, 20 Mar 2021 11:54:46 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/design/rest_1/</guid>
+        <description>요즘 API 를 보면 흔히 REST 하게 API 를 작성한다고들 합니다. 실제 보면 대부분 url 을 명사로 쓰고, HTTP Method 를 잘 배분한다는 것으로 알고 있습니다. 실제로 이렇게 설명하는 곳도 많</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>설계</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>자바 비동기 (2)</title>
