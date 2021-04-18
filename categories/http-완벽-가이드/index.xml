@@ -14,13 +14,41 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sun, 13 Sep 2020 21:27:25 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 17 Apr 2021 15:35:34 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/categories/http-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>HTTP 메시지</title>
+        <link>https://ysjune.github.io/posts/http/http_message/</link>
+        <pubDate>Sat, 17 Apr 2021 15:35:34 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sat, 17 Apr 2021 15:35:34 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/http/http_message/</guid>
+        <description>최근에 REST api 에 대해서 공부했었는데, 마침 새로운 기능을 만들 일이 있어서 해당 기능에 REST 를 적용해서 만드려고 하고 있습니다. 그런데 이전 코드에서는 HTTP 메소드를 GET,POST 구</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>HTTP 완벽 가이드</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>1. HTTP 개관</title>
