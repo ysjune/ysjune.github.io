@@ -14,13 +14,31 @@
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 17 Apr 2021 15:35:34 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 15 May 2021 17:38:56 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>JAVA</title>
+        <link>https://ysjune.github.io/categories/java/</link>
+        <pubDate>Sat, 15 May 2021 17:38:56 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        
+        <guid>https://ysjune.github.io/categories/java/</guid>
+        <description></description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+        
+      </item>
       
       <item>
         <title>HTTP 완벽 가이드</title>
@@ -47,24 +65,6 @@
         <author>windsyou@gmail.com (snack)</author>
         
         <guid>https://ysjune.github.io/categories/%EC%84%A4%EA%B3%84/</guid>
-        <description></description>
-        
-        <dc:creator>snack</dc:creator>
-        
-        
-        
-        
-        
-        
-      </item>
-      
-      <item>
-        <title>java</title>
-        <link>https://ysjune.github.io/categories/java/</link>
-        <pubDate>Sat, 20 Feb 2021 22:28:19 +0900</pubDate>
-        <author>windsyou@gmail.com (snack)</author>
-        
-        <guid>https://ysjune.github.io/categories/java/</guid>
         <description></description>
         
         <dc:creator>snack</dc:creator>

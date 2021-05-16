@@ -6,21 +6,49 @@
   xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
   xmlns:media="http://search.yahoo.com/mrss/">
   <channel>
-    <title>java on Lazy Snack</title>
+    <title>JAVA on Lazy Snack</title>
     <link>https://ysjune.github.io/categories/java/</link>
-    <description>Recent content in java on Lazy Snack</description>
+    <description>Recent content in JAVA on Lazy Snack</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>windsyou@gmail.com (snack)</managingEditor>
     <webMaster>windsyou@gmail.com (snack)</webMaster>
     <copyright>&amp;copy;{year}, All Rights Reserved</copyright>
-    <lastBuildDate>Sat, 20 Feb 2021 22:28:19 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 15 May 2021 17:38:56 +0900</lastBuildDate>
     
         <atom:link href="https://ysjune.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     
 
+      
+      <item>
+        <title>멀티쓰레드에서 Thread-Safe 방법</title>
+        <link>https://ysjune.github.io/posts/java/multi_thread/</link>
+        <pubDate>Sat, 15 May 2021 17:38:56 +0900</pubDate>
+        <author>windsyou@gmail.com (snack)</author>
+        <atom:modified>Sat, 15 May 2021 17:38:56 +0900</atom:modified>
+        <guid>https://ysjune.github.io/posts/java/multi_thread/</guid>
+        <description>1. 멀티 쓰레드(Multi Thread)란? 1-1) 정의 하나의 프로세스를 다수의 실행 단위로 구분하여 자원을 공유하고, 자원의 생성과 관리의 중복성으 최소화하여</description>
+        
+        <dc:creator>snack</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>JAVA</category>
+            
+          
+        
+        
+          
+            
+          
+        
+      </item>
       
       <item>
         <title>자바 비동기 (2)</title>
